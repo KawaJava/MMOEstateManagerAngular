@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  players: string[] = ['Gracz1', 'Gracz2'];
+
   constructor() { }
 
   ngOnInit(): void {
