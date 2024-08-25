@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { DefaultModule } from './layouts/default/default.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     DefaultModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule
   ],
   exports: [
     RouterModule,
