@@ -6,6 +6,7 @@ import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.co
 import { AdminComponent } from './modules/admin/admin.component';
 import { AdminPlayerComponent } from './modules/admin/admin-player/admin-player.component';
 import { AdminPlayerUpdateComponent } from './modules/admin/admin-player-update/admin-player-update.component';
+import { AdminPlayerAddComponent } from './modules/admin/admin-player-add/admin-player-add.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
     path:'', component: FullpageadminComponent, children: [
       {path: 'admin', component: AdminComponent},
       {path: 'admin/players', component: AdminPlayerComponent},
-      {path: 'admin/players/update/:id', component: AdminPlayerUpdateComponent}
+      {path: 'admin/players/update/:id', component: AdminPlayerUpdateComponent},
+      {path: 'admin/players/add', component: AdminPlayerAddComponent}
     ]
   },
 ];

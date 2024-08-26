@@ -19,4 +19,8 @@ export class AdminPlayerUpdateService {
   savePlayer(id: number, value: AdminPlayerUpdate) {
     return this.http.put<AdminPlayerUpdate>("/api/admin/players/" + id, value);
   }
+
+  createPlayer(value: AdminPlayerUpdate) {
+    return this.http.post<AdminPlayerUpdate>("/api/admin/players", value);
+  }
 }

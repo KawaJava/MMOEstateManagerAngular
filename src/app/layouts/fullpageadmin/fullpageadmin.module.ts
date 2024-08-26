@@ -8,6 +8,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { AdminPlayerComponent } from 'src/app/modules/admin/admin-player/admin-player.component';
 import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-update/admin-player-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminPlayerAddComponent } from 'src/app/modules/admin/admin-player-add/admin-player-add.component';
 
 
 
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FullpageadminComponent,
     AdminComponent,
     AdminPlayerComponent,
-    AdminPlayerUpdateComponent
+    AdminPlayerUpdateComponent,
+    AdminPlayerAddComponent
   ],
   imports: [
     CommonModule,
