@@ -1,0 +1,14 @@
+<header flexLayout="column" fxLayoutAlign="start center">
+    <button mat-flat-button color="accent"routerLink="" >Strona główna</button>
+    <button mat-flat-button color="warn" routerLink="/players">Gracze</button>
+</header>
+<div flexLayout="row" fxFlex>
+    <div fxFlex="20">
+        <div fxFlex>
+            Sidebar
+        </div>
+    </div>
+    <div fxFlex="80" class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
