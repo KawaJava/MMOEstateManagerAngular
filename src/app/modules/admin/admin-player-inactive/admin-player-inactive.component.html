@@ -1,11 +1,4 @@
-<h1>Lista graczy</h1>
-
-<button mat-raised-button color="warn" [routerLink]="['/admin/players/add']">Dodaj gracza
-  <mat-icon color="accent">add</mat-icon>
-</button>
-<button mat-raised-button color="primary" [routerLink]="['/admin/players/inactive']">Nieaktywni
-  <mat-icon color="accent">remove</mat-icon>
-</button>
+<h1>Lista nieaktywnych graczy</h1>
 
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
 
@@ -43,20 +36,7 @@
           <th mat-header-cell *matHeaderCellDef> Dodano </th>
           <td mat-cell *matCellDef="let element"> {{element.created}} </td>
       </ng-container>
-
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> Akcje </th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-icon-button [routerLink]="['/admin/players/update', element.id]">
-            <mat-icon color="primary">edit</mat-icon>
-          </button>
-        </td>
-    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-    [pageSize]="5" showFirstLastButtons [length]="totalElements">
-  </mat-paginator>

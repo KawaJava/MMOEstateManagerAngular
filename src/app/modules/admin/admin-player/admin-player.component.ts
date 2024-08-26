@@ -31,7 +31,7 @@ export class AdminPlayerComponent implements AfterViewInit {
         this.totalElements = data.totalElements;
         return data.content;
       })
-    ).subscribe(data =>this.data = data)
+    ).subscribe(data => this.data = data)
   }
 
   // ngOnInit(): void {

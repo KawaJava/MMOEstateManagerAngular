@@ -16,4 +16,8 @@ export class AdminPlayerService {
   getPlayers(page: number, size: number): Observable<Page<AdminPlayer>> {
     return this.http.get<Page<AdminPlayer>>(`/api/admin/players?page=${page}&size=${size}`);
   }
+
+  getInactivePlayers(): Observable<AdminPlayer[]> {
+    return this.http.get<AdminPlayer[]>(`/api/admin/players/inactive`);
+  }
 }
