@@ -1,24 +1,24 @@
 <h1>Edycja gracza</h1>
 
-<form fxLayout="column">
+<form fxLayout="column" [formGroup]="playerForm" (submit)="submit()">
     <mat-form-field appearance="fill">
       <mat-label>Nazwa</mat-label>
-      <input matInput placeholder="Podaj nazwę gracza">
+      <input matInput placeholder="Podaj nazwę gracza" formControlName="name">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
         <mat-label>Slug</mat-label>
-        <input matInput placeholder="Podaj slug">
+        <input matInput placeholder="Podaj slug" formControlName="slug">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Podaj email gracza">
+        <input matInput placeholder="Podaj email gracza" formControlName="email">
       </mat-form-field>
       
       <mat-form-field appearance="fill">
         <mat-label>Klan</mat-label>
-        <input matInput placeholder="Podaj klan gracza">
+        <input matInput placeholder="Podaj klan gracza" formControlName="clan">
       </mat-form-field>
 
       <div fxLayoutAlign="end">
