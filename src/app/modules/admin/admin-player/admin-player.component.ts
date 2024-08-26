@@ -13,7 +13,7 @@ export class AdminPlayerComponent implements AfterViewInit {
 
   //dataSource: AdminPlayer[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  displayedColumns: string[] = ["id", "name", "email", "slug", "clan", "isActive", "created"];
+  displayedColumns: string[] = ["id", "name", "email", "slug", "clan", "isActive", "created", "actions"];
   totalElements: number = 0;
   data: AdminPlayer[] = [];
 
