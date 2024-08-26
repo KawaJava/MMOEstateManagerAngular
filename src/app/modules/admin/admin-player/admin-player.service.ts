@@ -9,7 +9,9 @@ import { Page } from 'src/app/shared/page';
 })
 export class AdminPlayerService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getPlayers(page: number, size: number): Observable<Page<AdminPlayer>> {
     return this.http.get<Page<AdminPlayer>>(`/api/admin/players?page=${page}&size=${size}`);
