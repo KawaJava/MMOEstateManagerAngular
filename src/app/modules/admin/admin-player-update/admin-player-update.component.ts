@@ -14,6 +14,7 @@ export class AdminPlayerUpdateComponent implements OnInit {
 
   player!: AdminPlayerUpdate;
   playerForm!: FormGroup;
+  clans: string[] = ['Clan1', 'Clan2', 'Clan3', `Clan4`];
 
   constructor(
     private router: ActivatedRoute,

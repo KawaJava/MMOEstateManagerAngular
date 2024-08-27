@@ -18,7 +18,9 @@
       
       <mat-form-field appearance="fill">
         <mat-label>Klan</mat-label>
-        <input matInput placeholder="Podaj klan gracza" formControlName="clan">
+        <mat-select formControlName="clan">
+          <mat-option *ngFor="let clan of clans" [value]="clan">{{ clan }}</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <div fxLayoutAlign="end">

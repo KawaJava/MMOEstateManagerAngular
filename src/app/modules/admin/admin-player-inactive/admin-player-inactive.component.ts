@@ -9,7 +9,7 @@ import { AdminPlayerService } from '../admin-player/admin-player.service';
 })
 export class AdminPlayerInactiveComponent implements OnInit {
 
-  displayedColumns: string[] = ["id", "name", "email", "slug", "clan", "isActive", "created"];
+  displayedColumns: string[] = ["id", "name", "email", "slug", "clan", "created"];
   data: AdminPlayer[] = [];
   
   constructor(
