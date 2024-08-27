@@ -10,6 +10,7 @@ import { AdminPlayerAddComponent } from './modules/admin/admin-player-add/admin-
 import { AdminPlayerInactiveComponent } from './modules/admin/admin-player-inactive/admin-player-inactive.component';
 import { AdminCountryComponent } from './modules/admin/admin-country/admin-country.component';
 import { AdminCountryUpdateComponent } from './modules/admin/admin-country-update/admin-country-update.component';
+import { AdminCountryAddComponent } from './modules/admin/admin-country-add/admin-country-add.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
       {path: 'admin/players/add', component: AdminPlayerAddComponent},
       {path: 'admin/players/inactive', component: AdminPlayerInactiveComponent},
       {path: 'admin/countries', component: AdminCountryComponent},
-      {path: 'admin/countries/update/:id', component: AdminCountryUpdateComponent}
+      {path: 'admin/countries/update/:id', component: AdminCountryUpdateComponent},
+      {path: 'admin/countries/add', component: AdminCountryAddComponent}
     ]
   },
 ];

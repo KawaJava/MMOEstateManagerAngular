@@ -4,6 +4,7 @@ import { AdminCountry } from './model/adminCountry';
 import { Observable } from 'rxjs';
 import { Page } from 'src/app/shared/page';
 import { AdminCountryGeneralInfo } from '../admin-country-update/model/adminCountryGeneralInfo';
+import { AdminCountryAdd } from '../admin-country-add/model/adminCountryAdd';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class AdminCountryService {
 
   getCountry(id: number):  Observable<AdminCountryGeneralInfo> {
     return this.http.get<AdminCountryGeneralInfo>("/api/admin/countries/" + id);
+  }
+
+  createCountry(value: AdminCountryAdd) {
+    return this.http.post<AdminCountryAdd>("/api/admin/countries", value);
   }
   
 }

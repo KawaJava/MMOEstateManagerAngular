@@ -1,0 +1,45 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdminCountryAdd } from './model/adminCountryAdd';
+import { AdminCountryService } from '../admin-country/admin-country.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-admin-country-add',
+  templateUrl: './admin-country-add.component.html',
+  styleUrls: ['./admin-country-add.component.scss']
+})
+export class AdminCountryAddComponent implements OnInit {
+
+  country!: AdminCountryAdd;
+  countryForm!: FormGroup;
+
+  constructor(
+    private router: ActivatedRoute,
+    private adminCountryService: AdminCountryService,
+    private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar
+  ) { }
+
+  ngOnInit(): void {
+    this.countryForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      slug: ['', [Validators.required, Validators.minLength(3)]],
+      actualSheriffId: ['', [Validators.required]],
+      goldLimit: ['', [Validators.min(0)]],
+    });
+  }
+
+  submit() {{
+    this.adminCountryService.createCountry(this.countryForm.value)
+    .subscribe(country => this.countryForm.setValue({
+      name: country.name,
+      slug: country.slug,
+      actualSheriffId: country.actualSheriffId,
+      goldLimit: country.goldLimit,
+  }));
+  this.snackBar.open("Hrabstwo zostało dodane", '', {duration: 3000});
+  }}
+
+}
