@@ -11,6 +11,7 @@ import { AdminPlayerInactiveComponent } from './modules/admin/admin-player-inact
 import { AdminCountryComponent } from './modules/admin/admin-country/admin-country.component';
 import { AdminCountryUpdateComponent } from './modules/admin/admin-country-update/admin-country-update.component';
 import { AdminCountryAddComponent } from './modules/admin/admin-country-add/admin-country-add.component';
+import { AdminCountryChangeSheriffComponent } from './modules/admin/admin-country-change-sheriff/admin-country-change-sheriff.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
       {path: 'admin/players/inactive', component: AdminPlayerInactiveComponent},
       {path: 'admin/countries', component: AdminCountryComponent},
       {path: 'admin/countries/update/:id', component: AdminCountryUpdateComponent},
-      {path: 'admin/countries/add', component: AdminCountryAddComponent}
+      {path: 'admin/countries/add', component: AdminCountryAddComponent},
+      {path: 'admin/countries/:id/changeSheriff', component: AdminCountryChangeSheriffComponent}
     ]
   },
 ];

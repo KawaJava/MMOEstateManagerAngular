@@ -1,0 +1,17 @@
+<h1>Zmiana szeryfa hrabstwa</h1>
+
+<form fxLayout="column" [formGroup]="countryForm" (submit)="submit()">
+    
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nowy szeryf</mat-label>
+        <mat-select formControlName="actualSheriffId">
+          <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+      <div fxLayoutAlign="end">
+        <button mat-flat-button color="accent">Zapisz</button>
+      </div>
+
+</form>

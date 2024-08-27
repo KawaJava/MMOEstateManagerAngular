@@ -44,6 +44,9 @@
           <button mat-icon-button [routerLink]="['/admin/countries/update', element.id]">
             <mat-icon color="primary">edit</mat-icon>
           </button>
+          <button mat-icon-button [routerLink]="['/admin/countries', element.id, 'changeSheriff']">
+            <mat-icon color="warn">edit</mat-icon>
+          </button>
           <!-- <button mat-icon-button (click)="confirmDelete(element)">
             <mat-icon color="warn">delete</mat-icon>
           </button>

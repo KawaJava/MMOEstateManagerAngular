@@ -14,6 +14,7 @@ import { AdminConfirmDialogComponent } from 'src/app/modules/admin/admin-confirm
 import { AdminCountryComponent } from 'src/app/modules/admin/admin-country/admin-country.component';
 import { AdminCountryUpdateComponent } from 'src/app/modules/admin/admin-country-update/admin-country-update.component';
 import { AdminCountryAddComponent } from 'src/app/modules/admin/admin-country-add/admin-country-add.component';
+import { AdminCountryChangeSheriffComponent } from 'src/app/modules/admin/admin-country-change-sheriff/admin-country-change-sheriff.component';
 
 
 
@@ -28,7 +29,8 @@ import { AdminCountryAddComponent } from 'src/app/modules/admin/admin-country-ad
     AdminConfirmDialogComponent,
     AdminCountryComponent,
     AdminCountryUpdateComponent,
-    AdminCountryAddComponent
+    AdminCountryAddComponent,
+    AdminCountryChangeSheriffComponent
   ],
   imports: [
     CommonModule,

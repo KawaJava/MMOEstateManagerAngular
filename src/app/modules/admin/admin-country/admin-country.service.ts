@@ -21,12 +21,16 @@ export class AdminCountryService {
     return this.http.patch<AdminCountryGeneralInfo>("/api/admin/countries/" + id, value);
   }
 
-  getCountry(id: number):  Observable<AdminCountryGeneralInfo> {
+  getCountry(id: number): Observable<AdminCountryGeneralInfo> {
     return this.http.get<AdminCountryGeneralInfo>("/api/admin/countries/" + id);
   }
 
   createCountry(value: AdminCountryAdd) {
     return this.http.post<AdminCountryAdd>("/api/admin/countries", value);
+  }
+  
+  changeSheriff(countryId: number, sheriffId: number): Observable<number> {
+    return this.http.patch<number>("/api/admin/countries/" + countryId + "/changeSheriff/" + sheriffId, {});
   }
   
 }
