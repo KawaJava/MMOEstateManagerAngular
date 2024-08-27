@@ -10,6 +10,7 @@ import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-u
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminPlayerAddComponent } from 'src/app/modules/admin/admin-player-add/admin-player-add.component';
 import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player-inactive/admin-player-inactive.component';
+import { AdminConfirmDialogComponent } from 'src/app/modules/admin/admin-confirm-dialog/admin-confirm-dialog.component';
 
 
 
@@ -20,7 +21,8 @@ import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player
     AdminPlayerComponent,
     AdminPlayerUpdateComponent,
     AdminPlayerAddComponent,
-    AdminPlayerInactiveComponent
+    AdminPlayerInactiveComponent,
+    AdminConfirmDialogComponent
   ],
   imports: [
     CommonModule,

@@ -20,4 +20,8 @@ export class AdminPlayerService {
   getInactivePlayers(): Observable<AdminPlayer[]> {
     return this.http.get<AdminPlayer[]>(`/api/admin/players/inactive`);
   }
+
+  deletePlayer(id: number): Observable<void> {
+    return this.http.delete<void>(`/api/admin/players/`+ id);
+  }
 }
