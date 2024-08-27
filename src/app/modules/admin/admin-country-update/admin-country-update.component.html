@@ -1,0 +1,18 @@
+<h1>Edycja podstawowych danych o hrabstwie</h1>
+
+<form fxLayout="column" [formGroup]="countryForm" (submit)="submit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nazwa</mat-label>
+      <input matInput placeholder="Podaj nazwę hrabstwa" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Slug</mat-label>
+        <input matInput placeholder="Podaj slug" formControlName="slug">
+      </mat-form-field>
+
+      <div fxLayoutAlign="end">
+        <button mat-flat-button color="accent">Zapisz</button>
+      </div>
+
+</form>

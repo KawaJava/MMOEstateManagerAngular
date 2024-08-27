@@ -12,6 +12,7 @@ import { AdminPlayerAddComponent } from 'src/app/modules/admin/admin-player-add/
 import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player-inactive/admin-player-inactive.component';
 import { AdminConfirmDialogComponent } from 'src/app/modules/admin/admin-confirm-dialog/admin-confirm-dialog.component';
 import { AdminCountryComponent } from 'src/app/modules/admin/admin-country/admin-country.component';
+import { AdminCountryUpdateComponent } from 'src/app/modules/admin/admin-country-update/admin-country-update.component';
 
 
 
@@ -24,7 +25,8 @@ import { AdminCountryComponent } from 'src/app/modules/admin/admin-country/admin
     AdminPlayerAddComponent,
     AdminPlayerInactiveComponent,
     AdminConfirmDialogComponent,
-    AdminCountryComponent
+    AdminCountryComponent,
+    AdminCountryUpdateComponent
   ],
   imports: [
     CommonModule,
