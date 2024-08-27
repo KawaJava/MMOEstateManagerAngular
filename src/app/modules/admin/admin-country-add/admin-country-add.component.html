@@ -11,9 +11,16 @@
         <input matInput placeholder="Podaj slug" formControlName="slug">
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <!-- <mat-form-field appearance="fill">
         <mat-label>Szeryf</mat-label>
         <input matInput placeholder="Podaj nazwę szeryfa" formControlName="actualSheriffId">
+      </mat-form-field> -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Szeryf</mat-label>
+        <mat-select formControlName="actualSheriffId">
+          <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
+        </mat-select>
       </mat-form-field>
   
       <mat-form-field appearance="fill">

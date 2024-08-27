@@ -4,6 +4,8 @@ import { AdminCountryAdd } from './model/adminCountryAdd';
 import { AdminCountryService } from '../admin-country/admin-country.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { AdminPlayer } from '../admin-player/adminPlayer';
+import { FormPlayerService } from './form-player.service';
 
 @Component({
   selector: 'app-admin-country-add',
@@ -14,15 +16,19 @@ export class AdminCountryAddComponent implements OnInit {
 
   country!: AdminCountryAdd;
   countryForm!: FormGroup;
+  players: Array<AdminPlayer> = [];
 
   constructor(
     private router: ActivatedRoute,
     private adminCountryService: AdminCountryService,
     private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private formPlayerService: FormPlayerService
   ) { }
 
   ngOnInit(): void {
+    this.getPlayers();
+
     this.countryForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       slug: ['', [Validators.required, Validators.minLength(3)]],
@@ -41,5 +47,10 @@ export class AdminCountryAddComponent implements OnInit {
   }));
   this.snackBar.open("Hrabstwo zostało dodane", '', {duration: 3000});
   }}
+
+  getPlayers() {
+    this.formPlayerService.getPlayers()
+      .subscribe(players => this.players = players);
+  }
 
 }
