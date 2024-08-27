@@ -24,4 +24,8 @@ export class AdminPlayerService {
   deletePlayer(id: number): Observable<void> {
     return this.http.delete<void>(`/api/admin/players/`+ id);
   }
+
+  deactivatePlayer(id: number): Observable<void> {
+    return this.http.delete<void>(`/api/admin/players/`+ id + `/deactivate`);
+  }
 }

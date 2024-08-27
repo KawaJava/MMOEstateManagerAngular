@@ -39,12 +39,29 @@ export class AdminPlayerComponent implements AfterViewInit {
   }
 
 
-  confirmDelete(element: AdminPlayer){
+  confirmDelete(element: AdminPlayer) {
     this.dialogService.openConfirmDialog("Czy na pewno chcesz usunąć tego gracza?")
     .afterClosed()
     .subscribe(result => {
       if(result) {
         this.adminPlayerService.deletePlayer(element.id)
+          .subscribe(() => {
+            this.data.forEach((value, index) => {
+              if(element == value) {
+                this.data.splice(index, 1);
+                this.table.renderRows();
+              }
+            })
+          });
+      }
+    });
+  }
+  confirmDeactivation(element: AdminPlayer) {
+    this.dialogService.openConfirmDialog("Czy na pewno chcesz dezaktywować tego gracza?")
+    .afterClosed()
+    .subscribe(result => {
+      if(result) {
+        this.adminPlayerService.deactivatePlayer(element.id)
           .subscribe(() => {
             this.data.forEach((value, index) => {
               if(element == value) {
