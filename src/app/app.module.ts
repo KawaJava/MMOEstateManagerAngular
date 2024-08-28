@@ -9,10 +9,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminHistoricalSheriffsFilteredComponent } from './modules/admin/admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminHistoricalSheriffsFilteredComponent
   ],
   imports: [
     BrowserModule,

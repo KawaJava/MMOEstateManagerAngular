@@ -15,6 +15,7 @@ import { AdminCountryComponent } from 'src/app/modules/admin/admin-country/admin
 import { AdminCountryUpdateComponent } from 'src/app/modules/admin/admin-country-update/admin-country-update.component';
 import { AdminCountryAddComponent } from 'src/app/modules/admin/admin-country-add/admin-country-add.component';
 import { AdminCountryChangeSheriffComponent } from 'src/app/modules/admin/admin-country-change-sheriff/admin-country-change-sheriff.component';
+import { AdminHistoricalSheriffsComponent } from 'src/app/modules/admin/admin-historical-sheriffs/admin-historical-sheriffs.component';
 
 
 
@@ -30,7 +31,8 @@ import { AdminCountryChangeSheriffComponent } from 'src/app/modules/admin/admin-
     AdminCountryComponent,
     AdminCountryUpdateComponent,
     AdminCountryAddComponent,
-    AdminCountryChangeSheriffComponent
+    AdminCountryChangeSheriffComponent,
+    AdminHistoricalSheriffsComponent
   ],
   imports: [
     CommonModule,
