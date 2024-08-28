@@ -2,31 +2,40 @@
 
 <form fxLayout="column" [formGroup]="dataForm">
 
-  
-    <mat-form-field appearance="fill">
+  <div fxLayout="row">
+    <mat-form-field appearance="fill" class="labelInput">
       <mat-label>Hrabstwo</mat-label>
       <mat-select formControlName="country">
         <mat-option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</mat-option>
       </mat-select>
   </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="labelInput">
       <mat-label>Gracz</mat-label>
       <mat-select formControlName="player">
         <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
       </mat-select>
   </mat-form-field>
-
-    <mat-form-field appearance="fill">
+  </div>
+    
+  <div fxLayout="row">
+    <mat-form-field appearance="fill" class="dataInput">
       <mat-label>Od</mat-label>
-      <input matInput placeholder="Podaj datę rozpoczęcia" formControlName="from">
-    </mat-form-field>
+      <input matInput placeholder="Podaj datę rozpoczęcia" formControlName="from" [matDatepicker]="from">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+      <mat-datepicker #from></mat-datepicker>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="dataInput">
       <mat-label>Do</mat-label>
-      <input matInput placeholder="Podaj datę zakończenia" formControlName="to">
-    </mat-form-field>
-
+      <input matInput placeholder="Podaj datę zakończenia" formControlName="to" [matDatepicker]="to">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+      <mat-datepicker #to></mat-datepicker>
+  </mat-form-field>
+  </div>
+    
     <button mat-raised-button color="warn" (click)="submit()">Filtruj
       <mat-icon color="accent">filter</mat-icon>
     </button>

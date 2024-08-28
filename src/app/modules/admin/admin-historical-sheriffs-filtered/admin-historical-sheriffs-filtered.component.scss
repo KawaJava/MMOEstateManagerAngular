@@ -1,10 +1,17 @@
 table{
     width: 100%;
 }
-form{
-    width: 700px;
-    margin: 20px;
+.labelInput{
+    width: 400px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.dataInput{
+    width: 180px;
+    margin: 10px;
 }
 button{
-    width: 500px;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
