@@ -52,5 +52,20 @@ export class AdminCountryAddComponent implements OnInit {
     this.formPlayerService.getPlayers()
       .subscribe(players => this.players = players);
   }
+  
+  get name() {
+    return this.countryForm.get("name");
+  }
 
+  get slug() {
+    return this.countryForm.get("slug");
+  }
+
+  get sheriff() {
+    return this.countryForm.get("actualSheriffId");
+  }
+
+  get goldLimit() {
+    return this.countryForm.get("goldLimit");
+  }
 }

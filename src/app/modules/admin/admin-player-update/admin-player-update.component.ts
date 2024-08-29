@@ -55,7 +55,20 @@ export class AdminPlayerUpdateComponent implements OnInit {
       clan: player.clan,
   }));
   this.snackBar.open("Gracz został zaktualizowany", '', {duration: 3000});
+  }}
+
+  get name() {
+    return this.playerForm.get("name");
   }
 
-}
+  get slug() {
+    return this.playerForm.get("slug");
+  }
+
+  get email() {
+    return this.playerForm.get("email");
+  }
+  get clan() {
+    return this.playerForm.get("clan");
+  }
 }

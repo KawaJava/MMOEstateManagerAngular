@@ -4,16 +4,43 @@
     <mat-form-field appearance="fill">
       <mat-label>Nazwa</mat-label>
       <input matInput placeholder="Podaj nazwę gracza" formControlName="name">
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <div *ngIf="name?.errors?.['required']">
+          Nazwa jest wymagana
+        </div>
+        <div *ngIf="name?.errors?.['minlength']">
+          Nazwa musi mieć 4 znaki
+        </div>
+      </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
         <mat-label>Slug</mat-label>
         <input matInput placeholder="Podaj slug" formControlName="slug">
+        <div *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)">
+          <div *ngIf="slug?.errors?.['required']">
+            Slug jest wymagany
+          </div>
+          <div *ngIf="slug?.errors?.['minlength']">
+            Slug musi mieć 4 znaki
+          </div>
+        </div>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput placeholder="Podaj email gracza" formControlName="email">
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <div *ngIf="email?.errors?.['required']">
+            Email jest wymagany
+          </div>
+          <div *ngIf="email?.errors?.['minlength']">
+            Email musi mieć 4 znaki
+          </div>
+          <div *ngIf="email?.errors?.['email']">
+            Podaj poprawny adres email
+          </div>
+        </div>
       </mat-form-field>
       
       <mat-form-field appearance="fill">
@@ -21,6 +48,11 @@
         <mat-select formControlName="clan">
           <mat-option *ngFor="let clan of clans" [value]="clan">{{ clan }}</mat-option>
         </mat-select>
+        <div *ngIf="clan?.invalid && (clan?.dirty || clan?.touched)">
+          <div *ngIf="clan?.errors?.['required']">
+            Klan jest wymagany
+          </div>
+        </div>
       </mat-form-field>
 
       <div fxLayoutAlign="end">

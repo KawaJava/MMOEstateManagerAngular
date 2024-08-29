@@ -47,6 +47,13 @@ export class AdminCountryUpdateComponent implements OnInit {
       slug: country.slug
   }));
   this.snackBar.open("Hrabstwo zostało zaktualizowane", '', {duration: 3000});
+  }}
+
+  get name() {
+    return this.countryForm.get("name");
   }
+
+  get slug() {
+    return this.countryForm.get("slug");
   }
 }

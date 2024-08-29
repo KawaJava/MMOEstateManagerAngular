@@ -50,5 +50,7 @@ export class AdminCountryChangeSheriffComponent implements OnInit {
     this.formPlayerService.getPlayers()
       .subscribe(players => this.players = players);
   }
-
+  get sheriff() {
+    return this.countryForm.get("actualSheriffId");
+  }
 }

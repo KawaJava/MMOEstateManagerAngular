@@ -8,6 +8,11 @@
         <mat-select formControlName="actualSheriffId">
           <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
         </mat-select>
+        <div *ngIf="sheriff?.invalid && (sheriff?.dirty || sheriff?.touched)">
+          <div *ngIf="sheriff?.errors?.['required']">
+            Szeryf jest wymagany
+          </div>
+        </div>
     </mat-form-field>
 
       <div fxLayoutAlign="end">
