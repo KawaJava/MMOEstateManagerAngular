@@ -29,7 +29,7 @@ export class AdminPlayerUpdateComponent implements OnInit {
     this.playerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       slug: ['', [Validators.required, Validators.minLength(4)]],
-      email: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.required, Validators.minLength(4), Validators.email]],
       clan: ['', [Validators.required, Validators.min(0)]],
     });
   }

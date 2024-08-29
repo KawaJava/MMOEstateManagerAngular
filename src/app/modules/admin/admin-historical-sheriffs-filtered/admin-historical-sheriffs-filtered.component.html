@@ -22,7 +22,7 @@
     <mat-form-field appearance="fill" class="dataInput">
       <mat-label>Od</mat-label>
       <input matInput placeholder="Podaj datę rozpoczęcia" formControlName="from" [matDatepicker]="from">
-      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
       <mat-datepicker #from></mat-datepicker>
   </mat-form-field>
@@ -30,10 +30,11 @@
     <mat-form-field appearance="fill" class="dataInput">
       <mat-label>Do</mat-label>
       <input matInput placeholder="Podaj datę zakończenia" formControlName="to" [matDatepicker]="to">
-      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-hint>DD/MM/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
       <mat-datepicker #to></mat-datepicker>
   </mat-form-field>
+  
   </div>
     
     <button mat-raised-button color="warn" (click)="submit()">Filtruj
