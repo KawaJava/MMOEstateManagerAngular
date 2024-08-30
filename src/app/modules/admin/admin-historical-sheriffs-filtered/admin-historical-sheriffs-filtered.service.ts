@@ -19,9 +19,7 @@ export class AdminHistoricalSheriffsFilteredService {
   
 
   getCountries(): Observable<Array<AdminCountry>> {
-    return this.http.get<Page<AdminCountry>>(`/api/admin/countries`).pipe(
-      map((page: Page<AdminCountry>) => page.content)
-    );
+    return this.http.get<Array<AdminCountry>>(`/api/admin/countries/list`);
   }
 
 }

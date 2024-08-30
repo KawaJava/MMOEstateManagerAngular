@@ -12,9 +12,7 @@ export class FormPlayerService {
   constructor(private http: HttpClient) { }
 
   getPlayers(): Observable<Array<AdminPlayer>> {
-    return this.http.get<Page<AdminPlayer>>(`/api/admin/players`).pipe(
-      map((page: Page<AdminPlayer>) => page.content)
-    );
+    return this.http.get<Array<AdminPlayer>>(`/api/admin/players/list`);
   }
 }
 
