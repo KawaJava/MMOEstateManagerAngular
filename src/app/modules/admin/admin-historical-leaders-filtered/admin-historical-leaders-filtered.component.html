@@ -1,0 +1,75 @@
+<h1>Dawni wójtowie (filtruj)</h1>
+
+<form fxLayout="column" [formGroup]="dataForm">
+
+  <div fxLayout="row">
+    <mat-form-field appearance="fill" class="labelInput">
+      <mat-label>Gmina</mat-label>
+      <mat-select formControlName="borough">
+        <mat-option *ngFor="let borough of boroughs" [value]="borough.id">{{ borough.name }}</mat-option>
+      </mat-select>
+  </mat-form-field>
+
+    <mat-form-field appearance="fill" class="labelInput">
+      <mat-label>Gracz</mat-label>
+      <mat-select formControlName="player">
+        <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
+      </mat-select>
+  </mat-form-field>
+  </div>
+    
+  <div fxLayout="row">
+    <mat-form-field appearance="fill" class="dataInput">
+      <mat-label>Od</mat-label>
+      <input matInput placeholder="Podaj datę rozpoczęcia" formControlName="from" [matDatepicker]="from">
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+      <mat-datepicker #from></mat-datepicker>
+  </mat-form-field>
+
+    <mat-form-field appearance="fill" class="dataInput">
+      <mat-label>Do</mat-label>
+      <input matInput placeholder="Podaj datę zakończenia" formControlName="to" [matDatepicker]="to">
+      <mat-hint>DD/MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+      <mat-datepicker #to></mat-datepicker>
+  </mat-form-field>
+  
+  </div>
+    
+    <button mat-raised-button color="warn" (click)="submit()">Filtruj
+      <mat-icon color="accent">filter</mat-icon>
+    </button>
+    
+</form>
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="boroughId">
+      <th mat-header-cell *matHeaderCellDef> Gmina </th>
+      <td mat-cell *matCellDef="let element"> {{element.boroughId}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="playerId">
+      <th mat-header-cell *matHeaderCellDef> Gracz </th>
+      <td mat-cell *matCellDef="let element"> {{element.playerId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef> Od </th>
+        <td mat-cell *matCellDef="let element"> {{ element.startDate | date: 'dd.MM.yyyy HH:mm:ss' }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef> Do </th>
+        <td mat-cell *matCellDef="let element"> {{ element.endDate | date: 'dd.MM.yyyy HH:mm:ss' }} </td>>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
