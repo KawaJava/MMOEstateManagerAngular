@@ -14,6 +14,7 @@ import { AdminCountryAddComponent } from './modules/admin/admin-country-add/admi
 import { AdminCountryChangeSheriffComponent } from './modules/admin/admin-country-change-sheriff/admin-country-change-sheriff.component';
 import { AdminHistoricalSheriffsComponent } from './modules/admin/admin-historical-sheriffs/admin-historical-sheriffs.component';
 import { AdminHistoricalSheriffsFilteredComponent } from './modules/admin/admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.component';
+import { AdminBoroughComponent } from './modules/admin/admin-borough/admin-borough.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
       {path: 'admin/countries/add', component: AdminCountryAddComponent},
       {path: 'admin/countries/:id/changeSheriff', component: AdminCountryChangeSheriffComponent},
       {path: 'admin/historical-sheriffs', component: AdminHistoricalSheriffsComponent},
-      {path: 'admin/historical-sheriffs/filtered', component: AdminHistoricalSheriffsFilteredComponent}
+      {path: 'admin/historical-sheriffs/filtered', component: AdminHistoricalSheriffsFilteredComponent},
+      {path: 'admin/boroughs', component: AdminBoroughComponent}
     ]
   },
 ];
