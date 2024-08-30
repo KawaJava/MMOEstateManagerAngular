@@ -20,6 +20,7 @@ import { AdminHistoricalSheriffsFilteredComponent } from 'src/app/modules/admin/
 import { AdminBoroughComponent } from 'src/app/modules/admin/admin-borough/admin-borough.component';
 import { AdminBoroughAddComponent } from 'src/app/modules/admin/admin-borough-add/admin-borough-add.component';
 import { AdminBoroughUpdateComponent } from 'src/app/modules/admin/admin-borough-update/admin-borough-update.component';
+import { AdminBoroughChangeLeaderComponent } from 'src/app/modules/admin/admin-borough-change-leader/admin-borough-change-leader.component';
 
 
 
@@ -40,7 +41,8 @@ import { AdminBoroughUpdateComponent } from 'src/app/modules/admin/admin-borough
     AdminHistoricalSheriffsFilteredComponent,
     AdminBoroughComponent,
     AdminBoroughAddComponent,
-    AdminBoroughUpdateComponent
+    AdminBoroughUpdateComponent,
+    AdminBoroughChangeLeaderComponent
   ],
   imports: [
     CommonModule,

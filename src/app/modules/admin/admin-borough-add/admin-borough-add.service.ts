@@ -22,4 +22,9 @@ export class AdminBoroughAddService {
   getBorough(id: number): Observable<AdminBoroughGeneralInfo> {
     return this.http.get<AdminBoroughAdd>("/api/admin/boroughs/" + id);
   }
+
+  changeLeader(boroughId: number, leaderId: number): Observable<number> {
+    return this.http.patch<number>("/api/admin/boroughs/" + boroughId + "/changeLeader/" + leaderId, {});
+  }
+
 }

@@ -66,6 +66,9 @@
           <button mat-icon-button [routerLink]="['/admin/boroughs/update', element.id]">
             <mat-icon color="primary">edit</mat-icon>
           </button>
+          <button mat-icon-button [routerLink]="['/admin/boroughs', element.id, 'changeLeader']">
+            <mat-icon color="warn">edit</mat-icon>
+          </button>
         </td>
     </ng-container>
   
