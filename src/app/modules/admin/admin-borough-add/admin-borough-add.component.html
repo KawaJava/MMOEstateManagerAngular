@@ -70,8 +70,11 @@
           <mat-label>Złoto</mat-label>
           <input matInput placeholder="Podaj ilość złota" formControlName="actualGold">
           <div *ngIf="actualGold?.invalid && (actualGold?.dirty || actualGold?.touched)">
+            <div *ngIf="actualGold?.errors?.['required']">
+              Złoto jest wymagane
+            </div>
             <div *ngIf="actualGold?.errors?.['min']">
-              Limit musi być większy od 1000
+              Złoto musi być większe od 1000
             </div>
           </div>
       </mat-form-field>
