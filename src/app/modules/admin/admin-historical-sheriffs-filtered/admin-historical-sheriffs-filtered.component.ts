@@ -34,7 +34,7 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPlayers();
-    this.getCountriess();
+    this.getCountries();
     this.dataForm = this.formBuilder.group({
       country: [''],
       player: [''],
@@ -60,7 +60,7 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
       .subscribe(players => this.players = players);
   }
 
-  getCountriess() {
+  getCountries() {
     this.adminHistoricalSheriffsFilteredService.getCountries()
       .subscribe(countries => this.countries = countries);
   }
