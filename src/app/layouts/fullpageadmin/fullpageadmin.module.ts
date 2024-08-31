@@ -24,6 +24,7 @@ import { AdminBoroughChangeLeaderComponent } from 'src/app/modules/admin/admin-b
 import { AdminHistoricalLeadersComponent } from 'src/app/modules/admin/admin-historical-leaders/admin-historical-leaders.component';
 import { AdminHistoricalLeadersFilteredComponent } from 'src/app/modules/admin/admin-historical-leaders-filtered/admin-historical-leaders-filtered.component';
 import { AdminGoldHistoryComponent } from 'src/app/modules/admin/admin-gold-history/admin-gold-history.component';
+import { AdminGoldHistoryFilteredComponent } from 'src/app/modules/admin/admin-gold-history-filtered/admin-gold-history-filtered.component';
 
 
 
@@ -48,7 +49,8 @@ import { AdminGoldHistoryComponent } from 'src/app/modules/admin/admin-gold-hist
     AdminBoroughChangeLeaderComponent,
     AdminHistoricalLeadersComponent,
     AdminHistoricalLeadersFilteredComponent,
-    AdminGoldHistoryComponent
+    AdminGoldHistoryComponent,
+    AdminGoldHistoryFilteredComponent
   ],
   imports: [
     CommonModule,

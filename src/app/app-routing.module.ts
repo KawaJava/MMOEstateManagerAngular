@@ -21,6 +21,7 @@ import { AdminBoroughChangeLeaderComponent } from './modules/admin/admin-borough
 import { AdminHistoricalLeadersComponent } from './modules/admin/admin-historical-leaders/admin-historical-leaders.component';
 import { AdminHistoricalLeadersFilteredComponent } from './modules/admin/admin-historical-leaders-filtered/admin-historical-leaders-filtered.component';
 import { AdminGoldHistoryComponent } from './modules/admin/admin-gold-history/admin-gold-history.component';
+import { AdminGoldHistoryFilteredComponent } from './modules/admin/admin-gold-history-filtered/admin-gold-history-filtered.component';
 
 const routes: Routes = [
   {
@@ -47,7 +48,8 @@ const routes: Routes = [
       {path: 'admin/boroughs/:id/changeLeader', component: AdminBoroughChangeLeaderComponent},
       {path: 'admin/historical-leaders', component: AdminHistoricalLeadersComponent},
       {path: 'admin/historical-leaders/filtered', component: AdminHistoricalLeadersFilteredComponent},
-      {path: 'admin/history-golds', component: AdminGoldHistoryComponent}
+      {path: 'admin/history-golds', component: AdminGoldHistoryComponent},
+      {path: 'admin/history-golds/filtered', component: AdminGoldHistoryFilteredComponent}
     ]
   },
 ];
