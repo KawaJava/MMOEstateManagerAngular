@@ -1,0 +1,45 @@
+<h1>Historia złota w gminach</h1>
+
+<!-- <button mat-raised-button color="warn" [routerLink]="['/admin/historical-leaders/filtered']">Filtruj
+  <mat-icon color="accent">filter</mat-icon>
+</button> -->
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="boroughId">
+      <th mat-header-cell *matHeaderCellDef> Gmina </th>
+      <td mat-cell *matCellDef="let element"> {{element.boroughId}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="gold">
+      <th mat-header-cell *matHeaderCellDef> Złoto </th>
+      <td mat-cell *matCellDef="let element"> {{element.gold}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="goldAddedby">
+        <th mat-header-cell *matHeaderCellDef> Wprowadzone przez </th>
+        <td mat-cell *matCellDef="let element"> {{element.goldAddedBy}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="dateAdded">
+        <th mat-header-cell *matHeaderCellDef> Dodano </th>
+        <td mat-cell *matCellDef="let element"> {{ element.dateAdded | date: 'dd.MM.yyyy HH:mm:ss' }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailSend">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.emailSend ? 'Tak' : 'Nie'}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 50]"
+    [pageSize]="25" showFirstLastButtons [length]="totalElements">
+  </mat-paginator>

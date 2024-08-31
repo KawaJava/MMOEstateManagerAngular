@@ -20,6 +20,7 @@ import { AdminBoroughUpdateComponent } from './modules/admin/admin-borough-updat
 import { AdminBoroughChangeLeaderComponent } from './modules/admin/admin-borough-change-leader/admin-borough-change-leader.component';
 import { AdminHistoricalLeadersComponent } from './modules/admin/admin-historical-leaders/admin-historical-leaders.component';
 import { AdminHistoricalLeadersFilteredComponent } from './modules/admin/admin-historical-leaders-filtered/admin-historical-leaders-filtered.component';
+import { AdminGoldHistoryComponent } from './modules/admin/admin-gold-history/admin-gold-history.component';
 
 const routes: Routes = [
   {
@@ -45,7 +46,8 @@ const routes: Routes = [
       {path: 'admin/boroughs/update/:id', component: AdminBoroughUpdateComponent},
       {path: 'admin/boroughs/:id/changeLeader', component: AdminBoroughChangeLeaderComponent},
       {path: 'admin/historical-leaders', component: AdminHistoricalLeadersComponent},
-      {path: 'admin/historical-leaders/filtered', component: AdminHistoricalLeadersFilteredComponent}
+      {path: 'admin/historical-leaders/filtered', component: AdminHistoricalLeadersFilteredComponent},
+      {path: 'admin/history-golds', component: AdminGoldHistoryComponent}
     ]
   },
 ];
