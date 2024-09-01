@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AdminBoroughAdd } from './model/adminBoroughAdd';
-import { AdminBoroughGeneralInfo } from '../admin-borough-update/model/adminBoroughGeneralInfo';
+import { AdminBoroughAdd } from '../admin-borough/model/adminBoroughAdd';
+import { AdminBoroughGeneralInfo } from '../admin-borough/model/adminBoroughGeneralInfo';
 import { Observable } from 'rxjs';
 
 @Injectable({

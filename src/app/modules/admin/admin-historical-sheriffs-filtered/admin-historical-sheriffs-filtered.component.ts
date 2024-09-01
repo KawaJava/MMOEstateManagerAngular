@@ -3,10 +3,10 @@ import { MatTable } from '@angular/material/table';
 import { AdminHistoricalSheriff } from '../admin-historical-sheriffs/model/adminHistoricalSheriff';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormPlayerService } from '../admin-country-add/form-player.service';
-import { AdminPlayer } from '../admin-player/adminPlayer';
+import { AdminPlayer } from '../admin-player/model/adminPlayer';
 import { AdminCountry } from '../admin-country/model/adminCountry';
 import { AdminHistoricalSheriffsFilteredService } from './admin-historical-sheriffs-filtered.service';
-import { HistoricalSheriffsFilteredDto } from './model/historicalSheriffsFilteredDto';
+import { HistoricalSheriffsFilteredDto } from '../admin-historical-sheriffs/model/historicalSheriffsFilteredDto';
 
 @Component({
   selector: 'app-admin-historical-sheriffs-filtered',

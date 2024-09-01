@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GoldHistoryFilteredDto } from './model/goldHistoryFilteredDto';
+import { GoldHistoryFilteredDto } from '../admin-gold-history/model/goldHistoryFilteredDto';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import { AdminBorough } from '../admin-borough/model/adminBorough';
 import { FormPlayerService } from '../admin-country-add/form-player.service';
 import { AdminHistoricalLeadersFilteredService } from '../admin-historical-leaders-filtered/admin-historical-leaders-filtered.service';
 import { AdminHistoricalLeader } from '../admin-historical-leaders/model/adminHistoricalLeader';
-import { AdminPlayer } from '../admin-player/adminPlayer';
+import { AdminPlayer } from '../admin-player/model/adminPlayer';
 import { AdminGoldHistoryFilteredService } from './admin-gold-history-filtered.service';
 import { AdminGoldHistory } from '../admin-gold-history/model/adminGoldHistory';
 

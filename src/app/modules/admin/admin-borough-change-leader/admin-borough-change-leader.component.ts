@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { FormPlayerService } from '../admin-country-add/form-player.service';
-import { AdminPlayer } from '../admin-player/adminPlayer';
+import { AdminPlayer } from '../admin-player/model/adminPlayer';
 import { AdminBoroughAddService } from '../admin-borough-add/admin-borough-add.service';
 
 @Component({

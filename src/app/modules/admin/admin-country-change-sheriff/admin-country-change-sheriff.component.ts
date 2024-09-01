@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { FormPlayerService } from '../admin-country-add/form-player.service';
 import { AdminCountryService } from '../admin-country/admin-country.service';
-import { AdminPlayer } from '../admin-player/adminPlayer';
+import { AdminPlayer } from '../admin-player/model/adminPlayer';
 
 @Component({
   selector: 'app-admin-country-change-sheriff',

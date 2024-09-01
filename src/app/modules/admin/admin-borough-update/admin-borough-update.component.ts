@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminBoroughGeneralInfo } from './model/adminBoroughGeneralInfo';
+import { AdminBoroughGeneralInfo } from '../admin-borough/model/adminBoroughGeneralInfo';
 import { AdminCountry } from '../admin-country/model/adminCountry';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';

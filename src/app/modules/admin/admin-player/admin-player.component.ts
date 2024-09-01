@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { AdminPlayer } from './adminPlayer';
+import { AdminPlayer } from './model/adminPlayer';
 import { AdminPlayerService } from './admin-player.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { map, startWith, switchMap } from 'rxjs';

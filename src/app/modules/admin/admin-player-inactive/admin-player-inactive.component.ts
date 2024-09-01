@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminPlayer } from '../admin-player/adminPlayer';
+import { AdminPlayer } from '../admin-player/model/adminPlayer';
 import { AdminPlayerService } from '../admin-player/admin-player.service';
 
 @Component({

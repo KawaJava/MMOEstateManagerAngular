@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { AdminCountry } from './model/adminCountry';
 import { Observable } from 'rxjs';
 import { Page } from 'src/app/shared/page';
-import { AdminCountryGeneralInfo } from '../admin-country-update/model/adminCountryGeneralInfo';
-import { AdminCountryAdd } from '../admin-country-add/model/adminCountryAdd';
+import { AdminCountryGeneralInfo } from './model/adminCountryGeneralInfo';
+import { AdminCountryAdd } from './model/adminCountryAdd';
 
 @Injectable({
   providedIn: 'root'

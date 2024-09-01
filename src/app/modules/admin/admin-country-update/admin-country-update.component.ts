@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminCountryGeneralInfo } from './model/adminCountryGeneralInfo';
+import { AdminCountryGeneralInfo } from '../admin-country/model/adminCountryGeneralInfo';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';

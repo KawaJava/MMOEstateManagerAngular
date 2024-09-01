@@ -8,12 +8,13 @@
 </mat-selection-list>
     </div>
 </sidebar> -->
-<sidebar fxLayout="column" fxFlexFill class="sidebar">
-  <div fxLayout="column" fxLayoutAlign="start stretch" fxFlexFill>
+<div>
+  <!-- <div fxLayout="column" fxLayoutAlign="start stretch" fxFlexFill>
     <mat-selection-list color="primary" [multiple]="false" fxFlexFill>
       <mat-list-option *ngFor="let player of players" class="custom-list-option">
         <a routerLink="/players/{{player}}" class="custom-link">{{player}}</a>
       </mat-list-option>
     </mat-selection-list>
-  </div>
-</sidebar>
+  </div> -->
+  <button mat-flat-button color="primary"routerLink="admin">Panel administracyjny</button>
+</div>

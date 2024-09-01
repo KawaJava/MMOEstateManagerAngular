@@ -4,7 +4,7 @@ import { AdminHistoricalSheriff } from '../admin-historical-sheriffs/model/admin
 import { map, Observable } from 'rxjs';
 import { Page } from 'src/app/shared/page';
 import { AdminCountry } from '../admin-country/model/adminCountry';
-import { HistoricalSheriffsFilteredDto } from './model/historicalSheriffsFilteredDto';
+import { HistoricalSheriffsFilteredDto } from '../admin-historical-sheriffs/model/historicalSheriffsFilteredDto';
 
 @Injectable({
   providedIn: 'root'

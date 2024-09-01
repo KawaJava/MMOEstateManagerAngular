@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GoldHistoryFilteredDto } from './model/goldHistoryFilteredDto';
+import { GoldHistoryFilteredDto } from '../admin-gold-history/model/goldHistoryFilteredDto';
 import { AdminGoldHistory } from '../admin-gold-history/model/adminGoldHistory';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

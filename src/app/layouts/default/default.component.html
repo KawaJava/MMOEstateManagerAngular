@@ -8,13 +8,17 @@
     </div>
 </div>
 <app-footer flexLayout="column"></app-footer> -->
+
+
+
 <app-header fxLayout="column"></app-header>
-<div fxLayout="row" fxFlexFill style="height: calc(100vh - 64px);"> <!-- Odejmując wysokość nagłówka -->
-  <div fxFlex="20" fxFlexFill>
-    <app-sidebar fxFlexFill></app-sidebar>
+<div fxLayout="row">
+  <div fxFlex="20">
+    <app-sidebar fxFlex></app-sidebar>
   </div>
-  <div fxFlex="80" fxFlexFill class="content" style="overflow: auto;">
+  <div fxFlex="80" class="content">
     <router-outlet></router-outlet>
+    dgddgdgdtg
   </div>
 </div>
 <app-footer fxLayout="column"></app-footer>
