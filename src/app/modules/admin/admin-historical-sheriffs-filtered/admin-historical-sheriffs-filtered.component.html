@@ -52,12 +52,12 @@
   
     <ng-container matColumnDef="countryId">
       <th mat-header-cell *matHeaderCellDef> Hrabstwo </th>
-      <td mat-cell *matCellDef="let element"> {{element.countryId}} </td>
+      <td mat-cell *matCellDef="let element"> {{countryMap.get(element.countryId)}} </td>
     </ng-container>
   
     <ng-container matColumnDef="playerId">
       <th mat-header-cell *matHeaderCellDef> Gracz </th>
-      <td mat-cell *matCellDef="let element"> {{element.playerId}} </td>
+      <td mat-cell *matCellDef="let element"> {{playerMap.get(element.playerId)}} </td>
     </ng-container>
 
     <ng-container matColumnDef="startDate">

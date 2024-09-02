@@ -28,7 +28,7 @@ export class AdminCountryAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPlayers();
-
+    console.log('Player Map:', this.players);
     this.countryForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       slug: ['', [Validators.required, Validators.minLength(3)]],

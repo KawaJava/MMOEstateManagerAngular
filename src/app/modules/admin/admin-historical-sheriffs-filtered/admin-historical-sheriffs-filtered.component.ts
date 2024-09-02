@@ -7,6 +7,7 @@ import { AdminPlayer } from '../admin-player/model/adminPlayer';
 import { AdminCountry } from '../admin-country/model/adminCountry';
 import { AdminHistoricalSheriffsFilteredService } from './admin-historical-sheriffs-filtered.service';
 import { HistoricalSheriffsFilteredDto } from '../admin-historical-sheriffs/model/historicalSheriffsFilteredDto';
+import { switchMap, of } from 'rxjs';
 
 @Component({
   selector: 'app-admin-historical-sheriffs-filtered',
@@ -25,6 +26,8 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
   dataForm!: FormGroup;
   players: Array<AdminPlayer> = [];
   countries: Array<AdminCountry> = [];
+  playerMap: Map<number, string> = new Map();
+  countryMap: Map<number, string> = new Map();
   
   constructor(
     private formPlayerService: FormPlayerService,
@@ -57,12 +60,36 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
 
   getPlayers() {
     this.formPlayerService.getPlayers()
-      .subscribe(players => this.players = players);
+      .pipe(
+        switchMap(players => {
+          this.players = players;
+          return of(this.setPlayerMap(players));
+        })
+      )
+      .subscribe(playerMap => {
+        this.playerMap = playerMap;
+      });
   }
 
   getCountries() {
     this.adminHistoricalSheriffsFilteredService.getCountries()
-      .subscribe(countries => this.countries = countries);
+      .pipe(
+        switchMap(countries => {
+          this.countries = countries;
+          return of(this.setCountryMap(countries));
+        })
+      )
+      .subscribe(countryMap => {
+        this.countryMap = countryMap;
+      });
+  }
+
+  setPlayerMap(players: AdminPlayer[]): Map<number, string> {
+    return new Map(players.map(player => [player.id, player.name]));
+  }
+
+  setCountryMap(countries: AdminCountry[]): Map<number, string> {
+    return new Map(countries.map(country => [country.id, country.name]));
   }
 
 }

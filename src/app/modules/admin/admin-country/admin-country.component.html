@@ -26,7 +26,7 @@
 
     <ng-container matColumnDef="actualSheriffId">
         <th mat-header-cell *matHeaderCellDef> Szeryf </th>
-        <td mat-cell *matCellDef="let element"> {{element.actualSheriffId}} </td>
+        <td mat-cell *matCellDef="let element"> {{ playerMap.get(element.actualSheriffId) }} </td>
       </ng-container>
 
       <ng-container matColumnDef="goldLimit">
