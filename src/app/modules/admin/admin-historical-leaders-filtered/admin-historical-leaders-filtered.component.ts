@@ -7,6 +7,7 @@ import { MatTable } from '@angular/material/table';
 import { FormPlayerService } from '../admin-country-add/form-player.service';
 import { AdminPlayer } from '../admin-player/model/adminPlayer';
 import { AdminHistoricalLeadersFilteredService } from './admin-historical-leaders-filtered.service';
+import { switchMap, of } from 'rxjs';
 
 @Component({
   selector: 'app-admin-historical-leaders-filtered',
@@ -25,6 +26,9 @@ export class AdminHistoricalLeadersFilteredComponent implements OnInit {
   dataForm!: FormGroup;
   players: Array<AdminPlayer> = [];
   boroughs: Array<AdminBorough> = [];
+  
+  playerMap: Map<number, string> = new Map();
+  boroughMap: Map<number, string> = new Map();
   
   constructor(
     private formPlayerService: FormPlayerService,
@@ -57,12 +61,36 @@ export class AdminHistoricalLeadersFilteredComponent implements OnInit {
 
   getPlayers() {
     this.formPlayerService.getPlayers()
-      .subscribe(players => this.players = players);
+      .pipe(
+        switchMap(players => {
+          this.players = players;
+          return of(this.setPlayerMap(players));
+        })
+      )
+      .subscribe(playerMap => {
+        this.playerMap = playerMap;
+      });
   }
 
   getBoroughs() {
     this.adminHistoricalLeadersFilteredService.getBoroughs()
-      .subscribe(boroughs => this.boroughs = boroughs);
+      .pipe(
+        switchMap(boroughs => {
+          this.boroughs = boroughs;
+          return of(this.setBoroughMap(boroughs));
+        })
+      )
+      .subscribe(boroughMap => {
+        this.boroughMap = boroughMap;
+      });
+  }
+
+  setPlayerMap(players: AdminPlayer[]): Map<number, string> {
+    return new Map(players.map(player => [player.id, player.name]));
+  }
+
+  setBoroughMap(boroughs: AdminBorough[]): Map<number, string> {
+    return new Map(boroughs.map(borough => [borough.id, borough.name]));
   }
 
 }

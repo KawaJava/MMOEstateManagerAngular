@@ -9,6 +9,7 @@ import { AdminHistoricalLeader } from '../admin-historical-leaders/model/adminHi
 import { AdminPlayer } from '../admin-player/model/adminPlayer';
 import { AdminGoldHistoryFilteredService } from './admin-gold-history-filtered.service';
 import { AdminGoldHistory } from '../admin-gold-history/model/adminGoldHistory';
+import { switchMap, of } from 'rxjs';
 
 @Component({
   selector: 'app-admin-gold-history-filtered',
@@ -18,7 +19,7 @@ import { AdminGoldHistory } from '../admin-gold-history/model/adminGoldHistory';
 export class AdminGoldHistoryFilteredComponent implements OnInit {
 
   @ViewChild(MatTable) table!: MatTable<any>;
-  displayedColumns: string[] = ["id", "boroughId", "gold", "goldAddedby", "dateAdded", "emailSend"];
+  displayedColumns: string[] = ["id", "boroughId", "gold", "goldAddedBy", "dateAdded", "emailSend"];
   totalElements: number = 0;
   data: AdminGoldHistory[] = [];
   goldHistoryFilteredDto!: GoldHistoryFilteredDto;
@@ -27,6 +28,8 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
   dataForm!: FormGroup;
   players: Array<AdminPlayer> = [];
   boroughs: Array<AdminBorough> = [];
+  playerMap: Map<number, string> = new Map();
+  boroughMap: Map<number, string> = new Map();
   
   constructor(
     private formPlayerService: FormPlayerService,
@@ -62,12 +65,36 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
 
   getPlayers() {
     this.formPlayerService.getPlayers()
-      .subscribe(players => this.players = players);
+      .pipe(
+        switchMap(players => {
+          this.players = players;
+          return of(this.setPlayerMap(players));
+        })
+      )
+      .subscribe(playerMap => {
+        this.playerMap = playerMap;
+      });
   }
 
   getBoroughs() {
     this.adminHistoricalLeadersFilteredService.getBoroughs()
-      .subscribe(boroughs => this.boroughs = boroughs);
+      .pipe(
+        switchMap(boroughs => {
+          this.boroughs = boroughs;
+          return of(this.setBoroughMap(boroughs));
+        })
+      )
+      .subscribe(boroughMap => {
+        this.boroughMap = boroughMap;
+      });
+  }
+
+  setPlayerMap(players: AdminPlayer[]): Map<number, string> {
+    return new Map(players.map(player => [player.id, player.name]));
+  }
+
+  setBoroughMap(boroughs: AdminBorough[]): Map<number, string> {
+    return new Map(boroughs.map(borough => [borough.id, borough.name]));
   }
 
 }

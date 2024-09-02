@@ -13,7 +13,7 @@
   
     <ng-container matColumnDef="boroughId">
       <th mat-header-cell *matHeaderCellDef> Gmina </th>
-      <td mat-cell *matCellDef="let element"> {{element.boroughId}} </td>
+      <td mat-cell *matCellDef="let element"> {{boroughMap.get(element.boroughId)}} </td>
     </ng-container>
   
     <ng-container matColumnDef="gold">
@@ -21,9 +21,9 @@
       <td mat-cell *matCellDef="let element"> {{element.gold}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="goldAddedby">
+    <ng-container matColumnDef="goldAddedBy">
         <th mat-header-cell *matHeaderCellDef> Wprowadzone przez </th>
-        <td mat-cell *matCellDef="let element"> {{element.goldAddedBy}} </td>
+        <td mat-cell *matCellDef="let element"> {{playerMap.get(element.goldAddedBy)}} </td>
       </ng-container>
 
     <ng-container matColumnDef="dateAdded">
