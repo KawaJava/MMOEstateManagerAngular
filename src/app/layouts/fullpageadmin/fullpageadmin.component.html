@@ -5,7 +5,48 @@
 <div flexLayout="row" fxFlex>
     <div fxFlex="20">
         <div fxFlex>
-            Sidebar
+            <h2 class="sidebar-title">Tabele do edycji:</h2>
+
+    <mat-selection-list [multiple]="false">
+      <mat-list-option>
+        <button mat-flat-button color="primary" routerLink="/admin/players">Gracze</button>
+      </mat-list-option>
+      <mat-list-option>
+        <button mat-flat-button color="accent" routerLink="/admin/countries">Hrabstwa</button>
+      </mat-list-option>
+      <mat-list-option>
+        <button mat-flat-button color="warn" routerLink="/admin/boroughs">Gminy</button>
+      </mat-list-option>
+    </mat-selection-list>
+
+    <mat-divider class="my-divider"></mat-divider>
+
+    <h2 class="sidebar-title">Rejestracja nowego użytkownika</h2>
+    <div class="center-button">
+      <button mat-raised-button color="primary" routerLink="/admin/register" disabled>+ Dodaj użytkownika</button>
+    </div>
+
+    <mat-divider class="my-divider"></mat-divider>
+
+    <h2 class="sidebar-title">Wykresy</h2>
+
+    <mat-selection-list [multiple]="false">
+        <mat-list-option>
+          <button mat-flat-button color="primary" routerLink="/admin/charts/gold-clans" disabled>Złoto na klany</button>
+        </mat-list-option>
+        <mat-list-option>
+          <button mat-flat-button color="accent" routerLink="/admin/charts/gold-players" disabled>Złoto na graczy</button>
+        </mat-list-option>
+        <mat-list-option>
+          <button mat-flat-button color="warn" routerLink="/admin/charts/boroughs-per-player" disabled>Ilość gmin na gracza</button>
+        </mat-list-option>
+        <mat-list-option>
+          <button mat-flat-button color="primary" routerLink="/admin/charts/gold-changes" disabled>Zmiany złota w gminie</button>
+        </mat-list-option>
+      </mat-selection-list>
+      
+
+    <mat-divider class="my-divider"></mat-divider>
         </div>
     </div>
     <div fxFlex="80" class="content">
