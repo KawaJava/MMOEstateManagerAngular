@@ -25,6 +25,7 @@ import { AdminHistoricalLeadersComponent } from 'src/app/modules/admin/admin-his
 import { AdminHistoricalLeadersFilteredComponent } from 'src/app/modules/admin/admin-historical-leaders-filtered/admin-historical-leaders-filtered.component';
 import { AdminGoldHistoryComponent } from 'src/app/modules/admin/admin-gold-history/admin-gold-history.component';
 import { AdminGoldHistoryFilteredComponent } from 'src/app/modules/admin/admin-gold-history-filtered/admin-gold-history-filtered.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 
@@ -50,7 +51,8 @@ import { AdminGoldHistoryFilteredComponent } from 'src/app/modules/admin/admin-g
     AdminHistoricalLeadersComponent,
     AdminHistoricalLeadersFilteredComponent,
     AdminGoldHistoryComponent,
-    AdminGoldHistoryFilteredComponent
+    AdminGoldHistoryFilteredComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,

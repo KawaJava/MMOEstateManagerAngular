@@ -24,35 +24,3 @@ header{
     height: 100vh;
   }
   
-  mat-sidenav {
-    width: 280px;
-    padding: 1rem;
-    background: #fafafa;
-  }
-  
-  /* Nagłówki - ujednolicone */
-  .sidebar-title {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 1.2rem 0 0.8rem;
-  }
-  
-  /* Przycisk centrowany */
-  .center-button {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  
-  /* Styl dla przycisków */
-  mat-list-option button {
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Divider z odstępami */
-  .my-divider {
-    margin: 1.5rem 0;
-  }
-  
