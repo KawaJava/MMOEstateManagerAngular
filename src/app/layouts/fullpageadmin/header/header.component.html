@@ -1,0 +1,10 @@
+<header fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutGap="8px">
+      <button mat-flat-button color="accent" routerLink="" class="button-margin-basic">Strona główna</button>
+      <button mat-flat-button color="warn" routerLink="/players" class="button-margin-basic">Gracze</button>
+    </div>
+  
+    <div *ngIf="isLoggedIn">
+      <button mat-flat-button color="primary" routerLink="/auth/logout" class="button-margin-basic">Wyloguj</button>
+    </div>
+  </header>
