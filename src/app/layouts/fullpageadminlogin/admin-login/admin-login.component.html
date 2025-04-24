@@ -1,4 +1,5 @@
 <form [formGroup]="formGroup" fxLayout="column" (submit)="submit()">
+    <div class="loginInfo">Zaloguj się do MMOEstateManager jako admin</div>
     <div *ngIf="loginError" class="error">Podaj poprawne dane logowania</div>
     <mat-form-field appearance="fill">
         <mat-label>Login</mat-label>
