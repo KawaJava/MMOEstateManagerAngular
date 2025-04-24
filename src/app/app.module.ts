@@ -8,8 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminLoginModule } from './layouts/fullpageadminlogin/admin-login/admin-login.module';
+import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { AdminLoginModule } from './layouts/fullpageadminlogin/admin-login/admin
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
