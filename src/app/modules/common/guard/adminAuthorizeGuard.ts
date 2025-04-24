@@ -9,7 +9,7 @@ export class AdminAuthorizeGuard implements CanActivate{
     constructor(private jwtService: JwtService, private router: Router){}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        if(!this.jwtService.getToken()){
+        if(!this.jwtService.getToken()) {
             this.router.navigate(["/admin-login"]);
         }
         return true;
