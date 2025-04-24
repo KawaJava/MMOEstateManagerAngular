@@ -22,11 +22,17 @@ import { AdminHistoricalLeadersComponent } from './modules/admin/admin-historica
 import { AdminHistoricalLeadersFilteredComponent } from './modules/admin/admin-historical-leaders-filtered/admin-historical-leaders-filtered.component';
 import { AdminGoldHistoryComponent } from './modules/admin/admin-gold-history/admin-gold-history.component';
 import { AdminGoldHistoryFilteredComponent } from './modules/admin/admin-gold-history-filtered/admin-gold-history-filtered.component';
+import { AdminLoginComponent } from './layouts/fullpageadminlogin/admin-login/admin-login.component';
 
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
       {path: 'players', component: PlayerComponent}
+    ]
+  },
+  {
+    path:'', component: AdminLoginComponent, children: [
+      {path: 'admin-login', component: AdminLoginComponent}
     ]
   },
   {

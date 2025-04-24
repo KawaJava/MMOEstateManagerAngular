@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminLoginModule } from './layouts/fullpageadminlogin/admin-login/admin-login.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    FullpageadminModule
+    FullpageadminModule,
+    AdminLoginModule
   ],
   exports: [
     RouterModule,
