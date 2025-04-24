@@ -23,6 +23,7 @@ import { AdminHistoricalLeadersFilteredComponent } from './modules/admin/admin-h
 import { AdminGoldHistoryComponent } from './modules/admin/admin-gold-history/admin-gold-history.component';
 import { AdminGoldHistoryFilteredComponent } from './modules/admin/admin-gold-history-filtered/admin-gold-history-filtered.component';
 import { AdminLoginComponent } from './layouts/fullpageadminlogin/admin-login/admin-login.component';
+import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizeGuard';
 
 const routes: Routes = [
   {
@@ -37,25 +38,25 @@ const routes: Routes = [
   },
   {
     path:'', component: FullpageadminComponent, children: [
-      {path: 'admin', component: AdminComponent},
-      {path: 'admin/players', component: AdminPlayerComponent},
-      {path: 'admin/players/update/:id', component: AdminPlayerUpdateComponent},
-      {path: 'admin/players/add', component: AdminPlayerAddComponent},
-      {path: 'admin/players/inactive', component: AdminPlayerInactiveComponent},
-      {path: 'admin/countries', component: AdminCountryComponent},
-      {path: 'admin/countries/update/:id', component: AdminCountryUpdateComponent},
-      {path: 'admin/countries/add', component: AdminCountryAddComponent},
-      {path: 'admin/countries/:id/changeSheriff', component: AdminCountryChangeSheriffComponent},
-      {path: 'admin/historical-sheriffs', component: AdminHistoricalSheriffsComponent},
-      {path: 'admin/historical-sheriffs/filtered', component: AdminHistoricalSheriffsFilteredComponent},
-      {path: 'admin/boroughs', component: AdminBoroughComponent},
-      {path: 'admin/boroughs/add', component: AdminBoroughAddComponent},
-      {path: 'admin/boroughs/update/:id', component: AdminBoroughUpdateComponent},
-      {path: 'admin/boroughs/:id/changeLeader', component: AdminBoroughChangeLeaderComponent},
-      {path: 'admin/historical-leaders', component: AdminHistoricalLeadersComponent},
-      {path: 'admin/historical-leaders/filtered', component: AdminHistoricalLeadersFilteredComponent},
-      {path: 'admin/history-golds', component: AdminGoldHistoryComponent},
-      {path: 'admin/history-golds/filtered', component: AdminGoldHistoryFilteredComponent}
+      {path: 'admin', component: AdminComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/players', component: AdminPlayerComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/players/update/:id', component: AdminPlayerUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/players/add', component: AdminPlayerAddComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/players/inactive', component: AdminPlayerInactiveComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/countries', component: AdminCountryComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/countries/update/:id', component: AdminCountryUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/countries/add', component: AdminCountryAddComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/countries/:id/changeSheriff', component: AdminCountryChangeSheriffComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/historical-sheriffs', component: AdminHistoricalSheriffsComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/historical-sheriffs/filtered', component: AdminHistoricalSheriffsFilteredComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/boroughs', component: AdminBoroughComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/boroughs/add', component: AdminBoroughAddComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/boroughs/update/:id', component: AdminBoroughUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/boroughs/:id/changeLeader', component: AdminBoroughChangeLeaderComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/historical-leaders', component: AdminHistoricalLeadersComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/historical-leaders/filtered', component: AdminHistoricalLeadersFilteredComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/history-golds', component: AdminGoldHistoryComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/history-golds/filtered', component: AdminGoldHistoryFilteredComponent, canActivate: [AdminAuthorizeGuard]}
     ]
   },
 ];

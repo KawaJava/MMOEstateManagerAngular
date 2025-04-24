@@ -11,6 +11,7 @@ import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.modul
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminLoginModule } from './layouts/fullpageadminlogin/admin-login/admin-login.module';
 import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
+import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizeGuard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    AdminAuthorizeGuard
   ],
   bootstrap: [AppComponent]
 })
