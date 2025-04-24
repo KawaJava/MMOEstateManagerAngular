@@ -1,4 +1,5 @@
-<form [formGroup]="formGroup" fxLayout="column">
+<form [formGroup]="formGroup" fxLayout="column" (submit)="submit()">
+    <div *ngIf="loginError" class="error">Podaj poprawne dane logowania</div>
     <mat-form-field appearance="fill">
         <mat-label>Login</mat-label>
         <input matInput formControlName="username">
