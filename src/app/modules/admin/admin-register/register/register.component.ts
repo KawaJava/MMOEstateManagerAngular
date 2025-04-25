@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { RegisterService } from 'src/app/modules/register/register.service';
 import { AdminPlayerToAutocomplete } from '../model/adminPlayerToAutoComplete';
 import { AdminplayerToAutocompleteService } from 'src/app/modules/common/service/AdminplayerToAutocompleteService';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private registerService: RegisterService,
-    private playerService: AdminplayerToAutocompleteService
+    private playerService: AdminplayerToAutocompleteService,
+    private snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class RegisterComponent implements OnInit {
         ],
       ],
       repeatPassword: ['', Validators.required],
-      playerId: [null, Validators.required],
+      playerId: [null],
       role: 'ROLE_ADMIN',
     });
   }
@@ -49,6 +51,7 @@ export class RegisterComponent implements OnInit {
       this.registerService.register(this.registerForm.value).subscribe({
         next: response => {
           this.registerErrorMessage = "Dodano nowego admina";
+          this.snackBar.open("Dodano nowego admina", '', {duration: 3000});
           this.registerError = false;
         },
         error: err => {
