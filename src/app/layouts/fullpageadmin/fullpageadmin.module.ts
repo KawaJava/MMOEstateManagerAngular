@@ -28,6 +28,7 @@ import { AdminGoldHistoryFilteredComponent } from 'src/app/modules/admin/admin-g
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from 'src/app/modules/admin/admin-register/register/register.component';
+import { GoldInBoroughComponent } from 'src/app/modules/admin/charts/gold-in-borough/gold-in-borough.component';
 
 
 
@@ -56,7 +57,8 @@ import { RegisterComponent } from 'src/app/modules/admin/admin-register/register
     AdminGoldHistoryFilteredComponent,
     SidenavComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    GoldInBoroughComponent
   ],
   imports: [
     CommonModule,

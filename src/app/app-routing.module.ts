@@ -25,6 +25,7 @@ import { AdminGoldHistoryFilteredComponent } from './modules/admin/admin-gold-hi
 import { AdminLoginComponent } from './layouts/fullpageadminlogin/admin-login/admin-login.component';
 import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizeGuard';
 import { RegisterComponent } from './modules/admin/admin-register/register/register.component';
+import { GoldInBoroughComponent } from './modules/admin/charts/gold-in-borough/gold-in-borough.component';
 
 const routes: Routes = [
   {
@@ -58,7 +59,8 @@ const routes: Routes = [
       {path: 'admin/historical-leaders/filtered', component: AdminHistoricalLeadersFilteredComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/history-golds', component: AdminGoldHistoryComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/history-golds/filtered', component: AdminGoldHistoryFilteredComponent, canActivate: [AdminAuthorizeGuard]},
-      {path: 'admin/register', component: RegisterComponent, canActivate: [AdminAuthorizeGuard]}
+      {path: 'admin/register', component: RegisterComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/charts/gold-in-borough', component: GoldInBoroughComponent, canActivate: [AdminAuthorizeGuard]},
     ]
   },
 ];
