@@ -23,6 +23,21 @@
       <input type="password" matInput formControlName="repeatPassword">
       <mat-error *ngIf="registerForm.get('repeatPassword')?.hasError('required')">Powtórz hasło</mat-error>
     </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Gracz</mat-label>
+      <input type="text" matInput
+       [matAutocomplete]="auto"
+       [formControl]="playerIdControl"
+       (input)="onSearchPlayer($event)">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPlayerName">
+        <mat-option *ngFor="let player of filteredPlayers" [value]="player.id">
+          {{ player.name }}
+        </mat-option>
+      </mat-autocomplete>
+    
+      <mat-error *ngIf="playerIdControl?.hasError('required')">Gracz jest wymagany</mat-error>
+    </mat-form-field>
   
     <button mat-flat-button color="primary">Dodaj admina</button>
   </form>

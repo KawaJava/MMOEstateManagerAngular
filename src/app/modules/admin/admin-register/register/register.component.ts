@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/modules/register/register.service';
+import { AdminPlayerToAutocomplete } from '../model/adminPlayerToAutoComplete';
+import { AdminplayerToAutocompleteService } from 'src/app/modules/common/service/AdminplayerToAutocompleteService';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +14,12 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   registerError = false;
   registerErrorMessage = "";
+  filteredPlayers: AdminPlayerToAutocomplete[] = [];
+
 
   constructor(private formBuilder: FormBuilder,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private playerService: AdminplayerToAutocompleteService
     ) { }
 
   ngOnInit(): void {
@@ -30,10 +35,11 @@ export class RegisterComponent implements OnInit {
         [Validators.required,
           Validators.minLength(8),
           Validators.maxLength(30),
-          Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d@$!%*?&]+$') // przynajmniej jedna litera i jedna cyfra
+          Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d@$!%*?&]+$')
         ],
       ],
       repeatPassword: ['', Validators.required],
+      playerId: [null, Validators.required],
       role: 'ROLE_ADMIN',
     });
   }
@@ -71,4 +77,30 @@ export class RegisterComponent implements OnInit {
     return false;
   }
 
+  onSearchPlayer(event: Event): void {
+    const input = (event.target as HTMLInputElement).value;
+    if (input.length >= 1) {
+      this.playerService.searchPlayers(input).subscribe({
+        next: players => {
+          this.filteredPlayers = players;
+        },
+        error: err => {
+          this.filteredPlayers = [];
+        }
+      });
+    } else {
+      this.filteredPlayers = [];
+    }
+  }
+  
+  displayPlayerName = (id: number): string => {
+    const match = this.filteredPlayers.find(player => player.id === id);
+    return match ? match.name : '';
+  };
+  
+  get playerIdControl(): FormControl {
+    return this.registerForm.get('playerId') as FormControl;
+  }
+  
+  
 }

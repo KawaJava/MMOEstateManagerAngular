@@ -15,6 +15,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule } from '@angular/material-moment-adapter';
 import {MatSidenavModule} from '@angular/material/sidenav'
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatOptionModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -34,7 +38,11 @@ import {MatSidenavModule} from '@angular/material/sidenav'
     MatDatepickerModule,
     MatProgressSpinnerModule,
     MatMomentDateModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatAutocompleteModule,
+    MatOptionModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   exports: [
     MatIconModule,
@@ -52,8 +60,11 @@ import {MatSidenavModule} from '@angular/material/sidenav'
     MatDatepickerModule,
     MatProgressSpinnerModule,
     MatMomentDateModule,
-    MatSidenavModule
-    
+    MatSidenavModule,
+    MatAutocompleteModule,
+    MatOptionModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   providers: [
     {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}}
