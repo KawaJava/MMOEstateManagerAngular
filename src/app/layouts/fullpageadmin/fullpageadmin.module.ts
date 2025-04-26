@@ -30,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from 'src/app/modules/admin/admin-register/register/register.component';
 import { GoldInBoroughComponent } from 'src/app/modules/admin/charts/gold-in-borough/gold-in-borough.component';
 import { PlayersIsCountryComponent } from 'src/app/modules/admin/charts/players-is-country/players-is-country.component';
+import { ClansIsCountryComponent } from 'src/app/modules/admin/charts/clans-is-country/clans-is-country.component';
 
 
 
@@ -60,7 +61,8 @@ import { PlayersIsCountryComponent } from 'src/app/modules/admin/charts/players-
     HeaderComponent,
     RegisterComponent,
     GoldInBoroughComponent,
-    PlayersIsCountryComponent
+    PlayersIsCountryComponent,
+    ClansIsCountryComponent
   ],
   imports: [
     CommonModule,

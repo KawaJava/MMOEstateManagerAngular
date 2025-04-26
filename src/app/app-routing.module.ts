@@ -27,6 +27,7 @@ import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizeGuard'
 import { RegisterComponent } from './modules/admin/admin-register/register/register.component';
 import { GoldInBoroughComponent } from './modules/admin/charts/gold-in-borough/gold-in-borough.component';
 import { PlayersIsCountryComponent } from './modules/admin/charts/players-is-country/players-is-country.component';
+import { ClansIsCountryComponent } from './modules/admin/charts/clans-is-country/clans-is-country.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,7 @@ const routes: Routes = [
       {path: 'admin/register', component: RegisterComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/charts/gold-in-borough', component: GoldInBoroughComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/charts/players-in-country', component: PlayersIsCountryComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/charts/clans-in-country', component: ClansIsCountryComponent, canActivate: [AdminAuthorizeGuard]}
     ]
   },
 ];
