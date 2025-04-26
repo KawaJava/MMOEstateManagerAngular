@@ -76,11 +76,6 @@ export class ClansIsCountryComponent implements OnInit {
   };
   
   generateChart(labels: string[], data: number[]): void {
-    if (!this.doughnutCanvas || !this.doughnutCanvas.nativeElement) {
-      console.error('Canvas not ready yet!');
-      return;
-    }
-  
     if (this.chart) {
       this.chart.destroy();
     }
