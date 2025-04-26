@@ -29,6 +29,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from 'src/app/modules/admin/admin-register/register/register.component';
 import { GoldInBoroughComponent } from 'src/app/modules/admin/charts/gold-in-borough/gold-in-borough.component';
+import { PlayersIsCountryComponent } from 'src/app/modules/admin/charts/players-is-country/players-is-country.component';
 
 
 
@@ -58,7 +59,8 @@ import { GoldInBoroughComponent } from 'src/app/modules/admin/charts/gold-in-bor
     SidenavComponent,
     HeaderComponent,
     RegisterComponent,
-    GoldInBoroughComponent
+    GoldInBoroughComponent,
+    PlayersIsCountryComponent
   ],
   imports: [
     CommonModule,

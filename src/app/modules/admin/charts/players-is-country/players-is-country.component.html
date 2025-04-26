@@ -1,0 +1,14 @@
+<div class="container">
+    <mat-form-field appearance="fill">
+      <mat-label>Wybierz hrabstwo</mat-label>
+      <input type="text"
+             matInput
+             [formControl]="countryControl"
+             [matAutocomplete]="auto"
+             [value]="countryControl.value?.name || ''">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCountryName">
+        <mat-option *ngFor="let country of filteredCountries | async" [value]="country">
+          {{ country.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>

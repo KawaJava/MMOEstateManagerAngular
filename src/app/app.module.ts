@@ -11,7 +11,7 @@ import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.modul
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AdminLoginModule } from './layouts/fullpageadminlogin/admin-login/admin-login.module';
 import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
-import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizeGuard'
+import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizeGuard';
 
 @NgModule({
   declarations: [
