@@ -1,14 +1,4 @@
-<header fxLayoutAlign="start center">
-    <div fxFlex fxLayoutAlign="start end" fxLayoutGap="15">
-        
-        <span class="logo">{{title}}</span>
-    </div>
-    <div fxLayoutGap="15" fxLayoutAlign="start center">
-        <button mat-flat-button color="accent"routerLink="admin">Panel administracyjny</button>
-        <button mat-flat-button color="warn" routerLink="admin/countries">Admin - hrabstwa</button>
-        <button mat-flat-button color="warn" routerLink="admin/boroughs">Admin - gminy</button>
-        <button mat-flat-button color="warn" routerLink="admin/players">Admin - gracze</button>
-        <button mat-flat-button color="primary" routerLink="admin-login">Zaloguj jako admin</button>
-        <span></span>
-    </div>
-</header>
+<mat-toolbar class="header-toolbar">
+  <span class="header-title">MMO ESTATE MANAGER</span>
+  <span class="header-subtitle">Zaawansowany system do zarządzania włościami w grach MMO</span>
+</mat-toolbar>

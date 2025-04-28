@@ -5,8 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { DefaultComponent } from './default.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-
-
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +17,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     RouterModule,
     AppRoutingModule,
     SharedModule,
+    MaterialModule
   ]
 })
 export class DefaultModule { }

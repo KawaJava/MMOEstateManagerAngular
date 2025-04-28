@@ -1,20 +1,16 @@
-<!-- <sidebar fxLayout="column">
-    <div fxLayoutAlign="start end" fxLayoutGap="15">
-       
-<mat-selection-list color="primary" [multiple]="false" fxLayout="column">
-  <mat-list-option *ngFor="let player of players" class="custom-list-option">
-    <a routerLink="{{'/players/'}}" class="custom-link">{{player}}</a>
-  </mat-list-option>
-</mat-selection-list>
-    </div>
-</sidebar> -->
-<div>
-  <!-- <div fxLayout="column" fxLayoutAlign="start stretch" fxFlexFill>
-    <mat-selection-list color="primary" [multiple]="false" fxFlexFill>
-      <mat-list-option *ngFor="let player of players" class="custom-list-option">
-        <a routerLink="/players/{{player}}" class="custom-link">{{player}}</a>
-      </mat-list-option>
-    </mat-selection-list>
-  </div> -->
-  <button mat-flat-button color="primary"routerLink="admin">Panel administracyjny</button>
+<div class="sidebar-content">
+  <div class="nav-section">
+    <h3>Listy do przeglądania:</h3>
+    <mat-nav-list>
+      <a mat-list-item class="nav-link" routerLink="/gracze">Gracze</a>
+      <a mat-list-item class="nav-link" routerLink="/hrabstwa">Hrabstwa</a>
+      <a mat-list-item class="nav-link" routerLink="/gminy">Gminy</a>
+    </mat-nav-list>
+  </div>
+
+  <div class="admin-button-wrapper">
+    <button mat-raised-button color="primary" routerLink="admin-login" class="admin-button">
+      Przejdź do panelu admina
+    </button>
+  </div>
 </div>
