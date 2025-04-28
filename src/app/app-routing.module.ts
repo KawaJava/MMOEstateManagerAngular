@@ -32,7 +32,7 @@ import { ClansIsCountryComponent } from './modules/admin/charts/clans-is-country
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
-      {path: 'players', component: PlayerComponent}
+      {path: '', component: PlayerComponent}
     ]
   },
   {
