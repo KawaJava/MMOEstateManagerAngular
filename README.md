@@ -1,5 +1,17 @@
 # MMOEstateManager - Frontend
 
+# Spis treści
+
+1. [Opis projektu](#opis-projektu)
+2. [Wymagania](#wymagania)
+3. [Instalacja](#instalacja)
+4. [Uruchamianie aplikacji](#uruchamianie-aplikacji)
+   - [Uruchomienie aplikacji w trybie deweloperskim](#uruchomienie-aplikacji-w-trybie-deweloperskim)
+   - [Budowanie aplikacji](#budowanie-aplikacji)
+5. [Podsumowanie](#podsumowanie)
+6. [Link do backendu](#link-do-backendu)
+
+## Opis projektu
 MMOEstateManager - Frontend to część systemu odpowiedzialna za zarządzanie włościami graczy MMO, zaprojektowana w Angularze z naciskiem na modularność, responsywność i dobre praktyki architektoniczne (SOLID, DRY, KISS). Kod jest podzielony na funkcjonalne moduły, a UI opiera się na Angular Material i dynamicznych danych sterowanych przez RxJS.
 
 Aplikacja oferuje intuicyjny interfejs do przeglądania i zarządzania włościami w grach MMO, w tym stanem złota oraz danymi o szeryfach i wójtach. Umożliwia śledzenie historycznych zmian, monitorowanie ilości złota i identyfikowanie anomalii, jak przekroczenie ustalonych limitów.
@@ -51,9 +63,12 @@ Aby uruchomić aplikację lokalnie, wykonaj poniższe kroki:
 ## Budowanie aplikacji
 
 Aby zbudować aplikację na produkcję:
-```bash
-ng build --prod
-```
-
+    ```bash
+   ng build --prod
+    ```
 Możesz teraz uruchomić aplikację frontendową zgodnie z tymi instrukcjami. Jeśli chcesz coś zmienić, daj znać!
+## Podsumowanie
+MMOEstateManager to nowoczesny system umożliwiający zarządzanie włościami graczy w grach MMO. Dzięki pełnej integracji z backendem, zaawansowanemu frontendowi w Angularze oraz rozbudowanej logice biznesowej, zapewnia kompleksową funkcjonalność, która odpowiada na potrzeby graczy, administratorów oraz deweloperów. Integracja z RxJS, Angular Material, Chart.js i innymi nowoczesnymi bibliotekami pozwala stworzyć intuicyjny i funkcjonalny interfejs użytkownika, podczas gdy backend oferuje solidne podstawy do przechowywania i zarządzania danymi.
+## Link do backendu
 
+Jeśli chcesz zapoznać się z projektem backendowym, odwiedź [MMOEstateManager](https://github.com/KawaJava/MMOEstateManager).
