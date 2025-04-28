@@ -1,27 +1,59 @@
-# MMOEstateDemoTestowe
+# MMOEstateManager - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+MMOEstateManager - Frontend to część systemu odpowiedzialna za zarządzanie włościami graczy MMO, zaprojektowana w Angularze z naciskiem na modularność, responsywność i dobre praktyki architektoniczne (SOLID, DRY, KISS). Kod jest podzielony na funkcjonalne moduły, a UI opiera się na Angular Material i dynamicznych danych sterowanych przez RxJS.
 
-## Development server
+Aplikacja oferuje intuicyjny interfejs do przeglądania i zarządzania włościami w grach MMO, w tym stanem złota oraz danymi o szeryfach i wójtach. Umożliwia śledzenie historycznych zmian, monitorowanie ilości złota i identyfikowanie anomalii, jak przekroczenie ustalonych limitów.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologie i biblioteki
 
-## Code scaffolding
+- **Angular 13.3**: struktura aplikacji, komponenty, routing i lazy loading, umożliwiające dynamiczne ładowanie danych w zależności od potrzeb.
+- **TypeScript**: bezpieczne typowanie danych zapewniające lepszą jakość kodu.
+- **RxJS**: zarządzanie asynchronicznością i strumieniami danych, wykorzystujące operatory takie jak `BehaviorSubject`, `tap`, czy `catchError`.
+- **Angular Material**: zaawansowane komponenty UI (np. `MatTable`, `MatDialog`, `MatPaginator`, `MatSnackBar`).
+- **Angular Flex-Layout**: responsywne layouty dostosowujące się do różnych rozmiarów ekranów.
+- **SCSS**: elastyczne stylowanie umożliwiające pełną kontrolę nad wyglądem aplikacji.
+- **Reactive Forms**: zaawansowane zarządzanie formularzami z walidacją i dynamicznymi reakcjami.
+- **Angular Router**: routing aplikacji i zabezpieczanie ścieżek za pomocą **AuthGuard**.
+- **Interceptors**: automatyczne dołączanie tokenów JWT do żądań HTTP oraz obsługa błędów związanych z autoryzacją.
+- **Chart.js + ng2-charts**: tworzenie interaktywnych wykresów (BarChart, PieChart) do wizualizacji danych.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Wymagania
 
-## Build
+Aby uruchomić projekt lokalnie, musisz mieć zainstalowane:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Node.js** (w wersji 16.0 lub nowszej)
+- **npm** (do instalacji zależności)
+- **Angular CLI** (w wersji 13.3)
+- **Git** (do klonowania repozytorium)
+- **Przeglądarka internetowa** (np. Google Chrome, Firefox)
+- **Edytor kodu** (np. IntelliJ IDEA, Visual Studio Code lub inne IDE z obsługą Angulara)
 
-## Running unit tests
+## Instalacja
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Sklonuj repozytorium:
+   ```bash
+   git clone https://github.com/KawaJava/MMOEstateManagerAngular.git
+   ```
+2. Zainstaluj zależności:
+   ```bash
+   npm install
+   ```
+## Uruchamianie aplikacji
 
-## Running end-to-end tests
+Aby uruchomić aplikację lokalnie, wykonaj poniższe kroki:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Uruchomienie aplikacji w trybie deweloperskim
+1. Uruchom serwer deweloperski:
+   ```bash
+   ng serve
+   ```
+2. Aplikacja będzie dostępna pod adresem: http://localhost:4200.
+## Budowanie aplikacji
 
-## Further help
+Aby zbudować aplikację na produkcję:
+```bash
+ng build --prod
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Możesz teraz uruchomić aplikację frontendową zgodnie z tymi instrukcjami. Jeśli chcesz coś zmienić, daj znać!
+
