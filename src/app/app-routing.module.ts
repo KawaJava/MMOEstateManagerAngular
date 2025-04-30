@@ -30,12 +30,14 @@ import { PlayersIsCountryComponent } from './modules/admin/charts/players-is-cou
 import { ClansIsCountryComponent } from './modules/admin/charts/clans-is-country/clans-is-country.component';
 import { HomepageComponent } from './modules/public/homepage/homepage.component';
 import { PlayersComponent } from './modules/public/players/list/players/players.component';
+import { PlayersDetailsComponent } from './modules/public/players/players-details/players-details.component';
 
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
       {path: '', component: HomepageComponent},
-      {path: 'players', component: PlayersComponent}
+      {path: 'players', component: PlayersComponent},
+      {path: 'players/:slug', component: PlayersDetailsComponent}
     ]
   },
   {

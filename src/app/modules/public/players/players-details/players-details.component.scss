@@ -1,0 +1,43 @@
+$color-blue: #2196F3;
+$color-purple: #7E57C2;
+$color-white: #FAFAFA;
+$color-light-gray: #ECEFF1;
+
+.player-detail {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+
+  mat-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: $color-white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    .active {
+      color: $color-blue;
+    }
+
+    .inactive {
+      color: #c62828;
+    }
+  }
+
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+}
+
+.back-button {
+  margin-bottom: 1rem;
+  color: $color-purple;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

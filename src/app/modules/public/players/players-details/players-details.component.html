@@ -1,0 +1,24 @@
+<div *ngIf="player" class="player-detail">
+    <mat-card>
+      <mat-card-title>{{ player.name }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>Email:</strong> {{ player.email }}</p>
+        <p><strong>Klan:</strong> {{ player.clan }}</p>
+        <p><strong>Status:</strong>
+          <span [ngClass]="{ 'active': player.isActive, 'inactive': !player.isActive }">
+            {{ !player.isActive ? 'Aktywny' : 'Nieaktywny' }}
+          </span>
+        </p>
+        <p><strong>Utworzony:</strong> {{ player.created | date:'longDate' }}</p>
+        <p><strong>Slug:</strong> {{ player.slug }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <button mat-button color="primary" (click)="goBack()" class="back-button">
+    ← Wróć do listy
+  </button>
+  
+  
+  <div *ngIf="loading" class="loading">Ładowanie...</div>
+  <div *ngIf="error" class="error">Nie znaleziono gracza.</div>
+  

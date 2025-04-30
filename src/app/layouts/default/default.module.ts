@@ -8,13 +8,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { HomepageComponent } from 'src/app/modules/public/homepage/homepage.component';
 import { PlayersComponent } from 'src/app/modules/public/players/list/players/players.component';
+import { PlayersDetailsComponent } from 'src/app/modules/public/players/players-details/players-details.component';
 
 @NgModule({
   declarations: [
     PlayerComponent,
     DefaultComponent,
     HomepageComponent,
-    PlayersComponent
+    PlayersComponent,
+    PlayersDetailsComponent
   ],
   imports: [
     CommonModule,
