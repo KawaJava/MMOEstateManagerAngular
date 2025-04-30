@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
+import { Page } from 'src/app/shared/page';
+import { Player } from '../../model/player';
+import { PlayerService } from '../../service/playerService';
 
 @Component({
   selector: 'app-players',
@@ -6,10 +10,74 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
+  players!: Page<Player>;
+  pageSize = 12;
+  currentPage = 0;
+  totalPages = 0;
+  pageNumbers: number[] = [];
 
-  constructor() { }
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
+    this.fetchPlayers();
+  }
+
+  onPageChange(event: PageEvent): void {
+    this.pageSize = event.pageSize;
+    this.currentPage = event.pageIndex;
+    this.fetchPlayers();
+  }
+
+
+
+  fetchPlayers(): void {
+    this.playerService.getPlayers(this.currentPage, this.pageSize).subscribe(data => {
+      this.players = data;
+      this.totalPages = data.totalElements;
+      this.updatePageNumbers();
+    });
+  }
+
+  updatePageNumbers(): void {
+    if (!this.totalPages || this.totalPages < 1) {
+      this.pageNumbers = [];
+      return;
+    }
+
+    const maxVisible = 5;
+    const half = Math.floor(maxVisible / 2);
+    let start = Math.max(1, this.currentPage + 1 - half);
+    let end = Math.min(this.totalPages, start + maxVisible - 1);
+
+    if (end - start < maxVisible - 1) {
+      start = Math.max(1, end - maxVisible + 1);
+    }
+    this.pageNumbers = [];
+    for (let i = start; i <= end; i++) {
+      if (i <= (this.totalPages / this.pageSize) + 1) {
+        this.pageNumbers.push(i);
+      }
+    }
+  }
+
+  goToPage(page: number): void {
+    this.currentPage = page - 1;
+    this.fetchPlayers();
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.fetchPlayers();
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage + 1 < this.totalPages) {
+      this.currentPage++;
+      this.fetchPlayers();
+    }
   }
 
 }
+

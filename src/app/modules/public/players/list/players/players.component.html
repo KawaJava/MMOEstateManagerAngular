@@ -1,1 +1,31 @@
-<p>players works!</p>
+<div class="players-wrapper">
+    <mat-card *ngFor="let player of players?.content" class="player-card">
+        <mat-card-title>{{ player.name }}</mat-card-title>
+        <mat-card-content>
+            <p><strong>Email:</strong> {{ player.email }}</p>
+            <p><strong>Klan:</strong> {{ player.clan }}</p>
+            <p><strong>Status:</strong>
+                <span [ngClass]="{ 'active': player.isActive, 'inactive': !player.isActive }">
+                    {{ !player.isActive ? 'Aktywny' : 'Nieaktywny' }}
+                </span>
+            </p>
+            <p><strong>Data dodania:</strong> {{ player.created | date:'longDate' }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [routerLink]="['/players', player.slug]">
+                Więcej
+            </button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
+
+<div class="pagination">
+    <span (click)="prevPage()" [class.disabled]="currentPage === 0">&lt;</span>
+
+    <span *ngFor="let page of pageNumbers" [class.active]="page === currentPage + 1" (click)="goToPage(page)">
+        {{ page }}
+    </span>
+
+    <span (click)="nextPage()" [class.disabled]="currentPage + 1 === totalPages">&gt;</span>
+</div>

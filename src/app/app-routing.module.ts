@@ -29,12 +29,13 @@ import { GoldInBoroughComponent } from './modules/admin/charts/gold-in-borough/g
 import { PlayersIsCountryComponent } from './modules/admin/charts/players-is-country/players-is-country.component';
 import { ClansIsCountryComponent } from './modules/admin/charts/clans-is-country/clans-is-country.component';
 import { HomepageComponent } from './modules/public/homepage/homepage.component';
+import { PlayersComponent } from './modules/public/players/list/players/players.component';
 
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
       {path: '', component: HomepageComponent},
-      {path: 'players', component: PlayerComponent}
+      {path: 'players', component: PlayersComponent}
     ]
   },
   {

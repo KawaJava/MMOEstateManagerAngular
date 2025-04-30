@@ -7,12 +7,14 @@ import { DefaultComponent } from './default.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { HomepageComponent } from 'src/app/modules/public/homepage/homepage.component';
+import { PlayersComponent } from 'src/app/modules/public/players/list/players/players.component';
 
 @NgModule({
   declarations: [
     PlayerComponent,
     DefaultComponent,
-    HomepageComponent
+    HomepageComponent,
+    PlayersComponent
   ],
   imports: [
     CommonModule,
