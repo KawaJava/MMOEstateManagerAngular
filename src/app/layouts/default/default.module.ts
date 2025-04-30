@@ -6,11 +6,13 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { DefaultComponent } from './default.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { HomepageComponent } from 'src/app/modules/public/homepage/homepage.component';
 
 @NgModule({
   declarations: [
     PlayerComponent,
-    DefaultComponent
+    DefaultComponent,
+    HomepageComponent
   ],
   imports: [
     CommonModule,

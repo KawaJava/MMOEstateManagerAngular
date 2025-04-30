@@ -1,0 +1,74 @@
+$color-blue: #2196F3;
+$color-purple: #7E57C2;
+$color-white: #FAFAFA;
+$color-light-gray: #ECEFF1;
+
+.home-container {
+    padding: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: $color-blue;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1s forwards;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: $color-blue;
+    line-height: 1.6;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: $color-blue;
+}
+
+ul {
+    text-align: left;
+    margin: 20px 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: $color-blue;
+}
+
+.links {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.link-button {
+    background-color: $color-blue;
+    color: $color-white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.link-button mat-icon {
+    margin-right: 8px;
+    font-size: 1.5rem;
+}
+
+.link-button:hover {
+    background-color: $color-purple;
+    transform: scale(1.05);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -28,11 +28,13 @@ import { RegisterComponent } from './modules/admin/admin-register/register/regis
 import { GoldInBoroughComponent } from './modules/admin/charts/gold-in-borough/gold-in-borough.component';
 import { PlayersIsCountryComponent } from './modules/admin/charts/players-is-country/players-is-country.component';
 import { ClansIsCountryComponent } from './modules/admin/charts/clans-is-country/clans-is-country.component';
+import { HomepageComponent } from './modules/public/homepage/homepage.component';
 
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
-      {path: '', component: PlayerComponent}
+      {path: '', component: HomepageComponent},
+      {path: 'players', component: PlayerComponent}
     ]
   },
   {

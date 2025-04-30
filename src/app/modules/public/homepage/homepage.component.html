@@ -1,0 +1,99 @@
+<div class="home-container">
+    <p class="project-description">
+        Aplikacja oferuje intuicyjny interfejs do przeglądania i zarządzania włościami w grach MMO, w tym zarządzania
+        stanem złota i przeglądania danych o szeryfach i wójtach. Umożliwia śledzenie historycznych zmian, co pozwala
+        graczom monitorować ilości złota oraz identyfikować anomalie, takie jak przekroczenie ustalonych limitów. W
+        panelu administracyjnym znajdują się wykresy, które ułatwiają interpretację tych danych.
+    </p>
+
+    <p class="project-description">
+        System umożliwia również automatyczne wysyłanie powiadomień e-mail do graczy, którzy nie zaktualizowali danych o
+        złocie w gminach, co z kolei minimalizuje konieczność ręcznego wysyłania takich przypomnień.
+    </p>
+
+    <h3>Działanie aplikacji:</h3>
+    <ul>
+        <li>Przeglądanie i edytowanie danych o włościach, w tym stanu złota, zarządzania szeryfami i wójtami.</li>
+        <li>Automatyczne powiadamianie graczy o wymaganych aktualizacjach danych o złocie.</li>
+        <li>Zgodność z zasadami bezpieczeństwa i autentykacji opartymi na JWT Tokenie, co zapewnia kontrolowany dostęp
+            do funkcji zależnie od ról użytkowników (Admin/User).</li>
+        <li>Administracja gminami, zarządzanie uprawnieniami, aktualizowanie danych o wójtach oraz generowanie raportów
+            z danych historycznych.</li>
+    </ul>
+    <h3>Backend:</h3>
+    <p class="project-description">
+        Backend aplikacji oparty jest na Spring Boot 3 i stanowi podstawową infrastrukturę dla całego systemu.
+        Obejmuje m.in. Web, Data-JPA, Liquibase, AOP, Mail Sender, Scheduler, Validation i
+        Security, zapewniając stabilność i skalowalność aplikacji.
+    </p>
+    <p class="project-description">
+        JWT Token to nowoczesne rozwiązanie do autoryzacji użytkowników. Każdy użytkownik posiada unikalny token
+        JWT, który jest używany do autentykacji podczas każdego żądania.
+    </p>
+    <p class="project-description">
+        MySQL to baza danych, która przechowuje dane o graczach, włościach, szeryfach i wójtach, a także transakcje
+        związane z zarządzaniem złotem.
+    </p>
+    <p class="project-description">
+        Komunikacja między frontendem a backendem odbywa się przy pomocy standardowego API REST, co umożliwia
+        integrację z innymi systemami i platformami.
+    </p>
+    <p class="project-description">
+        System jest pokryty testami jednostkowymi przy użyciu JUnit, Mockito oraz AssertJ, a także testami
+        manualnymi i API za pomocą Postman.
+    </p>
+    <h3>Frontend:</h3>
+    <p class="project-description">
+        MMOEstateManager - Frontend to część systemu odpowiedzialna za zarządzanie włościami graczy MMO,
+        zaprojektowana w Angularze z naciskiem na modularność, responsywność i dobre praktyki architektoniczne (SOLID,
+        DRY, KISS). Kod jest podzielony na funkcjonalne moduły, a UI opiera się na Angular Material i dynamicznych
+        danych sterowanych przez RxJS.
+    </p>
+    <p class="project-description">
+        Aplikacja oferuje intuicyjny interfejs do przeglądania i zarządzania włościami w grach MMO, w tym stanem złota
+        oraz danymi o szeryfach i wójtach. Umożliwia śledzenie historycznych zmian, monitorowanie ilości złota i
+        identyfikowanie anomalii, jak przekroczenie ustalonych limitów.
+    </p>
+    <p class="project-description">
+        Wykorzystane technologie i biblioteki:
+    </p>
+
+    <ul>
+        <li><strong>Angular 13.3:</strong> struktura aplikacji, komponenty, routing i lazy loading, umożliwiające
+            dynamiczne ładowanie danych w zależności od potrzeb.</li>
+        <li><strong>TypeScript:</strong> bezpieczne typowanie danych zapewniające lepszą jakość kodu.</li>
+        <li><strong>RxJS:</strong> zarządzanie asynchronicznością i strumieniami danych, wykorzystujące operatory takie
+            jak BehaviorSubject, tap, czy catchError.</li>
+        <li><strong>Angular Material:</strong> zaawansowane komponenty UI (MatTable, MatDialog, MatPaginator,
+            MatSnackBar) zapewniające nowoczesny interfejs użytkownika.</li>
+        <li><strong>Angular Flex-Layout:</strong> responsywne layouty dostosowujące się do różnych rozmiarów ekranów.
+        </li>
+        <li><strong>SCSS:</strong> elastyczne stylowanie umożliwiające pełną kontrolę nad wyglądem aplikacji.</li>
+        <li><strong>Reactive Forms:</strong> zaawansowane zarządzanie formularzami z walidacją i dynamicznymi reakcjami.
+        </li>
+        <li><strong>Angular Router:</strong> routing aplikacji i zabezpieczanie ścieżek za pomocą **AuthGuard**.</li>
+        <li><strong>Interceptors:</strong> automatyczne dołączanie tokenów JWT do żądań HTTP oraz obsługa błędów
+            związanych z autoryzacją.</li>
+        <li><strong>Chart.js + ng2-charts:</strong> tworzenie interaktywnych wykresów (BarChart, PieChart) do
+            wizualizacji danych.</li>
+    </ul>
+
+
+    <p class="project-description">
+        <strong>Podsumowanie:</strong> Aplikacja MMOEstateManager to nowoczesny system umożliwiający zarządzanie
+        włościami graczy w grach MMO. Dzięki pełnej integracji z backendem, zaawansowanemu frontendowi w Angularze oraz
+        rozbudowanej logice biznesowej, zapewnia kompleksową funkcjonalność, która odpowiada na potrzeby graczy,
+        administratorów oraz deweloperów. Integracja z RxJS, Angular Material, Chart.js i innymi
+        nowoczesnymi bibliotekami pozwala stworzyć intuicyjny i funkcjonalny interfejs użytkownika, podczas gdy backend
+        oferuje solidne podstawy do przechowywania i zarządzania danymi.
+    </p>
+
+    <div class="links">
+        <a href="https://github.com/kawajava" target="_blank" class="link-button">
+            <mat-icon>code</mat-icon> GitHub Programisty
+        </a>
+        <a href="https://kawajava.github.io" target="_blank" class="link-button">
+            <mat-icon>person</mat-icon> Strona Programisty
+        </a>
+    </div>
+</div>
