@@ -2,13 +2,12 @@
     <mat-card>
       <mat-card-title>{{ borough.name }}</mat-card-title>
       <mat-card-content>
-        <p><strong>Slug:</strong> {{ borough.slug }}</p>
         <p><strong>ID hrabstwa:</strong> {{ borough.countryId }}</p>
-        <p><strong>ID obecnego wójta:</strong> {{ borough.actualLeaderId }}</p>
+        <p><strong>Obecny wójt:</strong> {{ borough.actualLeader.name }}</p>
         <p><strong>Data rozpoczęcia przywództwa:</strong> {{ borough.leaderStartDate | date: 'longDate' }}</p>
         <p><strong>Aktualne złoto:</strong> {{ borough.actualGold }}</p>
-        <p><strong>Złoto dodane przez (ID gracza):</strong> {{ borough.goldAddedBy }}</p>
-        <p><strong>Data dodania:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
+        <p><strong>Złoto dodane przez gracza:</strong> {{ borough.goldAddedBy.name }}</p>
+        <p><strong>Data dodania złota:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
         <p><strong>Email wysłany:</strong>
           <span [ngClass]="{ 'active': borough.emailSend, 'inactive': !borough.emailSend }">
             {{ borough.emailSend ? 'Tak' : 'Nie' }}

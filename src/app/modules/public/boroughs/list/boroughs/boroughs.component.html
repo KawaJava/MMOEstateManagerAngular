@@ -2,10 +2,10 @@
     <mat-card *ngFor="let borough of boroughs?.content" class="borough-card">
       <mat-card-title>{{ borough.name }}</mat-card-title>
       <mat-card-content>
-        <p><strong>Slug:</strong> {{ borough.slug }}</p>
+        <p><strong>Obecny wójt:</strong> {{ borough.actualLeader.name }}</p>
         <p><strong>Data rozpoczęcia przywództwa:</strong> {{ borough.leaderStartDate | date: 'longDate' }}</p>
         <p><strong>Złoto:</strong> {{ borough.actualGold }}</p>
-        <p><strong>Data dodania:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
+        <p><strong>Data dodania złota:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
         <p><strong>Email wysłany:</strong>
           <span [ngClass]="{ 'active': borough.emailSend, 'inactive': !borough.emailSend }">
             {{ borough.emailSend ? 'Tak' : 'Nie' }}
