@@ -1,0 +1,48 @@
+<div *ngIf="country" class="country-detail">
+    <mat-card>
+      <mat-card-title>{{ country.name }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>Limit złota:</strong> {{ country.goldLimit }}</p>
+        <p><strong>Szeryf od:</strong> {{ country.sheriffStartDate | date: 'longDate' }}</p>
+        <p><strong>Liczba gmin:</strong> {{ country.boroughCount }}</p>
+        <p><strong>Całkowite złoto:</strong> {{ country.allGold }}</p>
+        <p><strong>Złoto do zebrania:</strong> {{ country.goldToCollect }}</p>
+  
+        <h3>Podział złota wg graczy</h3>
+        <ul>
+          <li *ngFor="let player of country.playerInfoList">
+            {{ player.name }} (klan: {{ player.clan }}) – {{ country.goldByPlayers[player.name] || '0' }} złota
+          </li>
+        </ul>
+  
+        <h3>Podział złota wg klanów</h3>
+        <ul>
+          <li *ngFor="let clan of clanNames">
+            {{ clan }} – {{ country.goldByClan[clan] || '0' }} złota
+          </li>
+        </ul>
+  
+        <h3>Procentowy udział graczy</h3>
+        <ul>
+          <li *ngFor="let player of country.playerInfoList">
+            {{ player.name }} – {{ country.playerPercentage[player.name] || '0%' }} %
+          </li>
+        </ul>
+  
+        <h3>Procentowy udział klanów</h3>
+        <ul>
+          <li *ngFor="let clan of clanNames">
+            {{ clan }} – {{ country.clanPercentage[clan] || '0%' }} %
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <button mat-button color="primary" (click)="goBack()" class="back-button">
+    ← Wróć do listy
+  </button>
+  
+  <div *ngIf="loading" class="loading">Ładowanie...</div>
+  <div *ngIf="error" class="error">Nie znaleziono kraju.</div>
+  

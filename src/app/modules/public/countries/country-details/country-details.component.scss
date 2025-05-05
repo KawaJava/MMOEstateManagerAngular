@@ -1,0 +1,52 @@
+@import '/src/variables.scss';
+
+.country-detail {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+
+  mat-card {
+    width: 100%;
+    max-width: 800px;
+    background-color: $color-white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+
+    h3 {
+      margin-top: 1.5rem;
+      color: $color-purple;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+      margin: 0.5rem 0;
+
+      li {
+        margin-bottom: 0.25rem;
+        color: #333;
+      }
+    }
+  }
+
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: $color-light-gray;
+  }
+}
+
+.back-button {
+  margin: 1rem auto;
+  display: block;
+  color: $color-purple;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

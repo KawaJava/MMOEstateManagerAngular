@@ -34,6 +34,7 @@ import { PlayersDetailsComponent } from './modules/public/players/players-detail
 import { BoroughsComponent } from './modules/public/boroughs/list/boroughs/boroughs.component';
 import { BoroughsDetailsComponent } from './modules/public/boroughs/boroughs-details/boroughs-details.component';
 import { CountriesComponent } from './modules/public/countries/list/countries/countries.component';
+import { CountryDetailsComponent } from './modules/public/countries/country-details/country-details.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,8 @@ const routes: Routes = [
       {path: 'players/:slug', component: PlayersDetailsComponent},
       {path: 'boroughs', component: BoroughsComponent},
       {path: 'boroughs/:slug', component: BoroughsDetailsComponent},
-      {path: 'countries', component: CountriesComponent}
+      {path: 'countries', component: CountriesComponent},
+      {path: 'countries/:slug', component: CountryDetailsComponent}
     ]
   },
   {
