@@ -31,13 +31,15 @@ import { ClansIsCountryComponent } from './modules/admin/charts/clans-is-country
 import { HomepageComponent } from './modules/public/homepage/homepage.component';
 import { PlayersComponent } from './modules/public/players/list/players/players.component';
 import { PlayersDetailsComponent } from './modules/public/players/players-details/players-details.component';
+import { BoroughsComponent } from './modules/public/boroughs/list/boroughs/boroughs.component';
 
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
       {path: '', component: HomepageComponent},
       {path: 'players', component: PlayersComponent},
-      {path: 'players/:slug', component: PlayersDetailsComponent}
+      {path: 'players/:slug', component: PlayersDetailsComponent},
+      {path: 'boroughs', component: BoroughsComponent},
     ]
   },
   {

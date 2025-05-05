@@ -9,6 +9,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { HomepageComponent } from 'src/app/modules/public/homepage/homepage.component';
 import { PlayersComponent } from 'src/app/modules/public/players/list/players/players.component';
 import { PlayersDetailsComponent } from 'src/app/modules/public/players/players-details/players-details.component';
+import { BoroughsComponent } from 'src/app/modules/public/boroughs/list/boroughs/boroughs.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PlayersDetailsComponent } from 'src/app/modules/public/players/players-
     DefaultComponent,
     HomepageComponent,
     PlayersComponent,
-    PlayersDetailsComponent
+    PlayersDetailsComponent,
+    BoroughsComponent
   ],
   imports: [
     CommonModule,
