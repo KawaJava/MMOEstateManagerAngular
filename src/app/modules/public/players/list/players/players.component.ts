@@ -28,12 +28,10 @@ export class PlayersComponent implements OnInit {
     this.fetchPlayers();
   }
 
-
-
   fetchPlayers(): void {
     this.playerService.getPlayers(this.currentPage, this.pageSize).subscribe(data => {
       this.players = data;
-      this.totalPages = data.totalElements;
+      this.totalPages = Math.ceil(data.totalElements / this.pageSize);
       this.updatePageNumbers();
     });
   }
@@ -43,20 +41,19 @@ export class PlayersComponent implements OnInit {
       this.pageNumbers = [];
       return;
     }
-
+  
     const maxVisible = 5;
     const half = Math.floor(maxVisible / 2);
     let start = Math.max(1, this.currentPage + 1 - half);
     let end = Math.min(this.totalPages, start + maxVisible - 1);
-
+  
     if (end - start < maxVisible - 1) {
       start = Math.max(1, end - maxVisible + 1);
     }
+  
     this.pageNumbers = [];
     for (let i = start; i <= end; i++) {
-      if (i <= (this.totalPages / this.pageSize) + 1) {
-        this.pageNumbers.push(i);
-      }
+      this.pageNumbers.push(i);
     }
   }
 
