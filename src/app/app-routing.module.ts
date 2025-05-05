@@ -32,6 +32,7 @@ import { HomepageComponent } from './modules/public/homepage/homepage.component'
 import { PlayersComponent } from './modules/public/players/list/players/players.component';
 import { PlayersDetailsComponent } from './modules/public/players/players-details/players-details.component';
 import { BoroughsComponent } from './modules/public/boroughs/list/boroughs/boroughs.component';
+import { BoroughsDetailsComponent } from './modules/public/boroughs/boroughs-details/boroughs-details.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
       {path: 'players', component: PlayersComponent},
       {path: 'players/:slug', component: PlayersDetailsComponent},
       {path: 'boroughs', component: BoroughsComponent},
+      {path: 'boroughs/:slug', component: BoroughsDetailsComponent},
     ]
   },
   {

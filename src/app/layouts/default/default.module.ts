@@ -10,6 +10,7 @@ import { HomepageComponent } from 'src/app/modules/public/homepage/homepage.comp
 import { PlayersComponent } from 'src/app/modules/public/players/list/players/players.component';
 import { PlayersDetailsComponent } from 'src/app/modules/public/players/players-details/players-details.component';
 import { BoroughsComponent } from 'src/app/modules/public/boroughs/list/boroughs/boroughs.component';
+import { BoroughsDetailsComponent } from 'src/app/modules/public/boroughs/boroughs-details/boroughs-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BoroughsComponent } from 'src/app/modules/public/boroughs/list/boroughs
     HomepageComponent,
     PlayersComponent,
     PlayersDetailsComponent,
-    BoroughsComponent
+    BoroughsComponent,
+    BoroughsDetailsComponent
   ],
   imports: [
     CommonModule,

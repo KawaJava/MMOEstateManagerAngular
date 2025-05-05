@@ -1,0 +1,41 @@
+@import '/src/variables.scss';
+
+.borough-detail {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+
+  mat-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: $color-white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    .active {
+        color: #c62828;
+    }
+
+    .inactive {
+        color: $color-blue;
+      
+    }
+  }
+
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+}
+
+.back-button {
+  margin-bottom: 1rem;
+  color: $color-purple;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
