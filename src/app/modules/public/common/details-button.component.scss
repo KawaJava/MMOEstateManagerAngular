@@ -1,0 +1,13 @@
+@import '/src/variables.scss';
+
+button {
+    background-color: $color-purple;
+    color: $color-white;
+    font-size: 0.875rem;
+    font-weight: normal;
+    border-radius: 15px;
+
+    &:hover {
+      background-color: darken($color-purple, 20%);
+    }
+  }

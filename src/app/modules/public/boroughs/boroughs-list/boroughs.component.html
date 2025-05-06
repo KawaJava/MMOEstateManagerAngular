@@ -12,11 +12,9 @@
           </span>
         </p>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" [routerLink]="['/boroughs', borough.slug]">
-          Szczegóły
-        </button>
-      </mat-card-actions>
+        <mat-card-actions>
+          <app-details-button [link]="['/boroughs', borough.slug]"></app-details-button>
+        </mat-card-actions>
     </mat-card>
   </div>
   

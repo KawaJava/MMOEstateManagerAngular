@@ -6,9 +6,7 @@
         <p><strong>Data rozpoczęcia kadencji szeryfa:</strong> {{ country.sheriffStartDate | date: 'longDate' }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" [routerLink]="['/countries', country.slug]">
-          Szczegóły
-        </button>
+        <app-details-button [link]="['/countries', country.slug]"></app-details-button>
       </mat-card-actions>
     </mat-card>
   </div>

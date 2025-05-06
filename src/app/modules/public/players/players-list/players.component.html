@@ -12,9 +12,7 @@
             <p><strong>Data dodania:</strong> {{ player.created | date:'longDate' }}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" [routerLink]="['/players', player.slug]">
-                Więcej
-            </button>
+          <app-details-button [link]="['/players', player.slug]"></app-details-button>
         </mat-card-actions>
     </mat-card>
 

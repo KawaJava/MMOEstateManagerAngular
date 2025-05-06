@@ -33,15 +33,6 @@
   mat-card-actions {
     display: flex;
     justify-content: flex-end;
-
-    button {
-      background-color: $color-purple;
-      color: $color-white;
-
-      &:hover {
-        background-color: darken($color-purple, 10%);
-      }
-    }
   }
 }
 
