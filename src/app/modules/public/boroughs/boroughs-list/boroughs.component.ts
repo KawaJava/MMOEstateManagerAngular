@@ -1,37 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from '../../model/country';
-import { CountryService } from '../../service/countryService';
-import { PageEvent } from '@angular/material/paginator';
 import { Page } from 'src/app/shared/page';
+import { Borough } from '../model/borough';
+import { BoroughService } from '../service/boroughService';
 
 @Component({
-  selector: 'app-countries',
-  templateUrl: './countries.component.html',
-  styleUrls: ['./countries.component.scss']
+  selector: 'app-boroughs',
+  templateUrl: './boroughs.component.html',
+  styleUrls: ['./boroughs.component.scss']
 })
-export class CountriesComponent implements OnInit {
+export class BoroughsComponent implements OnInit {
 
-  countries!: Page<Country>;
+  boroughs!: Page<Borough>;
   pageSize = 12;
   currentPage = 0;
   totalPages = 0;
   pageNumbers: number[] = [];
 
-  constructor(private countryService: CountryService) { }
+  constructor(private boroughService: BoroughService) {}
 
   ngOnInit(): void {
-    this.fetchCountries();
+    this.fetchBoroughs();
   }
 
-  onPageChange(event: PageEvent): void {
-    this.pageSize = event.pageSize;
-    this.currentPage = event.pageIndex;
-    this.fetchCountries();
-  }
-
-  fetchCountries(): void {
-    this.countryService.getCountries(this.currentPage, this.pageSize).subscribe(data => {
-      this.countries = data;
+  fetchBoroughs(): void {
+    this.boroughService.getBoroughs(this.currentPage, this.pageSize).subscribe(data => {
+      this.boroughs = data;
       this.totalPages = Math.ceil(data.totalElements / this.pageSize);
       this.updatePageNumbers();
     });
@@ -60,20 +53,20 @@ export class CountriesComponent implements OnInit {
 
   goToPage(page: number): void {
     this.currentPage = page - 1;
-    this.fetchCountries();
+    this.fetchBoroughs();
   }
 
   prevPage(): void {
     if (this.currentPage > 0) {
       this.currentPage--;
-      this.fetchCountries();
+      this.fetchBoroughs();
     }
   }
 
   nextPage(): void {
     if (this.currentPage + 1 < this.totalPages) {
       this.currentPage++;
-      this.fetchCountries();
+      this.fetchBoroughs();
     }
   }
 

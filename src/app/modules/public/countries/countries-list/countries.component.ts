@@ -1,36 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Page } from 'src/app/shared/page';
-import { Player } from '../../model/player';
-import { PlayerService } from '../../service/playerService';
+import { Country } from '../model/country';
+import { CountryService } from '../service/countryService';
 
 @Component({
-  selector: 'app-players',
-  templateUrl: './players.component.html',
-  styleUrls: ['./players.component.scss']
+  selector: 'app-countries',
+  templateUrl: './countries.component.html',
+  styleUrls: ['./countries.component.scss']
 })
-export class PlayersComponent implements OnInit {
-  players!: Page<Player>;
+export class CountriesComponent implements OnInit {
+
+  countries!: Page<Country>;
   pageSize = 12;
   currentPage = 0;
   totalPages = 0;
   pageNumbers: number[] = [];
 
-  constructor(private playerService: PlayerService) { }
+  constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
-    this.fetchPlayers();
+    this.fetchCountries();
   }
 
   onPageChange(event: PageEvent): void {
     this.pageSize = event.pageSize;
     this.currentPage = event.pageIndex;
-    this.fetchPlayers();
+    this.fetchCountries();
   }
 
-  fetchPlayers(): void {
-    this.playerService.getPlayers(this.currentPage, this.pageSize).subscribe(data => {
-      this.players = data;
+  fetchCountries(): void {
+    this.countryService.getCountries(this.currentPage, this.pageSize).subscribe(data => {
+      this.countries = data;
       this.totalPages = Math.ceil(data.totalElements / this.pageSize);
       this.updatePageNumbers();
     });
@@ -41,16 +42,16 @@ export class PlayersComponent implements OnInit {
       this.pageNumbers = [];
       return;
     }
-  
+
     const maxVisible = 5;
     const half = Math.floor(maxVisible / 2);
     let start = Math.max(1, this.currentPage + 1 - half);
     let end = Math.min(this.totalPages, start + maxVisible - 1);
-  
+
     if (end - start < maxVisible - 1) {
       start = Math.max(1, end - maxVisible + 1);
     }
-  
+
     this.pageNumbers = [];
     for (let i = start; i <= end; i++) {
       this.pageNumbers.push(i);
@@ -59,22 +60,21 @@ export class PlayersComponent implements OnInit {
 
   goToPage(page: number): void {
     this.currentPage = page - 1;
-    this.fetchPlayers();
+    this.fetchCountries();
   }
 
   prevPage(): void {
     if (this.currentPage > 0) {
       this.currentPage--;
-      this.fetchPlayers();
+      this.fetchCountries();
     }
   }
 
   nextPage(): void {
     if (this.currentPage + 1 < this.totalPages) {
       this.currentPage++;
-      this.fetchPlayers();
+      this.fetchCountries();
     }
   }
 
 }
-

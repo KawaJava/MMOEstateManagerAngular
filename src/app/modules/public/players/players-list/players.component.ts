@@ -1,30 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Page } from 'src/app/shared/page';
-import { Borough } from '../../model/borough';
-import { BoroughService } from '../../service/boroughService';
+import { Player } from '../model/player';
+import { PlayerService } from '../service/playerService';
 
 @Component({
-  selector: 'app-boroughs',
-  templateUrl: './boroughs.component.html',
-  styleUrls: ['./boroughs.component.scss']
+  selector: 'app-players',
+  templateUrl: './players.component.html',
+  styleUrls: ['./players.component.scss']
 })
-export class BoroughsComponent implements OnInit {
-
-  boroughs!: Page<Borough>;
+export class PlayersComponent implements OnInit {
+  players!: Page<Player>;
   pageSize = 12;
   currentPage = 0;
   totalPages = 0;
   pageNumbers: number[] = [];
 
-  constructor(private boroughService: BoroughService) {}
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit(): void {
-    this.fetchBoroughs();
+    this.fetchPlayers();
   }
 
-  fetchBoroughs(): void {
-    this.boroughService.getBoroughs(this.currentPage, this.pageSize).subscribe(data => {
-      this.boroughs = data;
+  onPageChange(event: PageEvent): void {
+    this.pageSize = event.pageSize;
+    this.currentPage = event.pageIndex;
+    this.fetchPlayers();
+  }
+
+  fetchPlayers(): void {
+    this.playerService.getPlayers(this.currentPage, this.pageSize).subscribe(data => {
+      this.players = data;
       this.totalPages = Math.ceil(data.totalElements / this.pageSize);
       this.updatePageNumbers();
     });
@@ -35,16 +41,16 @@ export class BoroughsComponent implements OnInit {
       this.pageNumbers = [];
       return;
     }
-
+  
     const maxVisible = 5;
     const half = Math.floor(maxVisible / 2);
     let start = Math.max(1, this.currentPage + 1 - half);
     let end = Math.min(this.totalPages, start + maxVisible - 1);
-
+  
     if (end - start < maxVisible - 1) {
       start = Math.max(1, end - maxVisible + 1);
     }
-
+  
     this.pageNumbers = [];
     for (let i = start; i <= end; i++) {
       this.pageNumbers.push(i);
@@ -53,21 +59,22 @@ export class BoroughsComponent implements OnInit {
 
   goToPage(page: number): void {
     this.currentPage = page - 1;
-    this.fetchBoroughs();
+    this.fetchPlayers();
   }
 
   prevPage(): void {
     if (this.currentPage > 0) {
       this.currentPage--;
-      this.fetchBoroughs();
+      this.fetchPlayers();
     }
   }
 
   nextPage(): void {
     if (this.currentPage + 1 < this.totalPages) {
       this.currentPage++;
-      this.fetchBoroughs();
+      this.fetchPlayers();
     }
   }
 
 }
+

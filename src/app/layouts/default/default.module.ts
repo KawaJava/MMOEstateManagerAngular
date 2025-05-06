@@ -7,12 +7,12 @@ import { DefaultComponent } from './default.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { HomepageComponent } from 'src/app/modules/public/homepage/homepage.component';
-import { PlayersComponent } from 'src/app/modules/public/players/list/players/players.component';
 import { PlayersDetailsComponent } from 'src/app/modules/public/players/players-details/players-details.component';
-import { BoroughsComponent } from 'src/app/modules/public/boroughs/list/boroughs/boroughs.component';
 import { BoroughsDetailsComponent } from 'src/app/modules/public/boroughs/boroughs-details/boroughs-details.component';
-import { CountriesComponent } from 'src/app/modules/public/countries/list/countries/countries.component';
 import { CountryDetailsComponent } from 'src/app/modules/public/countries/country-details/country-details.component';
+import { BoroughsComponent } from 'src/app/modules/public/boroughs/boroughs-list/boroughs.component';
+import { PlayersComponent } from 'src/app/modules/public/players/players-list/players.component';
+import { CountriesComponent } from 'src/app/modules/public/countries/countries-list/countries.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
-import { PlayerComponent } from './modules/player/player.component';
 import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.component';
 import { AdminComponent } from './modules/admin/admin.component';
 import { AdminPlayerComponent } from './modules/admin/admin-player/admin-player.component';
@@ -29,12 +28,12 @@ import { GoldInBoroughComponent } from './modules/admin/charts/gold-in-borough/g
 import { PlayersIsCountryComponent } from './modules/admin/charts/players-is-country/players-is-country.component';
 import { ClansIsCountryComponent } from './modules/admin/charts/clans-is-country/clans-is-country.component';
 import { HomepageComponent } from './modules/public/homepage/homepage.component';
-import { PlayersComponent } from './modules/public/players/list/players/players.component';
 import { PlayersDetailsComponent } from './modules/public/players/players-details/players-details.component';
-import { BoroughsComponent } from './modules/public/boroughs/list/boroughs/boroughs.component';
 import { BoroughsDetailsComponent } from './modules/public/boroughs/boroughs-details/boroughs-details.component';
-import { CountriesComponent } from './modules/public/countries/list/countries/countries.component';
 import { CountryDetailsComponent } from './modules/public/countries/country-details/country-details.component';
+import { BoroughsComponent } from './modules/public/boroughs/boroughs-list/boroughs.component';
+import { PlayersComponent } from './modules/public/players/players-list/players.component';
+import { CountriesComponent } from './modules/public/countries/countries-list/countries.component';
 
 const routes: Routes = [
   {
