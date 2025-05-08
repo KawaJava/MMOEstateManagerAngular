@@ -21,3 +21,74 @@
   <div *ngIf="loading" class="loading">Ładowanie...</div>
   <div *ngIf="error" class="error">Nie znaleziono gracza.</div>
   
+
+<mat-expansion-panel (opened)="loadReviews(player.id)">
+  <mat-expansion-panel-header>
+    <mat-panel-title>Opinie o graczu</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div *ngIf="isLoadingReviews" class="loading">Ładowanie opinii...</div>
+  <div *ngIf="reviewError" class="error">Błąd podczas ładowania opinii.</div>
+
+  <ng-container *ngIf="reviews.length">
+    <mat-list>
+      <mat-list-item *ngFor="let review of reviews">
+        <div>
+          <h4>
+            {{ review.authorName }}
+            <span class="stars">
+              <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+                <mat-icon [ngClass]="{ 'filled': i < review.note }">star</mat-icon>
+              </ng-container>
+            </span>
+          </h4>
+          <p>{{ review.content }}</p>
+          <small>{{ review.createdAt | date:'short' }}</small>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </ng-container>
+
+  <div *ngIf="reviews.length && hasMoreReviews" class="load-more-wrapper">
+    <button mat-button color="accent" (click)="loadReviews(player.id, true)" [disabled]="isLoadingReviews">
+      Pokaż więcej
+    </button>
+  </div>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Dodaj swoją opinię</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form [formGroup]="reviewForm" (ngSubmit)="submitReview()" class="review-form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Imię autora</mat-label>
+      <input matInput formControlName="authorName" maxlength="60" required>
+      <mat-error *ngIf="reviewForm.get('authorName')?.hasError('required')">Pole wymagane</mat-error>
+      <mat-error *ngIf="reviewForm.get('authorName')?.hasError('maxlength')">Max 60 znaków</mat-error>
+    </mat-form-field>
+
+    <div class="stars-input">
+      <label>Ocena:</label>
+      <ng-container *ngFor="let star of [1,2,3,4,5]">
+        <mat-icon
+          [ngClass]="{ 'filled': star <= reviewForm.get('note')?.value }"
+          (click)="setRating(star)"
+        >star</mat-icon>
+      </ng-container>
+      <mat-error *ngIf="reviewForm.get('note')?.hasError('required')">Ocena wymagana</mat-error>
+    </div>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Opinia</mat-label>
+      <textarea matInput formControlName="content" maxlength="600" rows="4" required></textarea>
+      <mat-error *ngIf="reviewForm.get('content')?.hasError('required')">Pole wymagane</mat-error>
+      <mat-error *ngIf="reviewForm.get('content')?.hasError('maxlength')">Max 600 znaków</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="reviewForm.invalid">
+      Dodaj opinię
+    </button>
+  </form>
+</mat-expansion-panel>

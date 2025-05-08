@@ -20,6 +20,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [],
@@ -44,7 +45,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatOptionModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatExpansionModule
   ],
   exports: [
     MatIconModule,
@@ -67,7 +69,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatOptionModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatExpansionModule
   ],
   providers: [
     {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}}
