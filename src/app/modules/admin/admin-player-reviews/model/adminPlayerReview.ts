@@ -1,6 +1,8 @@
+import { AdminPlayer } from "../../admin-player/model/adminPlayer";
+
 export interface AdminPlayerReview {
   id: number;
-  playerId: number;
+  player: AdminPlayer;
   authorName: string;
   note: number;
   content: string;

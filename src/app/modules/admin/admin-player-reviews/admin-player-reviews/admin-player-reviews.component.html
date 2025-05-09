@@ -13,7 +13,7 @@
     </ng-container>
 
     <ng-container matColumnDef="authorName">
-        <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+        <th mat-header-cell *matHeaderCellDef> Nick dodającego opinie </th>
         <td mat-cell *matCellDef="let element"> {{element.authorName}} </td>
     </ng-container>
 
@@ -32,9 +32,9 @@
         <td mat-cell *matCellDef="let element"> {{element.actualGold}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="playerId">
-        <th mat-header-cell *matHeaderCellDef> Id gracza </th>
-        <td mat-cell *matCellDef="let element"> {{element.playerId}} </td>
+    <ng-container matColumnDef="player">
+        <th mat-header-cell *matHeaderCellDef> Gracz </th>
+        <td mat-cell *matCellDef="let element"> {{element.player.name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="createdAt">

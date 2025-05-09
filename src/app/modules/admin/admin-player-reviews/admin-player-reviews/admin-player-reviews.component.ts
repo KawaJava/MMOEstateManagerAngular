@@ -17,7 +17,7 @@ export class AdminPlayerReviewsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatTable) table!: MatTable<AdminPlayerReview>;
 
-  displayedColumns: string[] = ['id', 'playerId', 'authorName', 'note', 'content', 'createdAt', 'accepted', 'actions'];
+  displayedColumns: string[] = ['id', 'authorName', 'note', 'player', 'content', 'createdAt', 'accepted', 'actions'];
   data: AdminPlayerReview[] = [];
   totalElements = 0;
 
