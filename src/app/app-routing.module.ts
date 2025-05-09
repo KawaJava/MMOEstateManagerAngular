@@ -35,6 +35,7 @@ import { BoroughsComponent } from './modules/public/boroughs/boroughs-list/borou
 import { PlayersComponent } from './modules/public/players/players-list/players.component';
 import { CountriesComponent } from './modules/public/countries/countries-list/countries.component';
 import { AdminPlayerReviewsComponent } from './modules/admin/admin-player-reviews/admin-player-reviews/admin-player-reviews.component';
+import { AdminPlayerReviewsToAcceptComponent } from './modules/admin/admin-player-reviews/admin-player-reviews-to-accept/admin-player-reviews-to-accept.component';
 
 const routes: Routes = [
   {
@@ -78,7 +79,8 @@ const routes: Routes = [
       {path: 'admin/charts/gold-in-borough', component: GoldInBoroughComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/charts/players-in-country', component: PlayersIsCountryComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/charts/clans-in-country', component: ClansIsCountryComponent, canActivate: [AdminAuthorizeGuard]},
-      {path: 'admin/player-revievs', component: AdminPlayerReviewsComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/player-reviews', component: AdminPlayerReviewsComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/player-reviews-to-accept', component: AdminPlayerReviewsToAcceptComponent, canActivate: [AdminAuthorizeGuard]},
     ]
   },
 ];

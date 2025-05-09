@@ -18,4 +18,10 @@ export class AdminPlayerReviewsService {
   deletePlayerReview(id: number): Observable<void> {
     return this.http.delete<void>(`/api/admin/player-reviews/`+ id);
   }
+  getReviewsToAccept(): Observable<AdminPlayerReview[]> {
+      return this.http.get<AdminPlayerReview[]>(`/api/admin/player-reviews/to-accept`);
+  }
+  acceptPlayerReview(id: number): Observable<void> {
+    return this.http.patch<void>(`/api/admin/player-reviews/${id}/accept`, {});
+  }
 }
