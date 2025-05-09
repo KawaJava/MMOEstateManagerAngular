@@ -5,11 +5,9 @@ import { AdminComponent } from 'src/app/modules/admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { AdminPlayerComponent } from 'src/app/modules/admin/admin-player/admin-player.component';
-import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-update/admin-player-update.component';
+import { AdminPlayerComponent } from 'src/app/modules/admin/admin-player-all/admin-player/admin-player.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AdminPlayerAddComponent } from 'src/app/modules/admin/admin-player-add/admin-player-add.component';
-import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player-inactive/admin-player-inactive.component';
+import { AdminPlayerAddComponent } from 'src/app/modules/admin/admin-player-all/admin-player-add/admin-player-add.component';
 import { AdminConfirmDialogComponent } from 'src/app/modules/admin/admin-confirm-dialog/admin-confirm-dialog.component';
 import { AdminCountryUpdateComponent } from 'src/app/modules/admin/admin-country-all/admin-country-update/admin-country-update.component';
 import { AdminCountryAddComponent } from 'src/app/modules/admin/admin-country-all/admin-country-add/admin-country-add.component';
@@ -33,6 +31,8 @@ import { AdminPlayerReviewsToAcceptComponent } from 'src/app/modules/admin/admin
 import { AdminBoroughAddComponent } from 'src/app/modules/admin/admin-borough-all/admin-borough-add/admin-borough-add.component';
 import { AdminBoroughChangeLeaderComponent } from 'src/app/modules/admin/admin-borough-all/admin-borough-change-leader/admin-borough-change-leader.component';
 import { AdminCountryComponent } from 'src/app/modules/admin/admin-country-all/admin-country/admin-country.component';
+import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player-all/admin-player-inactive/admin-player-inactive.component';
+import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-all/admin-player-update/admin-player-update.component';
 
 
 

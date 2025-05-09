@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminPlayerUpdateService } from './admin-player-update.service';
-import { AdminPlayerUpdate } from '../admin-player/model/adminPlayerUpdate';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AdminPlayerUpdate } from '../model/adminPlayerUpdate';
 
 @Component({
   selector: 'app-admin-player-update',

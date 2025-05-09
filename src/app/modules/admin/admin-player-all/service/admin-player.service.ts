@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AdminPlayer } from './model/adminPlayer';
+import { AdminPlayer } from '../model/adminPlayer';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Page } from 'src/app/shared/page';

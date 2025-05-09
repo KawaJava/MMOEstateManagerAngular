@@ -3,7 +3,7 @@ import { MatTable } from '@angular/material/table';
 import { AdminHistoricalSheriff } from '../admin-historical-sheriffs/model/adminHistoricalSheriff';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormPlayerService } from '../admin-country-all/model/form-player.service';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
+import { AdminPlayer } from '../admin-player-all/model/adminPlayer';
 import { AdminHistoricalSheriffsFilteredService } from './admin-historical-sheriffs-filtered.service';
 import { HistoricalSheriffsFilteredDto } from '../admin-historical-sheriffs/model/historicalSheriffsFilteredDto';
 import { switchMap, of } from 'rxjs';

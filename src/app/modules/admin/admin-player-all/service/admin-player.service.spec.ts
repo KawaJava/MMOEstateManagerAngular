@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AdminPlayerService } from './admin-player.service';
+import { AdminPlayerService } from '../service/admin-player.service';
 
 describe('AdminPlayerService', () => {
   let service: AdminPlayerService;

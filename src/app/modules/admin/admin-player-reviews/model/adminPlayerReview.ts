@@ -1,4 +1,4 @@
-import { AdminPlayer } from "../../admin-player/model/adminPlayer";
+import { AdminPlayer } from "../../admin-player-all/model/adminPlayer";
 
 export interface AdminPlayerReview {
   id: number;

@@ -6,7 +6,7 @@ import { AdminConfirmDialogService } from '../admin-confirm-dialog.service';
 import { AdminHistoricalSheriffsService } from './admin-historical-sheriffs.service';
 import { startWith, switchMap, map, of } from 'rxjs';
 import { FormPlayerService } from '../admin-country-all/model/form-player.service';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
+import { AdminPlayer } from '../admin-player-all/model/adminPlayer';
 import { AdminHistoricalSheriffsFilteredService } from '../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
 import { AdminCountry } from '../admin-country-all/model/adminCountry';
 

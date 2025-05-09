@@ -5,7 +5,7 @@ import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import { FormPlayerService } from '../admin-country-all/model/form-player.service';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
+import { AdminPlayer } from '../admin-player-all/model/adminPlayer';
 import { AdminHistoricalLeadersFilteredService } from './admin-historical-leaders-filtered.service';
 import { switchMap, of } from 'rxjs';
 

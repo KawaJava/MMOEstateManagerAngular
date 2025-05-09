@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTable } from '@angular/material/table';
 import { startWith, switchMap, map, of } from 'rxjs';
 import { AdminConfirmDialogService } from '../../admin-confirm-dialog.service';
-import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { AdminPlayer } from '../../admin-player-all/model/adminPlayer';
 import { AdminCountry } from '../model/adminCountry';
 import { FormPlayerService } from '../model/form-player.service';
 import { AdminCountryService } from '../service/admin-country.service';

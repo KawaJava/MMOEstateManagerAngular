@@ -6,7 +6,7 @@ import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 import { FormPlayerService } from '../admin-country-all/model/form-player.service';
 import { AdminHistoricalLeadersFilteredService } from '../admin-historical-leaders-filtered/admin-historical-leaders-filtered.service';
 import { AdminHistoricalLeader } from '../admin-historical-leaders/model/adminHistoricalLeader';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
+import { AdminPlayer } from '../admin-player-all/model/adminPlayer';
 import { AdminGoldHistoryFilteredService } from './admin-gold-history-filtered.service';
 import { AdminGoldHistory } from '../admin-gold-history/model/adminGoldHistory';
 import { switchMap, of } from 'rxjs';

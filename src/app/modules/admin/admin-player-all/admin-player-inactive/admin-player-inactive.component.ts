@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { AdminPlayerService } from '../admin-player/admin-player.service';
+import { AdminPlayer } from '../model/adminPlayer';
+import { AdminPlayerService } from '../service/admin-player.service';
 
 @Component({
   selector: 'app-admin-player-inactive',

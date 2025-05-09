@@ -3,7 +3,7 @@ import { AdminBorough } from '../model/adminBorough';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTable } from '@angular/material/table';
 import { startWith, switchMap, map, of } from 'rxjs';
-import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { AdminPlayer } from '../../admin-player-all/model/adminPlayer';
 import { FormPlayerService } from '../../admin-country-all/model/form-player.service';
 import { AdminHistoricalSheriffsFilteredService } from '../../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
 import { AdminBoroughService } from '../service/admin-borough.service';

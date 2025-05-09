@@ -3,10 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.component';
 import { AdminComponent } from './modules/admin/admin.component';
-import { AdminPlayerComponent } from './modules/admin/admin-player/admin-player.component';
-import { AdminPlayerUpdateComponent } from './modules/admin/admin-player-update/admin-player-update.component';
-import { AdminPlayerAddComponent } from './modules/admin/admin-player-add/admin-player-add.component';
-import { AdminPlayerInactiveComponent } from './modules/admin/admin-player-inactive/admin-player-inactive.component';
+import { AdminPlayerComponent } from './modules/admin/admin-player-all/admin-player/admin-player.component';
+import { AdminPlayerAddComponent } from './modules/admin/admin-player-all/admin-player-add/admin-player-add.component';
 import { AdminCountryUpdateComponent } from './modules/admin/admin-country-all/admin-country-update/admin-country-update.component';
 import { AdminCountryAddComponent } from './modules/admin/admin-country-all/admin-country-add/admin-country-add.component';
 import { AdminCountryChangeSheriffComponent } from './modules/admin/admin-country-all/admin-country-change-sheriff/admin-country-change-sheriff.component';
@@ -36,6 +34,8 @@ import { AdminPlayerReviewsToAcceptComponent } from './modules/admin/admin-playe
 import { AdminBoroughAddComponent } from './modules/admin/admin-borough-all/admin-borough-add/admin-borough-add.component';
 import { AdminBoroughChangeLeaderComponent } from './modules/admin/admin-borough-all/admin-borough-change-leader/admin-borough-change-leader.component';
 import { AdminCountryComponent } from './modules/admin/admin-country-all/admin-country/admin-country.component';
+import { AdminPlayerInactiveComponent } from './modules/admin/admin-player-all/admin-player-inactive/admin-player-inactive.component';
+import { AdminPlayerUpdateComponent } from './modules/admin/admin-player-all/admin-player-update/admin-player-update.component';
 
 
 const routes: Routes = [

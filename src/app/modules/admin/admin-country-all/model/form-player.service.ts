@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { AdminPlayer } from '../../admin-player-all/model/adminPlayer';
 import { Page } from 'src/app/shared/page';
 
 @Injectable({

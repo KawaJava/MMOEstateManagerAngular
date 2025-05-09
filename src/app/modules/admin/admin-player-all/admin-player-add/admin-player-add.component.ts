@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminPlayerUpdate } from '../admin-player/model/adminPlayerUpdate';
+import { AdminPlayerUpdate } from '../model/adminPlayerUpdate';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AdminPlayerUpdateService } from '../admin-player-update/admin-player-update.service';
