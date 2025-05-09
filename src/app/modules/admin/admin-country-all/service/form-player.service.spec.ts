@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FormPlayerService } from './form-player.service';
+import { FormPlayerService } from '../model/form-player.service';
 
 describe('FormPlayerService', () => {
   let service: FormPlayerService;

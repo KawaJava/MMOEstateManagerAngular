@@ -4,10 +4,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { AdminBoroughAddService } from '../service/admin-borough-add.service';
 import { AdminBoroughAdd } from '../model/adminBoroughAdd';
-import { FormPlayerService } from '../../admin-country-add/form-player.service';
-import { AdminCountry } from '../../admin-country/model/adminCountry';
+import { FormPlayerService } from '../../admin-country-all/model/form-player.service';
 import { AdminHistoricalSheriffsFilteredService } from '../../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
 import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { AdminCountry } from '../../admin-country-all/model/adminCountry';
 
 @Component({
   selector: 'app-admin-borough-add',

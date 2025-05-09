@@ -7,7 +7,7 @@ import { AdminHistoricalLeadersService } from './admin-historical-leaders.servic
 import { startWith, switchMap, map, of } from 'rxjs';
 import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
+import { FormPlayerService } from '../admin-country-all/model/form-player.service';
 import { AdminHistoricalLeadersFilteredService } from '../admin-historical-leaders-filtered/admin-historical-leaders-filtered.service';
 import { AdminBoroughService } from '../admin-borough-all/service/admin-borough.service';
 

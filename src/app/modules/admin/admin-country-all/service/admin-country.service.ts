@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AdminCountry } from './model/adminCountry';
 import { Observable } from 'rxjs';
 import { Page } from 'src/app/shared/page';
-import { AdminCountryGeneralInfo } from './model/adminCountryGeneralInfo';
-import { AdminCountryAdd } from './model/adminCountryAdd';
+import { AdminCountry } from '../model/adminCountry';
+import { AdminCountryAdd } from '../model/adminCountryAdd';
+import { AdminCountryGeneralInfo } from '../model/adminCountryGeneralInfo';
 
 @Injectable({
   providedIn: 'root'

@@ -7,10 +7,9 @@ import { AdminPlayerComponent } from './modules/admin/admin-player/admin-player.
 import { AdminPlayerUpdateComponent } from './modules/admin/admin-player-update/admin-player-update.component';
 import { AdminPlayerAddComponent } from './modules/admin/admin-player-add/admin-player-add.component';
 import { AdminPlayerInactiveComponent } from './modules/admin/admin-player-inactive/admin-player-inactive.component';
-import { AdminCountryComponent } from './modules/admin/admin-country/admin-country.component';
-import { AdminCountryUpdateComponent } from './modules/admin/admin-country-update/admin-country-update.component';
-import { AdminCountryAddComponent } from './modules/admin/admin-country-add/admin-country-add.component';
-import { AdminCountryChangeSheriffComponent } from './modules/admin/admin-country-change-sheriff/admin-country-change-sheriff.component';
+import { AdminCountryUpdateComponent } from './modules/admin/admin-country-all/admin-country-update/admin-country-update.component';
+import { AdminCountryAddComponent } from './modules/admin/admin-country-all/admin-country-add/admin-country-add.component';
+import { AdminCountryChangeSheriffComponent } from './modules/admin/admin-country-all/admin-country-change-sheriff/admin-country-change-sheriff.component';
 import { AdminHistoricalSheriffsComponent } from './modules/admin/admin-historical-sheriffs/admin-historical-sheriffs.component';
 import { AdminHistoricalSheriffsFilteredComponent } from './modules/admin/admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.component';
 import { AdminBoroughComponent } from './modules/admin/admin-borough-all/admin-borough/admin-borough.component';
@@ -36,6 +35,8 @@ import { AdminPlayerReviewsComponent } from './modules/admin/admin-player-review
 import { AdminPlayerReviewsToAcceptComponent } from './modules/admin/admin-player-reviews/admin-player-reviews-to-accept/admin-player-reviews-to-accept.component';
 import { AdminBoroughAddComponent } from './modules/admin/admin-borough-all/admin-borough-add/admin-borough-add.component';
 import { AdminBoroughChangeLeaderComponent } from './modules/admin/admin-borough-all/admin-borough-change-leader/admin-borough-change-leader.component';
+import { AdminCountryComponent } from './modules/admin/admin-country-all/admin-country/admin-country.component';
+
 
 const routes: Routes = [
   {

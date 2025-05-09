@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminCountryGeneralInfo } from '../admin-country/model/adminCountryGeneralInfo';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { AdminCountryService } from '../admin-country/admin-country.service';
+import { AdminCountryGeneralInfo } from '../model/adminCountryGeneralInfo';
+import { AdminCountryService } from '../service/admin-country.service';
 
 @Component({
   selector: 'app-admin-country-update',

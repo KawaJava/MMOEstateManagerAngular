@@ -2,12 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { AdminHistoricalSheriff } from '../admin-historical-sheriffs/model/adminHistoricalSheriff';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
+import { FormPlayerService } from '../admin-country-all/model/form-player.service';
 import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { AdminCountry } from '../admin-country/model/adminCountry';
 import { AdminHistoricalSheriffsFilteredService } from './admin-historical-sheriffs-filtered.service';
 import { HistoricalSheriffsFilteredDto } from '../admin-historical-sheriffs/model/historicalSheriffsFilteredDto';
 import { switchMap, of } from 'rxjs';
+import { AdminCountry } from '../admin-country-all/model/adminCountry';
 
 @Component({
   selector: 'app-admin-historical-sheriffs-filtered',

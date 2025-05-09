@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AdminCountryAdd } from '../admin-country/model/adminCountryAdd';
-import { AdminCountryService } from '../admin-country/admin-country.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { FormPlayerService } from './form-player.service';
+import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { FormPlayerService } from '../model/form-player.service';
+import { AdminCountryAdd } from '../model/adminCountryAdd';
+import { AdminCountryService } from '../service/admin-country.service';
 
 @Component({
   selector: 'app-admin-country-add',

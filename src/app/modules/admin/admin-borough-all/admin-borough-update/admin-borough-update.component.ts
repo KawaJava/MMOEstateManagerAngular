@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminBoroughGeneralInfo } from '../model/adminBoroughGeneralInfo';
-import { AdminCountry } from '../../admin-country/model/adminCountry';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { AdminHistoricalSheriffsFilteredService } from '../../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
 import { AdminBoroughAddService } from '../service/admin-borough-add.service';
+import { AdminCountry } from '../../admin-country-all/model/adminCountry';
 
 @Component({
   selector: 'app-admin-borough-update',

@@ -1,12 +1,13 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { AdminCountry } from './model/adminCountry';
 import { MatPaginator } from '@angular/material/paginator';
-import { AdminCountryService } from './admin-country.service';
-import { AdminConfirmDialogService } from '../admin-confirm-dialog.service';
 import { MatTable } from '@angular/material/table';
-import { map, of, startWith, switchMap } from 'rxjs';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
+import { startWith, switchMap, map, of } from 'rxjs';
+import { AdminConfirmDialogService } from '../../admin-confirm-dialog.service';
+import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { AdminCountry } from '../model/adminCountry';
+import { FormPlayerService } from '../model/form-player.service';
+import { AdminCountryService } from '../service/admin-country.service';
+
 
 @Component({
   selector: 'app-admin-country',

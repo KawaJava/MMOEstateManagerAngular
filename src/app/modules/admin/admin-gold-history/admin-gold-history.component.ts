@@ -6,7 +6,7 @@ import { AdminConfirmDialogService } from '../admin-confirm-dialog.service';
 import { AdminGoldHistoryService } from './admin-gold-history.service';
 import { startWith, switchMap, map, of } from 'rxjs';
 import { AdminBorough } from '../admin-borough-all/model/adminBorough';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
+import { FormPlayerService } from '../admin-country-all/model/form-player.service';
 import { AdminHistoricalLeadersFilteredService } from '../admin-historical-leaders-filtered/admin-historical-leaders-filtered.service';
 import { AdminPlayer } from '../admin-player/model/adminPlayer';
 

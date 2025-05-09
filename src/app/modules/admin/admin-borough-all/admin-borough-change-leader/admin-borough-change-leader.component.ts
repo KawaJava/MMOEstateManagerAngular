@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { FormPlayerService } from '../../admin-country-add/form-player.service';
+import { FormPlayerService } from '../../admin-country-all/model/form-player.service';
 import { AdminPlayer } from '../../admin-player/model/adminPlayer';
 import { AdminBoroughAddService } from '../service/admin-borough-add.service';
 

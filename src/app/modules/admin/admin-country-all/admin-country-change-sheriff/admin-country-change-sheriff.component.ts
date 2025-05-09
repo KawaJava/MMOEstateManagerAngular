@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
-import { AdminCountryService } from '../admin-country/admin-country.service';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
+import { FormPlayerService } from '../model/form-player.service';
+import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { AdminCountryService } from '../service/admin-country.service';
 
 @Component({
   selector: 'app-admin-country-change-sheriff',
@@ -13,7 +13,6 @@ import { AdminPlayer } from '../admin-player/model/adminPlayer';
 })
 export class AdminCountryChangeSheriffComponent implements OnInit {
 
-  //country!: AdminCountryAdd;
   countryForm!: FormGroup;
   players: Array<AdminPlayer> = [];
 

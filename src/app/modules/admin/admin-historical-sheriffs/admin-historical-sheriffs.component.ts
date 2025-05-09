@@ -5,10 +5,10 @@ import { MatTable } from '@angular/material/table';
 import { AdminConfirmDialogService } from '../admin-confirm-dialog.service';
 import { AdminHistoricalSheriffsService } from './admin-historical-sheriffs.service';
 import { startWith, switchMap, map, of } from 'rxjs';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
+import { FormPlayerService } from '../admin-country-all/model/form-player.service';
 import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { AdminCountry } from '../admin-country/model/adminCountry';
 import { AdminHistoricalSheriffsFilteredService } from '../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
+import { AdminCountry } from '../admin-country-all/model/adminCountry';
 
 @Component({
   selector: 'app-admin-historical-sheriffs',
