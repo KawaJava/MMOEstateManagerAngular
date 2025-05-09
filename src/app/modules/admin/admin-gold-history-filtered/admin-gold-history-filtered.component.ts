@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoldHistoryFilteredDto } from '../admin-gold-history/model/goldHistoryFilteredDto';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
-import { AdminBorough } from '../admin-borough/model/adminBorough';
+import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 import { FormPlayerService } from '../admin-country-add/form-player.service';
 import { AdminHistoricalLeadersFilteredService } from '../admin-historical-leaders-filtered/admin-historical-leaders-filtered.service';
 import { AdminHistoricalLeader } from '../admin-historical-leaders/model/adminHistoricalLeader';

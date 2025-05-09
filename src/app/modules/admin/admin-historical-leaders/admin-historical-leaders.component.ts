@@ -5,11 +5,11 @@ import { MatTable } from '@angular/material/table';
 import { AdminConfirmDialogService } from '../admin-confirm-dialog.service';
 import { AdminHistoricalLeadersService } from './admin-historical-leaders.service';
 import { startWith, switchMap, map, of } from 'rxjs';
-import { AdminBorough } from '../admin-borough/model/adminBorough';
+import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { AdminBoroughService } from '../admin-borough/admin-borough.service';
 import { FormPlayerService } from '../admin-country-add/form-player.service';
 import { AdminHistoricalLeadersFilteredService } from '../admin-historical-leaders-filtered/admin-historical-leaders-filtered.service';
+import { AdminBoroughService } from '../admin-borough-all/service/admin-borough.service';
 
 @Component({
   selector: 'app-admin-historical-leaders',

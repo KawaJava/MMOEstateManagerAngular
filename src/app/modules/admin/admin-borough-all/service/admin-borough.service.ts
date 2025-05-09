@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AdminBorough } from './model/adminBorough';
 import { Observable } from 'rxjs';
 import { Page } from 'src/app/shared/page';
+import { AdminBorough } from '../model/adminBorough';
 
 @Injectable({
   providedIn: 'root'

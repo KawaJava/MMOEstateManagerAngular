@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminHistoricalLeader } from '../admin-historical-leaders/model/adminHistoricalLeader';
 import { HistoricalLeadersFilteredDto } from '../admin-historical-leaders/model/historicalLeadersFilteredDto';
-import { AdminBorough } from '../admin-borough/model/adminBorough';
+import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import { FormPlayerService } from '../admin-country-add/form-player.service';

@@ -3,7 +3,7 @@ import { AdminHistoricalLeader } from '../admin-historical-leaders/model/adminHi
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HistoricalLeadersFilteredDto } from '../admin-historical-leaders/model/historicalLeadersFilteredDto';
-import { AdminBorough } from '../admin-borough/model/adminBorough';
+import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 
 @Injectable({
   providedIn: 'root'

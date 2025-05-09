@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { AdminBorough } from './model/adminBorough';
+import { AdminBorough } from '../model/adminBorough';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTable } from '@angular/material/table';
-import { AdminBoroughService } from './admin-borough.service';
 import { startWith, switchMap, map, of } from 'rxjs';
-import { AdminCountry } from '../admin-country/model/adminCountry';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
-import { AdminHistoricalSheriffsFilteredService } from '../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
+import { AdminCountry } from '../../admin-country/model/adminCountry';
+import { AdminPlayer } from '../../admin-player/model/adminPlayer';
+import { FormPlayerService } from '../../admin-country-add/form-player.service';
+import { AdminHistoricalSheriffsFilteredService } from '../../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
+import { AdminBoroughService } from '../service/admin-borough.service';
 
 @Component({
   selector: 'app-admin-borough',

@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { FormPlayerService } from '../admin-country-add/form-player.service';
-import { AdminPlayer } from '../admin-player/model/adminPlayer';
-import { AdminBoroughAdd } from '../admin-borough/model/adminBoroughAdd';
-import { AdminCountry } from '../admin-country/model/adminCountry';
-import { AdminHistoricalSheriffsFilteredService } from '../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
-import { AdminBoroughAddService } from './admin-borough-add.service';
+import { AdminBoroughAddService } from '../service/admin-borough-add.service';
+import { AdminBoroughAdd } from '../model/adminBoroughAdd';
+import { FormPlayerService } from '../../admin-country-add/form-player.service';
+import { AdminCountry } from '../../admin-country/model/adminCountry';
+import { AdminHistoricalSheriffsFilteredService } from '../../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
+import { AdminPlayer } from '../../admin-player/model/adminPlayer';
 
 @Component({
   selector: 'app-admin-borough-add',
