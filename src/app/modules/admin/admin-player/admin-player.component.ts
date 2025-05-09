@@ -13,7 +13,6 @@ import { MatTable } from '@angular/material/table';
 })
 export class AdminPlayerComponent implements AfterViewInit {
 
-  //dataSource: AdminPlayer[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatTable) table!: MatTable<any>;
   displayedColumns: string[] = ["id", "name", "email", "slug", "clan", "isActive", "created", "actions"];
