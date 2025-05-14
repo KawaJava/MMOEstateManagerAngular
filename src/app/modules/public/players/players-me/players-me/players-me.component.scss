@@ -1,0 +1,97 @@
+@import '/src/variables.scss';
+
+.player-profile {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+
+  mat-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: $color-white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 1rem 1.5rem;
+
+    mat-card-title {
+      font-size: 1.5rem;
+      color: $color-purple;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    mat-card-content {
+      p {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+
+        strong {
+          color: #455A64;
+        }
+
+        span.active {
+          color: $color-blue;
+          font-weight: 600;
+        }
+
+        span.inactive {
+          color: #c62828;
+          font-weight: 600;
+        }
+      }
+
+      h4 {
+        margin-top: 1rem;
+        color: $color-purple;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      ul {
+        padding-left: 1.2rem;
+
+        li {
+          margin: 0.25rem 0;
+          color: #455A64;
+        }
+      }
+    }
+  }
+
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #455A64;
+  }
+}
+mat-list {
+  margin-top: 1rem;
+  background-color: $color-light-gray;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+
+  mat-list-item {
+    padding: 0.75rem 1rem;
+
+    .country-name {
+      font-weight: 600;
+      color: $color-blue;
+    }
+
+    .country-meta {
+      font-size: 0.9rem;
+      color: #455A64;;
+    }
+
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+

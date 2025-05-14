@@ -1,0 +1,33 @@
+<div *ngIf="loading" class="loading">Ładowanie...</div>
+<div *ngIf="error" class="error">Nie udało się załadować danych gracza.</div>
+
+<div *ngIf="player" class="player-profile">
+    <mat-card>
+        <mat-card-title>{{ player.name }}</mat-card-title>
+        <mat-card-content>
+            <p><strong>Email:</strong> {{ player.email }}</p>
+            <p><strong>Klan:</strong> {{ player.clan }}</p>
+            <p><strong>Status:</strong>
+                <span [ngClass]="{ 'active': player.active, 'inactive': !player.active }">
+                    {{ player.active ? 'Aktywny' : 'Nieaktywny' }}
+                </span>
+            </p>
+            <p><strong>Dołączono:</strong> {{ player.created | date:'longDate' }}</p>
+
+            <div *ngIf="player.countries?.length">
+                <h4>Przydzielone hrabstwa:</h4>
+                <mat-list>
+                    <mat-list-item *ngFor="let country of player.countries">
+                        <mat-icon matListIcon color="primary">flag</mat-icon>
+                        <div matLine class="country-name">{{ country.name }}</div>
+                        <div matLine class="country-meta">
+                            Limit złota: {{ country.goldLimit }} |
+                            Rządzisz od: {{ country.sheriffStartDate | date:'longDate' }}
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>

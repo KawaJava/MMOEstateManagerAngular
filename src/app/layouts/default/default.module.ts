@@ -14,6 +14,7 @@ import { BoroughsComponent } from 'src/app/modules/public/boroughs/boroughs-list
 import { PlayersComponent } from 'src/app/modules/public/players/players-list/players.component';
 import { CountriesComponent } from 'src/app/modules/public/countries/countries-list/countries.component';
 import { DetailsButton } from 'src/app/modules/public/common/detailsButton';
+import { PlayersMeComponent } from 'src/app/modules/public/players/players-me/players-me/players-me.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DetailsButton } from 'src/app/modules/public/common/detailsButton';
     BoroughsDetailsComponent,
     CountriesComponent,
     CountryDetailsComponent,
-    DetailsButton
+    DetailsButton,
+    PlayersMeComponent
   ],
   imports: [
     CommonModule,

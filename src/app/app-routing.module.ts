@@ -36,6 +36,7 @@ import { AdminBoroughChangeLeaderComponent } from './modules/admin/admin-borough
 import { AdminCountryComponent } from './modules/admin/admin-country-all/admin-country/admin-country.component';
 import { AdminPlayerInactiveComponent } from './modules/admin/admin-player-all/admin-player-inactive/admin-player-inactive.component';
 import { AdminPlayerUpdateComponent } from './modules/admin/admin-player-all/admin-player-update/admin-player-update.component';
+import { PlayersMeComponent } from './modules/public/players/players-me/players-me/players-me.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
       {path: '', component: HomepageComponent},
       {path: 'players', component: PlayersComponent},
       {path: 'players/:slug', component: PlayersDetailsComponent},
+      {path: 'players-me', component: PlayersMeComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'boroughs', component: BoroughsComponent},
       {path: 'boroughs/:slug', component: BoroughsDetailsComponent},
       {path: 'countries', component: CountriesComponent},
