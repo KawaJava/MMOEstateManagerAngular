@@ -1,32 +1,22 @@
 <div class="boroughs-wrapper">
-    <mat-card *ngFor="let borough of boroughs?.content" class="borough-card">
-      <mat-card-title>{{ borough.name }}</mat-card-title>
-      <mat-card-content>
-        <p><strong>Obecny wójt:</strong> {{ borough.actualLeader.name }}</p>
-        <p><strong>Data rozpoczęcia przywództwa:</strong> {{ borough.leaderStartDate | date: 'longDate' }}</p>
-        <p><strong>Złoto:</strong> {{ borough.actualGold }}</p>
-        <p><strong>Data dodania złota:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
-        <p><strong>Email wysłany:</strong>
-          <span [ngClass]="{ 'active': borough.emailSend, 'inactive': !borough.emailSend }">
-            {{ borough.emailSend ? 'Tak' : 'Nie' }}
-          </span>
-        </p>
-      </mat-card-content>
-        <mat-card-actions>
-          <app-details-button [link]="['/boroughs', borough.slug]"></app-details-button>
-        </mat-card-actions>
-    </mat-card>
-  </div>
-  
-  <div class="pagination">
-    <span (click)="prevPage()" [class.disabled]="currentPage === 0">&lt;</span>
-  
-    <span *ngFor="let page of pageNumbers"
-          [class.active]="page === currentPage + 1"
-          (click)="goToPage(page)">
-      {{ page }}
-    </span>
-  
-    <span (click)="nextPage()" [class.disabled]="currentPage + 1 === totalPages">&gt;</span>
-  </div>
-  
+  <mat-card *ngFor="let borough of boroughs?.content" class="borough-card">
+    <mat-card-title>{{ borough.name }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Obecny wójt:</strong> {{ borough.actualLeader.name }}</p>
+      <p><strong>Data rozpoczęcia przywództwa:</strong> {{ borough.leaderStartDate | date: 'longDate' }}</p>
+      <p><strong>Złoto:</strong> {{ borough.actualGold }}</p>
+      <p><strong>Data dodania złota:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
+      <p><strong>Email wysłany:</strong>
+        <span [ngClass]="{ 'active': borough.emailSend, 'inactive': !borough.emailSend }">
+          {{ borough.emailSend ? 'Tak' : 'Nie' }}
+        </span>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <app-details-button [link]="['/boroughs', borough.slug]"></app-details-button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<app-pagination-buttons [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)">
+</app-pagination-buttons>

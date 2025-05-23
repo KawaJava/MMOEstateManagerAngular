@@ -16,6 +16,7 @@ import { CountriesComponent } from 'src/app/modules/public/countries/countries-l
 import { DetailsButton } from 'src/app/modules/public/common/detailsButton';
 import { PlayersMeComponent } from 'src/app/modules/public/players/players-me/players-me/players-me.component';
 import { BackButtonComponent } from 'src/app/modules/public/common/back-button/back-button.component';
+import { PaginationButtonsComponent } from 'src/app/modules/public/common/pagination-buttons/pagination-buttons.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BackButtonComponent } from 'src/app/modules/public/common/back-button/b
     CountryDetailsComponent,
     DetailsButton,
     PlayersMeComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    PaginationButtonsComponent
   ],
   imports: [
     CommonModule,

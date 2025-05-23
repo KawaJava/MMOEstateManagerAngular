@@ -23,12 +23,6 @@ export class CountriesComponent implements OnInit {
     this.fetchCountries();
   }
 
-  onPageChange(event: PageEvent): void {
-    this.pageSize = event.pageSize;
-    this.currentPage = event.pageIndex;
-    this.fetchCountries();
-  }
-
   fetchCountries(): void {
     this.countryService.getCountries(this.currentPage, this.pageSize).subscribe(data => {
       this.countries = data;
@@ -58,23 +52,10 @@ export class CountriesComponent implements OnInit {
     }
   }
 
-  goToPage(page: number): void {
-    this.currentPage = page - 1;
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
     this.fetchCountries();
-  }
-
-  prevPage(): void {
-    if (this.currentPage > 0) {
-      this.currentPage--;
-      this.fetchCountries();
-    }
-  }
-
-  nextPage(): void {
-    if (this.currentPage + 1 < this.totalPages) {
-      this.currentPage++;
-      this.fetchCountries();
-    }
   }
 
 }

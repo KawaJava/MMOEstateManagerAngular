@@ -22,12 +22,6 @@ export class PlayersComponent implements OnInit {
     this.fetchPlayers();
   }
 
-  onPageChange(event: PageEvent): void {
-    this.pageSize = event.pageSize;
-    this.currentPage = event.pageIndex;
-    this.fetchPlayers();
-  }
-
   fetchPlayers(): void {
     this.playerService.getPlayers(this.currentPage, this.pageSize).subscribe(data => {
       this.players = data;
@@ -57,24 +51,10 @@ export class PlayersComponent implements OnInit {
     }
   }
 
-  goToPage(page: number): void {
-    this.currentPage = page - 1;
-    this.fetchPlayers();
-  }
-
-  prevPage(): void {
-    if (this.currentPage > 0) {
-      this.currentPage--;
-      this.fetchPlayers();
-    }
-  }
-
-  nextPage(): void {
-    if (this.currentPage + 1 < this.totalPages) {
-      this.currentPage++;
-      this.fetchPlayers();
-    }
-  }
+  onPageChange(page: number): void {
+  this.currentPage = page;
+  this.fetchPlayers();
+}
 
 }
 

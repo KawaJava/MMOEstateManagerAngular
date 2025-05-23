@@ -35,36 +35,3 @@
     justify-content: flex-end;
   }
 }
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 3rem 0 1rem 0;
-  gap: 0.5rem;
-  font-size: 1rem;
-
-  span {
-    cursor: pointer;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    background-color: $color-white;
-    color: $color-purple;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-    &.active {
-      background-color: $color-purple;
-      color: $color-white;
-      font-weight: bold;
-    }
-
-    &.disabled {
-      color: gray;
-      pointer-events: none;
-      opacity: 0.6;
-    }
-
-    &:hover:not(.active):not(.disabled) {
-      background-color: lighten($color-purple, 30%);
-    }
-  }
-}

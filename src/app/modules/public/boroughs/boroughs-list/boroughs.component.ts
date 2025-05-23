@@ -51,23 +51,8 @@ export class BoroughsComponent implements OnInit {
     }
   }
 
-  goToPage(page: number): void {
-    this.currentPage = page - 1;
+  onPageChange(page: number): void {
+    this.currentPage = page;
     this.fetchBoroughs();
   }
-
-  prevPage(): void {
-    if (this.currentPage > 0) {
-      this.currentPage--;
-      this.fetchBoroughs();
-    }
-  }
-
-  nextPage(): void {
-    if (this.currentPage + 1 < this.totalPages) {
-      this.currentPage++;
-      this.fetchBoroughs();
-    }
-  }
-
 }
