@@ -58,10 +58,6 @@ export class PlayersDetailsComponent implements OnInit {
       content: ['', [Validators.required, Validators.maxLength(600)]]
     });
   }
-  goBack(): void {
-    this.location.back();
-  }
-
   loadReviews(playerId: number, nextPage: boolean = false): void {
     if (this.isLoadingReviews || (!this.hasMoreReviews && nextPage)) return;
 

@@ -38,9 +38,4 @@ export class CountryDetailsComponent implements OnInit {
       });
     }
   }
-  goBack(): void {
-    this.location.back();
-  }
-  
-
 }

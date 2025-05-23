@@ -15,6 +15,7 @@ import { PlayersComponent } from 'src/app/modules/public/players/players-list/pl
 import { CountriesComponent } from 'src/app/modules/public/countries/countries-list/countries.component';
 import { DetailsButton } from 'src/app/modules/public/common/detailsButton';
 import { PlayersMeComponent } from 'src/app/modules/public/players/players-me/players-me/players-me.component';
+import { BackButtonComponent } from 'src/app/modules/public/common/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PlayersMeComponent } from 'src/app/modules/public/players/players-me/pl
     CountriesComponent,
     CountryDetailsComponent,
     DetailsButton,
-    PlayersMeComponent
+    PlayersMeComponent,
+    BackButtonComponent
   ],
   imports: [
     CommonModule,

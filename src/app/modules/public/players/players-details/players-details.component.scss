@@ -29,15 +29,6 @@
   }
 }
 
-.back-button {
-  margin-bottom: 1rem;
-  color: $color-purple;
-  font-weight: 500;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
 mat-expansion-panel {
   margin-top: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);

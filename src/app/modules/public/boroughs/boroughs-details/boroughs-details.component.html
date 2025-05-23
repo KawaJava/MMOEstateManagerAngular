@@ -1,26 +1,24 @@
 <div *ngIf="borough" class="borough-detail">
-    <mat-card>
-      <mat-card-title>{{ borough.name }}</mat-card-title>
-      <mat-card-content>
-        <p><strong>ID hrabstwa:</strong> {{ borough.countryId }}</p>
-        <p><strong>Obecny wójt:</strong> {{ borough.actualLeader.name }}</p>
-        <p><strong>Data rozpoczęcia przywództwa:</strong> {{ borough.leaderStartDate | date: 'longDate' }}</p>
-        <p><strong>Aktualne złoto:</strong> {{ borough.actualGold }}</p>
-        <p><strong>Złoto dodane przez gracza:</strong> {{ borough.goldAddedBy.name }}</p>
-        <p><strong>Data dodania złota:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
-        <p><strong>Email wysłany:</strong>
-          <span [ngClass]="{ 'active': borough.emailSend, 'inactive': !borough.emailSend }">
-            {{ borough.emailSend ? 'Tak' : 'Nie' }}
-          </span>
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
-  <button mat-button color="primary" (click)="goBack()" class="back-button">
-    ← Wróć do listy
-  </button>
-  
-  <div *ngIf="loading" class="loading">Ładowanie...</div>
-  <div *ngIf="error" class="error">Nie znaleziono dzielnicy.</div>
-  
+  <mat-card>
+    <mat-card-title>{{ borough.name }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>ID hrabstwa:</strong> {{ borough.countryId }}</p>
+      <p><strong>Obecny wójt:</strong> {{ borough.actualLeader.name }}</p>
+      <p><strong>Data rozpoczęcia przywództwa:</strong> {{ borough.leaderStartDate | date: 'longDate' }}</p>
+      <p><strong>Aktualne złoto:</strong> {{ borough.actualGold }}</p>
+      <p><strong>Złoto dodane przez gracza:</strong> {{ borough.goldAddedBy.name }}</p>
+      <p><strong>Data dodania złota:</strong> {{ borough.dateAdded | date: 'longDate' }}</p>
+      <p><strong>Email wysłany:</strong>
+        <span [ngClass]="{ 'active': borough.emailSend, 'inactive': !borough.emailSend }">
+          {{ borough.emailSend ? 'Tak' : 'Nie' }}
+        </span>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<app-back-button></app-back-button>
+
+
+<div *ngIf="loading" class="loading">Ładowanie...</div>
+<div *ngIf="error" class="error">Nie znaleziono dzielnicy.</div>

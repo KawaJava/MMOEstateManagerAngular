@@ -39,9 +39,7 @@
     </mat-card>
   </div>
   
-  <button mat-button color="primary" (click)="goBack()" class="back-button">
-    ← Wróć do listy
-  </button>
+  <app-back-button></app-back-button>
   
   <div *ngIf="loading" class="loading">Ładowanie...</div>
   <div *ngIf="error" class="error">Nie znaleziono kraju.</div>

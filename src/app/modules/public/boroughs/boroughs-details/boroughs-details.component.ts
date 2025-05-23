@@ -36,8 +36,4 @@ export class BoroughsDetailsComponent implements OnInit {
       });
     }
   }
-  goBack(): void {
-    this.location.back();
-  }
-
 }

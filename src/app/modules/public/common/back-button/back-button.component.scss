@@ -1,0 +1,12 @@
+@import '/src/variables.scss';
+
+.back-button {
+  margin: 1rem auto;
+  display: block;
+  color: $color-purple;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
