@@ -9,9 +9,7 @@
     </mat-option>
   </mat-autocomplete>
   <div *ngIf="control?.invalid && (control?.dirty || control?.touched)">
-    <div *ngIf="control?.errors?.['required']">
-      {{ label }} jest wymagany
-    </div>
+    <div *ngIf="control?.errors?.['required']">{{ label }} jest wymagany</div>
   </div>
 </mat-form-field>
 
