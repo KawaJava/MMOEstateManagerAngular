@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { AdminBoroughAddService } from '../service/admin-borough-add.service';
@@ -8,6 +8,8 @@ import { FormPlayerService } from '../../admin-country-all/model/form-player.ser
 import { AdminHistoricalSheriffsFilteredService } from '../../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
 import { AdminPlayer } from '../../admin-player-all/model/adminPlayer';
 import { AdminCountry } from '../../admin-country-all/model/adminCountry';
+import { AdminplayerToAutocompleteService } from 'src/app/modules/common/service/AdminplayerToAutocompleteService';
+import { AdminPlayerToAutocomplete } from '../../admin-register/model/adminPlayerToAutoComplete';
 
 @Component({
   selector: 'app-admin-borough-add',
@@ -20,18 +22,18 @@ export class AdminBoroughAddComponent implements OnInit {
   boroughForm!: FormGroup;
   players: Array<AdminPlayer> = [];
   countries: Array<AdminCountry> = [];
+  filteredPlayers: AdminPlayerToAutocomplete[] = [];
 
   constructor(
     private router: ActivatedRoute,
     private adminBoroughAddService: AdminBoroughAddService,
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
-    private formPlayerService: FormPlayerService,
+    private playerService: AdminplayerToAutocompleteService,
     private adminHistoricalSheriffsFilteredService: AdminHistoricalSheriffsFilteredService,
   ) { }
 
   ngOnInit(): void {
-    this.getPlayers();
     this.getCountries();
 
     this.boroughForm = this.formBuilder.group({
@@ -45,29 +47,42 @@ export class AdminBoroughAddComponent implements OnInit {
     });
   }
 
-  getPlayers() {
-    this.formPlayerService.getPlayers()
-      .subscribe(players => this.players = players);
-  }
-
   getCountries() {
     this.adminHistoricalSheriffsFilteredService.getCountries()
       .subscribe(countries => this.countries = countries);
   }
 
-  submit() {{
-    this.adminBoroughAddService.createBorough(this.boroughForm.value)
-    .subscribe(borough => this.boroughForm.setValue({
-      name: borough.name,
-      slug: borough.slug,
-      countryId: borough.countryId,
-      actualLeaderId: borough.actualLeaderId,
-      leaderStartDate: borough.leaderStartDate,
-      actualGold: borough.actualGold,
-      goldAddedBy: borough.goldAddedBy
-  }));
-  this.snackBar.open("Gmina została dodana", '', {duration: 3000});
-  }}
+  submit() {
+    {
+      this.adminBoroughAddService.createBorough(this.boroughForm.value)
+        .subscribe(borough => this.boroughForm.setValue({
+          name: borough.name,
+          slug: borough.slug,
+          countryId: borough.countryId,
+          actualLeaderId: borough.actualLeaderId,
+          leaderStartDate: borough.leaderStartDate,
+          actualGold: borough.actualGold,
+          goldAddedBy: borough.goldAddedBy
+        }));
+      this.snackBar.open("Gmina została dodana", '', { duration: 3000 });
+    }
+  }
+
+  onSearchPlayer(event: Event): void {
+    const input = (event.target as HTMLInputElement).value;
+    if (input.length >= 1) {
+      this.playerService.searchPlayers(input).subscribe({
+        next: players => {
+          this.filteredPlayers = players;
+        },
+        error: err => {
+          this.filteredPlayers = [];
+        }
+      });
+    } else {
+      this.filteredPlayers = [];
+    }
+  }
 
   get name() {
     return this.boroughForm.get("name");
@@ -81,8 +96,8 @@ export class AdminBoroughAddComponent implements OnInit {
     return this.boroughForm.get("countryId");
   }
 
-  get leader() {
-    return this.boroughForm.get("actualLeaderId");
+  get actualLeaderId() {
+    return this.boroughForm.get('actualLeaderId') as FormControl;
   }
 
   get leaderStartDate() {
@@ -94,6 +109,14 @@ export class AdminBoroughAddComponent implements OnInit {
   }
 
   get goldAddedBy() {
-    return this.boroughForm.get("goldAddedBy");
+    return this.boroughForm.get("goldAddedBy") as FormControl;
+  }
+  displayPlayerName = (id: number): string => {
+    const match = this.filteredPlayers.find(player => player.id === id);
+    return match ? match.name : '';
+  };
+
+  get playerIdControl(): FormControl {
+    return this.boroughForm.get('playerIdControl') as FormControl;
   }
 }

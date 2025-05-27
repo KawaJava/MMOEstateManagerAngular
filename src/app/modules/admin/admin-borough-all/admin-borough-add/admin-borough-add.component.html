@@ -2,97 +2,104 @@
 
 <form fxLayout="column" [formGroup]="boroughForm" (submit)="submit()">
 
-    <mat-form-field appearance="fill">
-      <mat-label>Nazwa</mat-label>
-      <input matInput placeholder="Podaj nazwę gminy" formControlName="name">
-      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
-        <div *ngIf="name?.errors?.['required']">
-          Nazwa jest wymagana
-        </div>
-        <div *ngIf="name?.errors?.['minlength']">
-          Nazwa musi mieć 3 znaki
-        </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Nazwa</mat-label>
+    <input matInput placeholder="Podaj nazwę gminy" formControlName="name">
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+      <div *ngIf="name?.errors?.['required']">
+        Nazwa jest wymagana
       </div>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-        <mat-label>Slug</mat-label>
-        <input matInput placeholder="Podaj slug" formControlName="slug">
-        <div *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)">
-          <div *ngIf="slug?.errors?.['required']">
-            Slug jest wymagany
-          </div>
-          <div *ngIf="slug?.errors?.['minlength']">
-            Slug musi mieć 3 znaki
-          </div>
-        </div>
-    </mat-form-field>
-
-   <mat-form-field appearance="fill">
-        <mat-label>Hrabstwo</mat-label>
-        <mat-select formControlName="countryId">
-          <mat-option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</mat-option>
-        </mat-select>
-        <div *ngIf="country?.invalid && (country?.dirty || country?.touched)">
-          <div *ngIf="country?.errors?.['required']">
-            Hrabstwo jest wymagane
-          </div>
-        </div>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Wójt</mat-label>
-        <mat-select formControlName="actualLeaderId">
-          <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
-        </mat-select>
-        <div *ngIf="leader?.invalid && (leader?.dirty || leader?.touched)">
-          <div *ngIf="leader?.errors?.['required']">
-            Wójt jest wymagany
-          </div>
-        </div>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="dataInput">
-        <mat-label>Data rozpoczęcia urzędowania</mat-label>
-        <input matInput placeholder="Podaj datę rozpoczęcia urzędowania" formControlName="leaderStartDate" 
-        [matDatepicker]="leaderStartDate">
-        <mat-hint>DD/MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="leaderStartDate"></mat-datepicker-toggle>
-        <mat-datepicker #leaderStartDate></mat-datepicker>
-        <!-- <div *ngIf="leaderStartDate?.invalid && (leaderStartDate?.dirty || leaderStartDate?.touched)">
-            <div *ngIf="leaderStartDate?.errors?.['required']">
-              Data rozpoczęcia jest wymagana
-            </div>
-          </div> -->
-    </mat-form-field>
-
-      <mat-form-field appearance="fill">
-          <mat-label>Złoto</mat-label>
-          <input matInput placeholder="Podaj ilość złota" formControlName="actualGold">
-          <div *ngIf="actualGold?.invalid && (actualGold?.dirty || actualGold?.touched)">
-            <div *ngIf="actualGold?.errors?.['required']">
-              Złoto jest wymagane
-            </div>
-            <div *ngIf="actualGold?.errors?.['min']">
-              Złoto musi być większe od 1000
-            </div>
-          </div>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Wprowadzający złoto</mat-label>
-        <mat-select formControlName="goldAddedBy">
-          <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
-        </mat-select>
-        <div *ngIf="goldAddedBy?.invalid && (goldAddedBy?.dirty || goldAddedBy?.touched)">
-          <div *ngIf="goldAddedBy?.errors?.['required']">
-            Wprowadzający jest wymagany
-          </div>
-        </div>
-      </mat-form-field>
-
-    <div fxLayoutAlign="end">
-        <button mat-flat-button color="accent" [disabled]="!boroughForm.valid">Zapisz</button>
+      <div *ngIf="name?.errors?.['minlength']">
+        Nazwa musi mieć 3 znaki
+      </div>
     </div>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Slug</mat-label>
+    <input matInput placeholder="Podaj slug" formControlName="slug">
+    <div *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)">
+      <div *ngIf="slug?.errors?.['required']">
+        Slug jest wymagany
+      </div>
+      <div *ngIf="slug?.errors?.['minlength']">
+        Slug musi mieć 3 znaki
+      </div>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Hrabstwo</mat-label>
+    <mat-select formControlName="countryId">
+      <mat-option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</mat-option>
+    </mat-select>
+    <div *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+      <div *ngIf="country?.errors?.['required']">
+        Hrabstwo jest wymagane
+      </div>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <mat-label>Wójt</mat-label>
+      <input type="text" matInput
+       [matAutocomplete]="auto"
+       [formControl]="actualLeaderId"
+       (input)="onSearchPlayer($event)">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPlayerName">
+        <mat-option *ngFor="let player of filteredPlayers" [value]="player.id">
+          {{ player.name }}
+        </mat-option>
+      </mat-autocomplete>
+      <div *ngIf="actualLeaderId?.invalid && (actualLeaderId?.dirty || actualLeaderId?.touched)">
+      <div *ngIf="actualLeaderId?.errors?.['required']">
+        Wójt jest wymagany
+      </div>
+    </div>
+    </mat-form-field>
+
+  <mat-form-field appearance="fill" class="dataInput">
+    <mat-label>Data rozpoczęcia urzędowania</mat-label>
+    <input matInput placeholder="Podaj datę rozpoczęcia urzędowania" formControlName="leaderStartDate"
+      [matDatepicker]="leaderStartDate">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="leaderStartDate"></mat-datepicker-toggle>
+    <mat-datepicker #leaderStartDate></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Złoto</mat-label>
+    <input matInput placeholder="Podaj ilość złota" formControlName="actualGold">
+    <div *ngIf="actualGold?.invalid && (actualGold?.dirty || actualGold?.touched)">
+      <div *ngIf="actualGold?.errors?.['required']">
+        Złoto jest wymagane
+      </div>
+      <div *ngIf="actualGold?.errors?.['min']">
+        Złoto musi być większe od 1000
+      </div>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <mat-label>Wprowadzający złoto</mat-label>
+      <input type="text" matInput
+       [matAutocomplete]="auto"
+       [formControl]="goldAddedBy"
+       (input)="onSearchPlayer($event)">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPlayerName">
+        <mat-option *ngFor="let player of filteredPlayers" [value]="player.id">
+          {{ player.name }}
+        </mat-option>
+      </mat-autocomplete>
+      <div *ngIf="playerIdControl?.invalid && (playerIdControl?.dirty || playerIdControl?.touched)">
+      <div *ngIf="playerIdControl?.errors?.['required']">
+        Wprowadzający jest wymagany
+      </div>
+    </div>
+    </mat-form-field>
+
+  <div fxLayoutAlign="end">
+    <button mat-flat-button color="accent" [disabled]="!boroughForm.valid">Zapisz</button>
+  </div>
 
 </form>
