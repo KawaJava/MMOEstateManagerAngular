@@ -4,7 +4,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { AdminBoroughAddService } from '../service/admin-borough-add.service';
 import { AdminBoroughAdd } from '../model/adminBoroughAdd';
-import { FormPlayerService } from '../../admin-country-all/model/form-player.service';
 import { AdminHistoricalSheriffsFilteredService } from '../../admin-historical-sheriffs-filtered/admin-historical-sheriffs-filtered.service';
 import { AdminPlayer } from '../../admin-player-all/model/adminPlayer';
 import { AdminCountry } from '../../admin-country-all/model/adminCountry';
@@ -68,22 +67,6 @@ export class AdminBoroughAddComponent implements OnInit {
     }
   }
 
-  onSearchPlayer(event: Event): void {
-    const input = (event.target as HTMLInputElement).value;
-    if (input.length >= 1) {
-      this.playerService.searchPlayers(input).subscribe({
-        next: players => {
-          this.filteredPlayers = players;
-        },
-        error: err => {
-          this.filteredPlayers = [];
-        }
-      });
-    } else {
-      this.filteredPlayers = [];
-    }
-  }
-
   get name() {
     return this.boroughForm.get("name");
   }
@@ -111,10 +94,6 @@ export class AdminBoroughAddComponent implements OnInit {
   get goldAddedBy() {
     return this.boroughForm.get("goldAddedBy") as FormControl;
   }
-  displayPlayerName = (id: number): string => {
-    const match = this.filteredPlayers.find(player => player.id === id);
-    return match ? match.name : '';
-  };
 
   get playerIdControl(): FormControl {
     return this.boroughForm.get('playerIdControl') as FormControl;

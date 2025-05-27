@@ -40,23 +40,9 @@
     </div>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-      <mat-label>Wójt</mat-label>
-      <input type="text" matInput
-       [matAutocomplete]="auto"
-       [formControl]="actualLeaderId"
-       (input)="onSearchPlayer($event)">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPlayerName">
-        <mat-option *ngFor="let player of filteredPlayers" [value]="player.id">
-          {{ player.name }}
-        </mat-option>
-      </mat-autocomplete>
-      <div *ngIf="actualLeaderId?.invalid && (actualLeaderId?.dirty || actualLeaderId?.touched)">
-      <div *ngIf="actualLeaderId?.errors?.['required']">
-        Wójt jest wymagany
-      </div>
-    </div>
-    </mat-form-field>
+  <app-player-autocomplete [label]="'Wójt'" [control]="actualLeaderId">
+  </app-player-autocomplete>
+
 
   <mat-form-field appearance="fill" class="dataInput">
     <mat-label>Data rozpoczęcia urzędowania</mat-label>
@@ -80,23 +66,9 @@
     </div>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-      <mat-label>Wprowadzający złoto</mat-label>
-      <input type="text" matInput
-       [matAutocomplete]="auto"
-       [formControl]="goldAddedBy"
-       (input)="onSearchPlayer($event)">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPlayerName">
-        <mat-option *ngFor="let player of filteredPlayers" [value]="player.id">
-          {{ player.name }}
-        </mat-option>
-      </mat-autocomplete>
-      <div *ngIf="playerIdControl?.invalid && (playerIdControl?.dirty || playerIdControl?.touched)">
-      <div *ngIf="playerIdControl?.errors?.['required']">
-        Wprowadzający jest wymagany
-      </div>
-    </div>
-    </mat-form-field>
+  <app-player-autocomplete [label]="'Wprowadzający złoto'" [control]="goldAddedBy">
+  </app-player-autocomplete>
+
 
   <div fxLayoutAlign="end">
     <button mat-flat-button color="accent" [disabled]="!boroughForm.valid">Zapisz</button>

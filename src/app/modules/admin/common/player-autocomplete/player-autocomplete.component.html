@@ -1,0 +1,17 @@
+<mat-form-field appearance="fill" class="w-full">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput
+         [formControl]="control"
+         [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPlayerName">
+    <mat-option *ngFor="let player of filteredPlayers" [value]="player.id">
+      {{ player.name }}
+    </mat-option>
+  </mat-autocomplete>
+  <div *ngIf="control?.invalid && (control?.dirty || control?.touched)">
+    <div *ngIf="control?.errors?.['required']">
+      {{ label }} jest wymagany
+    </div>
+  </div>
+</mat-form-field>
+

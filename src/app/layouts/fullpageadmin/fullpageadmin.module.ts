@@ -33,6 +33,7 @@ import { AdminBoroughChangeLeaderComponent } from 'src/app/modules/admin/admin-b
 import { AdminCountryComponent } from 'src/app/modules/admin/admin-country-all/admin-country/admin-country.component';
 import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player-all/admin-player-inactive/admin-player-inactive.component';
 import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-all/admin-player-update/admin-player-update.component';
+import { PlayerAutocompleteComponent } from 'src/app/modules/admin/common/player-autocomplete/player-autocomplete.component';
 
 
 
@@ -67,7 +68,8 @@ import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-a
     PlayersIsCountryComponent,
     ClansIsCountryComponent,
     AdminPlayerReviewsComponent,
-    AdminPlayerReviewsToAcceptComponent
+    AdminPlayerReviewsToAcceptComponent,
+    PlayerAutocompleteComponent
   ],
   imports: [
     CommonModule,
