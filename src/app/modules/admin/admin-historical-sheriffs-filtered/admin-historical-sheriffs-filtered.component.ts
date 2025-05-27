@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { AdminHistoricalSheriff } from '../admin-historical-sheriffs/model/adminHistoricalSheriff';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { FormPlayerService } from '../admin-country-all/model/form-player.service';
 import { AdminPlayer } from '../admin-player-all/model/adminPlayer';
 import { AdminHistoricalSheriffsFilteredService } from './admin-historical-sheriffs-filtered.service';
@@ -36,8 +36,8 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getPlayers();
     this.getCountries();
+    this.getPlayers();
     this.dataForm = this.formBuilder.group({
       country: [''],
       player: [''],
@@ -58,18 +58,6 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
       .subscribe(data => this.data = data);
   }
 
-  getPlayers() {
-    this.formPlayerService.getPlayers()
-      .pipe(
-        switchMap(players => {
-          this.players = players;
-          return of(this.setPlayerMap(players));
-        })
-      )
-      .subscribe(playerMap => {
-        this.playerMap = playerMap;
-      });
-  }
 
   getCountries() {
     this.adminHistoricalSheriffsFilteredService.getCountries()
@@ -90,6 +78,23 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
 
   setCountryMap(countries: AdminCountry[]): Map<number, string> {
     return new Map(countries.map(country => [country.id, country.name]));
+  }
+
+  get player(): FormControl {
+  return this.dataForm.get('player') as FormControl;
+}
+
+getPlayers() {
+    this.formPlayerService.getPlayers()
+      .pipe(
+        switchMap(players => {
+          this.players = players;
+          return of(this.setPlayerMap(players));
+        })
+      )
+      .subscribe(playerMap => {
+        this.playerMap = playerMap;
+      });
   }
 
 }

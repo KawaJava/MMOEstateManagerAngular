@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoldHistoryFilteredDto } from '../admin-gold-history/model/goldHistoryFilteredDto';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import { AdminBorough } from '../admin-borough-all/model/adminBorough';
 import { FormPlayerService } from '../admin-country-all/model/form-player.service';
@@ -26,11 +26,12 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
 
   leader!: AdminHistoricalLeader;
   dataForm!: FormGroup;
-  players: Array<AdminPlayer> = [];
   boroughs: Array<AdminBorough> = [];
   playerMap: Map<number, string> = new Map();
   boroughMap: Map<number, string> = new Map();
-  
+
+  players: Array<AdminPlayer> = [];
+
   constructor(
     private formPlayerService: FormPlayerService,
     private adminHistoricalLeadersFilteredService: AdminHistoricalLeadersFilteredService,
@@ -39,8 +40,8 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getPlayers();
     this.getBoroughs();
+    this.getPlayers();
     this.dataForm = this.formBuilder.group({
       borough: [''],
       goldAddedBy: [''],
@@ -49,6 +50,11 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
       endDate: [''],
     });
   }
+  get goldAddedBy(): FormControl {
+    return this.dataForm.get('goldAddedBy') as FormControl;
+  }
+
+
 
   submit() {
     const formValue = this.dataForm.value;
@@ -61,19 +67,6 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
     };
     this.adminGoldHistoryFilteredService.getFilteredData(dto)
       .subscribe(data => this.data = data);
-  }
-
-  getPlayers() {
-    this.formPlayerService.getPlayers()
-      .pipe(
-        switchMap(players => {
-          this.players = players;
-          return of(this.setPlayerMap(players));
-        })
-      )
-      .subscribe(playerMap => {
-        this.playerMap = playerMap;
-      });
   }
 
   getBoroughs() {
@@ -97,4 +90,16 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
     return new Map(boroughs.map(borough => [borough.id, borough.name]));
   }
 
+  getPlayers() {
+    this.formPlayerService.getPlayers()
+      .pipe(
+        switchMap(players => {
+          this.players = players;
+          return of(this.setPlayerMap(players));
+        })
+      )
+      .subscribe(playerMap => {
+        this.playerMap = playerMap;
+      });
+  }
 }

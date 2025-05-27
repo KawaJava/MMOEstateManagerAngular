@@ -2,20 +2,12 @@
 
 <form fxLayout="column" [formGroup]="boroughForm" (submit)="submit()">
 
-    <mat-form-field appearance="fill">
-        <mat-label>Wójt</mat-label>
-        <mat-select formControlName="actualLeaderId">
-          <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
-        </mat-select>
-        <div *ngIf="leader?.invalid && (leader?.dirty || leader?.touched)">
-          <div *ngIf="leader?.errors?.['required']">
-            Wójt jest wymagany
-          </div>
-        </div>
-      </mat-form-field>
+  <form [formGroup]="boroughForm" (ngSubmit)="submit()">
+    <app-player-autocomplete [label]="'Wójt'" [control]="leader">
+    </app-player-autocomplete>
 
     <div fxLayoutAlign="end">
-        <button mat-flat-button color="accent" [disabled]="!boroughForm.valid">Zapisz</button>
+      <button mat-flat-button color="accent" [disabled]="!boroughForm.valid">Zapisz</button>
     </div>
 
-</form>
+  </form>

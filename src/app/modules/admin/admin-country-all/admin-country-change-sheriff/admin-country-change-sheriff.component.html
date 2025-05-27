@@ -1,22 +1,13 @@
 <h1>Zmiana szeryfa hrabstwa</h1>
 
 <form fxLayout="column" [formGroup]="countryForm" (submit)="submit()">
-    
 
-    <mat-form-field appearance="fill">
-        <mat-label>Nowy szeryf</mat-label>
-        <mat-select formControlName="actualSheriffId">
-          <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
-        </mat-select>
-        <div *ngIf="sheriff?.invalid && (sheriff?.dirty || sheriff?.touched)">
-          <div *ngIf="sheriff?.errors?.['required']">
-            Szeryf jest wymagany
-          </div>
-        </div>
-    </mat-form-field>
+  <app-player-autocomplete [label]="'Szeryf'" [control]="sheriff">
+  </app-player-autocomplete>
 
-      <div fxLayoutAlign="end">
-        <button mat-flat-button color="accent" [disabled]="!countryForm.valid">Zapisz</button>
-      </div>
+
+  <div fxLayoutAlign="end">
+    <button mat-flat-button color="accent" [disabled]="!countryForm.valid">Zapisz</button>
+  </div>
 
 </form>

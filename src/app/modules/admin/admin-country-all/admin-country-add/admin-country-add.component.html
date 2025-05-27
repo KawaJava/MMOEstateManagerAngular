@@ -1,61 +1,48 @@
 <h1>Dodawanie hrabstwa</h1>
 
 <form fxLayout="column" [formGroup]="countryForm" (submit)="submit()">
-    <mat-form-field appearance="fill">
-      <mat-label>Nazwa</mat-label>
-      <input matInput placeholder="Podaj nazwę hrabstwa" formControlName="name">
-      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
-        <div *ngIf="name?.errors?.['required']">
-          Nazwa jest wymagana
-        </div>
-        <div *ngIf="name?.errors?.['minlength']">
-          Nazwa musi mieć 3 znaki
-        </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Nazwa</mat-label>
+    <input matInput placeholder="Podaj nazwę hrabstwa" formControlName="name">
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+      <div *ngIf="name?.errors?.['required']">
+        Nazwa jest wymagana
       </div>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-        <mat-label>Slug</mat-label>
-        <input matInput placeholder="Podaj slug" formControlName="slug">
-        <div *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)">
-          <div *ngIf="slug?.errors?.['required']">
-            Slug jest wymagany
-          </div>
-          <div *ngIf="slug?.errors?.['minlength']">
-            Slug musi mieć 3 znaki
-          </div>
-        </div>
-    </mat-form-field>
-
-    <!-- <mat-form-field appearance="fill">
-        <mat-label>Szeryf</mat-label>
-        <input matInput placeholder="Podaj nazwę szeryfa" formControlName="actualSheriffId">
-      </mat-form-field> -->
-
-      <mat-form-field appearance="fill">
-        <mat-label>Szeryf</mat-label>
-        <mat-select formControlName="actualSheriffId">
-          <mat-option *ngFor="let player of players" [value]="player.id">{{ player.name }}</mat-option>
-        </mat-select>
-        <div *ngIf="sheriff?.invalid && (sheriff?.dirty || sheriff?.touched)">
-          <div *ngIf="sheriff?.errors?.['required']">
-            Szeryf jest wymagany
-          </div>
-        </div>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-          <mat-label>Złoto</mat-label>
-          <input matInput placeholder="Podaj limit złota" formControlName="goldLimit">
-          <div *ngIf="goldLimit?.invalid && (goldLimit?.dirty || goldLimit?.touched)">
-            <div *ngIf="goldLimit?.errors?.['min']">
-              Limit musi być większy od 0
-            </div>
-          </div>
-      </mat-form-field>
-
-    <div fxLayoutAlign="end">
-        <button mat-flat-button color="accent" [disabled]="!countryForm.valid">Zapisz</button>
+      <div *ngIf="name?.errors?.['minlength']">
+        Nazwa musi mieć 3 znaki
+      </div>
     </div>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Slug</mat-label>
+    <input matInput placeholder="Podaj slug" formControlName="slug">
+    <div *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)">
+      <div *ngIf="slug?.errors?.['required']">
+        Slug jest wymagany
+      </div>
+      <div *ngIf="slug?.errors?.['minlength']">
+        Slug musi mieć 3 znaki
+      </div>
+    </div>
+  </mat-form-field>
+
+  <app-player-autocomplete [label]="'Szeryf'" [control]="sheriff">
+  </app-player-autocomplete>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Złoto</mat-label>
+    <input matInput placeholder="Podaj limit złota" formControlName="goldLimit">
+    <div *ngIf="goldLimit?.invalid && (goldLimit?.dirty || goldLimit?.touched)">
+      <div *ngIf="goldLimit?.errors?.['min']">
+        Limit musi być większy od 0
+      </div>
+    </div>
+  </mat-form-field>
+
+  <div fxLayoutAlign="end">
+    <button mat-flat-button color="accent" [disabled]="!countryForm.valid">Zapisz</button>
+  </div>
 
 </form>

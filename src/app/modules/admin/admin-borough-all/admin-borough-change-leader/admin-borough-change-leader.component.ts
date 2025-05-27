@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { FormPlayerService } from '../../admin-country-all/model/form-player.service';
-import { AdminPlayer } from '../../admin-player-all/model/adminPlayer';
 import { AdminBoroughAddService } from '../service/admin-borough-add.service';
+import { AdminPlayerToAutocomplete } from '../../admin-register/model/adminPlayerToAutoComplete';
 
 @Component({
   selector: 'app-admin-borough-change-leader',
@@ -14,18 +13,17 @@ import { AdminBoroughAddService } from '../service/admin-borough-add.service';
 export class AdminBoroughChangeLeaderComponent implements OnInit {
 
   boroughForm!: FormGroup;
-  players: Array<AdminPlayer> = [];
+
+  filteredPlayers: AdminPlayerToAutocomplete[] = [];
 
   constructor(
     private router: ActivatedRoute,
     private adminBoroughService: AdminBoroughAddService,
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
-    private formPlayerService: FormPlayerService
   ) { }
 
   ngOnInit(): void {
-    this.getPlayers();
     this.boroughForm = this.formBuilder.group({
       actualLeaderId: ['', [Validators.required]]
     });
@@ -45,12 +43,8 @@ export class AdminBoroughChangeLeaderComponent implements OnInit {
     });
   }
 
-  getPlayers() {
-    this.formPlayerService.getPlayers()
-      .subscribe(players => this.players = players);
-  }
+  get leader(): FormControl {
+  return this.boroughForm.get("actualLeaderId") as FormControl;
+}
 
-  get leader() {
-    return this.boroughForm.get("actualLeaderId");
-  }
 }

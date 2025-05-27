@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { FormPlayerService } from '../model/form-player.service';
@@ -20,12 +20,10 @@ export class AdminCountryChangeSheriffComponent implements OnInit {
     private router: ActivatedRoute,
     private adminCountryService: AdminCountryService,
     private formBuilder: FormBuilder,
-    private snackBar: MatSnackBar,
-    private formPlayerService: FormPlayerService
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
-    this.getPlayers();
     this.countryForm = this.formBuilder.group({
       actualSheriffId: ['', [Validators.required]]
     });
@@ -45,11 +43,8 @@ export class AdminCountryChangeSheriffComponent implements OnInit {
     });
   }
 
-  getPlayers() {
-    this.formPlayerService.getPlayers()
-      .subscribe(players => this.players = players);
-  }
-  get sheriff() {
-    return this.countryForm.get("actualSheriffId");
-  }
+  get sheriff(): FormControl {
+  return this.countryForm.get("actualSheriffId") as FormControl;
+}
+
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminHistoricalLeader } from '../admin-historical-leaders/model/adminHistoricalLeader';
 import { HistoricalLeadersFilteredDto } from '../admin-historical-leaders/model/historicalLeadersFilteredDto';
 import { AdminBorough } from '../admin-borough-all/model/adminBorough';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import { FormPlayerService } from '../admin-country-all/model/form-player.service';
 import { AdminPlayer } from '../admin-player-all/model/adminPlayer';
@@ -92,5 +92,9 @@ export class AdminHistoricalLeadersFilteredComponent implements OnInit {
   setBoroughMap(boroughs: AdminBorough[]): Map<number, string> {
     return new Map(boroughs.map(borough => [borough.id, borough.name]));
   }
+  get player(): FormControl {
+  return this.dataForm.get('player') as FormControl;
+}
+
 
 }

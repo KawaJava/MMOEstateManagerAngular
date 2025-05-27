@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { AdminPlayer } from '../../admin-player-all/model/adminPlayer';
@@ -27,7 +27,6 @@ export class AdminCountryAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getPlayers();
     console.log('Player Map:', this.players);
     this.countryForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
@@ -47,11 +46,6 @@ export class AdminCountryAddComponent implements OnInit {
   }));
   this.snackBar.open("Hrabstwo zostało dodane", '', {duration: 3000});
   }}
-
-  getPlayers() {
-    this.formPlayerService.getPlayers()
-      .subscribe(players => this.players = players);
-  }
   
   get name() {
     return this.countryForm.get("name");
@@ -61,9 +55,10 @@ export class AdminCountryAddComponent implements OnInit {
     return this.countryForm.get("slug");
   }
 
-  get sheriff() {
-    return this.countryForm.get("actualSheriffId");
-  }
+  get sheriff(): FormControl {
+  return this.countryForm.get("actualSheriffId") as FormControl;
+}
+
 
   get goldLimit() {
     return this.countryForm.get("goldLimit");
