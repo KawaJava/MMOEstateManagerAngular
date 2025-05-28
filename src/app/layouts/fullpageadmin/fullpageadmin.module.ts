@@ -34,9 +34,7 @@ import { AdminCountryComponent } from 'src/app/modules/admin/admin-country-all/a
 import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player-all/admin-player-inactive/admin-player-inactive.component';
 import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-all/admin-player-update/admin-player-update.component';
 import { PlayerAutocompleteComponent } from 'src/app/modules/admin/common/player-autocomplete/player-autocomplete.component';
-
-
-
+import { CountryAutocompleteComponent } from 'src/app/modules/admin/common/country-autocomplete/country-autocomplete.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +67,8 @@ import { PlayerAutocompleteComponent } from 'src/app/modules/admin/common/player
     ClansIsCountryComponent,
     AdminPlayerReviewsComponent,
     AdminPlayerReviewsToAcceptComponent,
-    PlayerAutocompleteComponent
+    PlayerAutocompleteComponent,
+    CountryAutocompleteComponent
   ],
   imports: [
     CommonModule,
