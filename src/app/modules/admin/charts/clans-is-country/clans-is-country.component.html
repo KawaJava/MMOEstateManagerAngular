@@ -1,7 +1,11 @@
 <div class="container">
-  <app-country-autocomplete [control]="countryControl" label="Wybierz hrabstwo">
-  </app-country-autocomplete>
-  <div style="max-width: 500px; margin-top: 40px;">
-    <canvas #doughnutCanvas></canvas>
+  <div class="content-wrapper">
+    <div class="autocomplete">
+      <app-country-autocomplete [control]="countryControl" label="Wybierz hrabstwo" class="country">
+      </app-country-autocomplete>
+    </div>
+    <div class="chart-wrapper">
+      <canvas #doughnutCanvas></canvas>
+    </div>
   </div>
 </div>

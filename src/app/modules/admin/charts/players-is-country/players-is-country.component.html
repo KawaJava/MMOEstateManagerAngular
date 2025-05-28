@@ -1,8 +1,10 @@
 <div class="container">
-  <app-country-autocomplete [control]="countryControl" label="Wybierz hrabstwo">
-  </app-country-autocomplete>
+  <div class="content-wrapper">
+    <app-country-autocomplete [control]="countryControl" label="Wybierz hrabstwo" class="autocomplete">
+    </app-country-autocomplete>
 
-  <div style="max-width: 950px; margin-top: 40px;">
-    <canvas #barCanvas></canvas>
+    <div class="chart-wrapper">
+      <canvas #barCanvas></canvas>
+    </div>
   </div>
 </div>
