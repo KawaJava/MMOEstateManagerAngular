@@ -28,7 +28,7 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
   countries: Array<AdminCountry> = [];
   playerMap: Map<number, string> = new Map();
   countryMap: Map<number, string> = new Map();
-  
+
   constructor(
     private formPlayerService: FormPlayerService,
     private adminHistoricalSheriffsFilteredService: AdminHistoricalSheriffsFilteredService,
@@ -49,7 +49,7 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
   submit() {
     const formValue = this.dataForm.value;
     const dto: HistoricalSheriffsFilteredDto = {
-      countryId: formValue.country,
+      countryId: typeof formValue.country === 'object' ? formValue.country.id : null,
       playerId: formValue.player,
       startDate: formValue.from,
       endDate: formValue.to
@@ -57,7 +57,6 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
     this.adminHistoricalSheriffsFilteredService.getFilteredData(dto)
       .subscribe(data => this.data = data);
   }
-
 
   getCountries() {
     this.adminHistoricalSheriffsFilteredService.getCountries()
@@ -81,10 +80,10 @@ export class AdminHistoricalSheriffsFilteredComponent implements OnInit {
   }
 
   get player(): FormControl {
-  return this.dataForm.get('player') as FormControl;
-}
+    return this.dataForm.get('player') as FormControl;
+  }
 
-getPlayers() {
+  getPlayers() {
     this.formPlayerService.getPlayers()
       .pipe(
         switchMap(players => {
@@ -95,6 +94,10 @@ getPlayers() {
       .subscribe(playerMap => {
         this.playerMap = playerMap;
       });
+  }
+
+  get country(): FormControl {
+    return this.dataForm.get('country') as FormControl;
   }
 
 }

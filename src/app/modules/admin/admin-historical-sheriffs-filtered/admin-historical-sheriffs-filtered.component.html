@@ -3,16 +3,11 @@
 <form fxLayout="column" [formGroup]="dataForm">
 
   <div fxLayout="row">
-    <mat-form-field appearance="fill" class="labelInput">
-      <mat-label>Hrabstwo</mat-label>
-      <mat-select formControlName="country">
-        <mat-option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <app-country-autocomplete [label]="'Hrabstwo'" [control]="country">
+    </app-country-autocomplete>
 
     <app-player-autocomplete [label]="'Gracz'" [control]="player">
     </app-player-autocomplete>
-
   </div>
 
   <div fxLayout="row">
