@@ -1,41 +1,36 @@
 <form [formGroup]="registerForm" fxLayout="column" (submit)="register()" class="registerForm">
-    <div *ngIf="registerError" class="error">{{ registerErrorMessage }}</div>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Username</mat-label>
-      <input matInput formControlName="username">
-      <mat-error *ngIf="registerForm.get('username')?.hasError('required')">Nazwa użytkownika jest wymagana</mat-error>
-      <mat-error *ngIf="registerForm.get('username')?.hasError('minlength')">Minimum 5 znaków</mat-error>
-      <mat-error *ngIf="registerForm.get('username')?.hasError('maxlength')">Maksymalnie 20 znaków</mat-error>
-      <mat-error *ngIf="registerForm.get('username')?.hasError('pattern')">Dozwolone: litery, cyfry, ., -, _</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Hasło</mat-label>
-      <input type="password" matInput formControlName="password">
-      <mat-error *ngIf="registerForm.get('password')?.hasError('required')">Hasło jest wymagane</mat-error>
-      <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Minimum 8 znaków</mat-error>
-      <mat-error *ngIf="registerForm.get('password')?.hasError('pattern')">Musi zawierać litery i cyfry</mat-error>
-    </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Powtórz hasło</mat-label>
-      <input type="password" matInput formControlName="repeatPassword">
-      <mat-error *ngIf="registerForm.get('repeatPassword')?.hasError('required')">Powtórz hasło</mat-error>
-    </mat-form-field>
+  <div *ngIf="registerError" class="error">{{ registerErrorMessage }}</div>
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username">
+    <mat-error *ngIf="registerForm.get('username')?.hasError('required')">Nazwa użytkownika jest wymagana</mat-error>
+    <mat-error *ngIf="registerForm.get('username')?.hasError('minlength')">Minimum 5 znaków</mat-error>
+    <mat-error *ngIf="registerForm.get('username')?.hasError('maxlength')">Maksymalnie 20 znaków</mat-error>
+    <mat-error *ngIf="registerForm.get('username')?.hasError('pattern')">Dozwolone: litery, cyfry, ., -, _</mat-error>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Gracz</mat-label>
-      <input type="text" matInput
-       [matAutocomplete]="auto"
-       [formControl]="playerIdControl"
-       (input)="onSearchPlayer($event)">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPlayerName">
-        <mat-option *ngFor="let player of filteredPlayers" [value]="player.id">
-          {{ player.name }}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-    <button mat-flat-button color="primary">Dodaj admina</button>
-  </form>
-  
+  <mat-form-field appearance="fill">
+    <mat-label>Hasło</mat-label>
+    <input type="password" matInput formControlName="password">
+    <mat-error *ngIf="registerForm.get('password')?.hasError('required')">Hasło jest wymagane</mat-error>
+    <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Minimum 8 znaków</mat-error>
+    <mat-error *ngIf="registerForm.get('password')?.hasError('pattern')">Musi zawierać litery i cyfry</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Powtórz hasło</mat-label>
+    <input type="password" matInput formControlName="repeatPassword">
+    <mat-error *ngIf="registerForm.get('repeatPassword')?.hasError('required')">
+      Powtórz hasło
+    </mat-error>
+    <mat-error
+      *ngIf="registerForm.hasError('passwordMismatch') && (registerForm.get('repeatPassword')?.dirty || registerForm.get('repeatPassword')?.touched)">
+      Hasła nie są identyczne
+    </mat-error>
+  </mat-form-field>
+
+  <app-player-autocomplete [label]="'Gracz'" [control]="playerIdControl" style="width: 100%;">
+  </app-player-autocomplete>
+
+  <button mat-flat-button color="primary" type="submit" [disabled]="!registerForm.valid">Dodaj admina</button>
+</form>
