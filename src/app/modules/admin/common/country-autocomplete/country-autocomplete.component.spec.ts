@@ -19,6 +19,7 @@ describe('CountryAutocompleteComponent', () => {
 
   beforeEach(async () => {
     mockService = jasmine.createSpyObj('AdminCountryToAutocompleteService', ['searchPlayers']);
+    mockService.searchPlayers.and.returnValue(of([]));
 
     await TestBed.configureTestingModule({
       declarations: [CountryAutocompleteComponent],
@@ -35,11 +36,11 @@ describe('CountryAutocompleteComponent', () => {
       ]
     }).compileComponents();
 
-
     fixture = TestBed.createComponent(CountryAutocompleteComponent);
     component = fixture.componentInstance;
     component.control = new FormControl('');
     fixture.detectChanges();
+    mockService.searchPlayers.calls.reset();
   });
 
   it('should create component', () => {

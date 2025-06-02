@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, Observable, switchMap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Observable, startWith, switchMap } from 'rxjs';
 import { AdminCountryToAutocomplete } from 'src/app/modules/common/model/adminCountryToAutocomplete';
 import { AdminCountryToAutocompleteService } from 'src/app/modules/common/service/AdminCountryToAutocomplete';
 
@@ -19,6 +19,11 @@ export class CountryAutocompleteComponent implements OnInit {
   constructor(private countryService: AdminCountryToAutocompleteService) { }
 
   ngOnInit(): void {
+    this.countryService.searchPlayers('').subscribe({
+    next: countries => this.filteredCountries = countries,
+    error: () => this.filteredCountries = []
+  });
+  
     this.control.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),

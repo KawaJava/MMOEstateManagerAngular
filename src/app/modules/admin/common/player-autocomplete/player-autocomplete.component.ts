@@ -19,6 +19,11 @@ export class PlayerAutocompleteComponent implements OnInit {
   constructor(private playerService: AdminplayerToAutocompleteService) {}
 
   ngOnInit(): void {
+    this.playerService.searchPlayers('').subscribe({
+    next: players => this.filteredPlayers = players,
+    error: () => this.filteredPlayers = []
+  });
+
     this.control.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),

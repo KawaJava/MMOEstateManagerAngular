@@ -6,9 +6,7 @@ import { AdminBoroughToAutocompleteService } from 'src/app/modules/common/servic
 import { ChartStatsService } from './ChartStatsService';
 import { Chart, ChartConfiguration, ChartType, registerables } from 'chart.js';
 
-Chart.register(...registerables); // dodaj to zaraz po importach
-
-
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-gold-in-borough',

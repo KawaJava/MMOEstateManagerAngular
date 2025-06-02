@@ -15,8 +15,8 @@ describe('PlayerAutocompleteComponent', () => {
   let mockService: jasmine.SpyObj<AdminplayerToAutocompleteService>;
 
   beforeEach(async () => {
-    mockService = jasmine.createSpyObj('AdminplayerToAutocompleteService', ['searchPlayers']);
-
+    mockService = jasmine.createSpyObj('AdminCountryToAutocompleteService', ['searchPlayers']);
+    mockService.searchPlayers.and.returnValue(of([]));
     await TestBed.configureTestingModule({
       declarations: [PlayerAutocompleteComponent],
       imports: [
@@ -35,6 +35,8 @@ describe('PlayerAutocompleteComponent', () => {
     component = fixture.componentInstance;
     component.control = new FormControl('');
     fixture.detectChanges();
+    mockService.searchPlayers.calls.reset();
+
   });
 
   it('should create component', () => {
