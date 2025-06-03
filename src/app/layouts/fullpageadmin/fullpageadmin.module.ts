@@ -35,6 +35,7 @@ import { AdminPlayerInactiveComponent } from 'src/app/modules/admin/admin-player
 import { AdminPlayerUpdateComponent } from 'src/app/modules/admin/admin-player-all/admin-player-update/admin-player-update.component';
 import { PlayerAutocompleteComponent } from 'src/app/modules/admin/common/player-autocomplete/player-autocomplete.component';
 import { CountryAutocompleteComponent } from 'src/app/modules/admin/common/country-autocomplete/country-autocomplete.component';
+import { BoroughAutocompleteComponent } from 'src/app/modules/admin/common/borough-autocomplete/borough-autocomplete.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { CountryAutocompleteComponent } from 'src/app/modules/admin/common/count
     AdminPlayerReviewsComponent,
     AdminPlayerReviewsToAcceptComponent,
     PlayerAutocompleteComponent,
-    CountryAutocompleteComponent
+    CountryAutocompleteComponent,
+    BoroughAutocompleteComponent
   ],
   imports: [
     CommonModule,

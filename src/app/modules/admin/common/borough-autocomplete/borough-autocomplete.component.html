@@ -1,0 +1,14 @@
+<mat-form-field appearance="fill" class="w-full">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput
+         [formControl]="control"
+         [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayBoroughName">
+    <mat-option *ngFor="let borough of filteredBoroughs" [value]="borough">
+      {{ borough.name }}
+    </mat-option>
+  </mat-autocomplete>
+  <div *ngIf="control?.invalid && (control?.dirty || control?.touched)">
+    <div *ngIf="control?.errors?.['required']">{{ label }} jest wymagany</div>
+  </div>
+</mat-form-field>
