@@ -26,10 +26,10 @@ export class AdminHistoricalLeadersFilteredComponent implements OnInit {
   dataForm!: FormGroup;
   players: Array<AdminPlayer> = [];
   boroughs: Array<AdminBorough> = [];
-  
+
   playerMap: Map<number, string> = new Map();
   boroughMap: Map<number, string> = new Map();
-  
+
   constructor(
     private formPlayerService: FormPlayerService,
     private adminHistoricalLeadersFilteredService: AdminHistoricalLeadersFilteredService,
@@ -93,8 +93,11 @@ export class AdminHistoricalLeadersFilteredComponent implements OnInit {
     return new Map(boroughs.map(borough => [borough.id, borough.name]));
   }
   get player(): FormControl {
-  return this.dataForm.get('player') as FormControl;
-}
+    return this.dataForm.get('player') as FormControl;
+  }
+  get borough(): FormControl {
+    return this.dataForm.get('borough') as FormControl;
+  }
 
 
 }
