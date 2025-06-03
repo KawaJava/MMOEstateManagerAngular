@@ -53,13 +53,16 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
   get goldAddedBy(): FormControl {
     return this.dataForm.get('goldAddedBy') as FormControl;
   }
+  get borough(): FormControl {
+    return this.dataForm.get('borough') as FormControl;
+  }
 
 
 
   submit() {
     const formValue = this.dataForm.value;
     const dto: GoldHistoryFilteredDto = {
-      boroughId: formValue.borough,
+      boroughId: formValue.borough?.id ?? null,
       goldAddedBy: formValue.goldAddedBy,
       emailSend: formValue.emailSend,
       startDate: formValue.startDate,

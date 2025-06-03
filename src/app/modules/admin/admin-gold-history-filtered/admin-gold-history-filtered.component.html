@@ -3,12 +3,8 @@
 <form fxLayout="column" [formGroup]="dataForm">
 
   <div fxLayout="row">
-    <mat-form-field appearance="fill" class="labelInput">
-      <mat-label>Gmina</mat-label>
-      <mat-select formControlName="borough">
-        <mat-option *ngFor="let borough of boroughs" [value]="borough.id">{{ borough.name }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <app-borough-autocomplete [control]="borough" label="Wybierz hrabstwo">
+      </app-borough-autocomplete>
 
     <app-player-autocomplete [label]="'Wprowadzający'" [control]="goldAddedBy">
     </app-player-autocomplete>

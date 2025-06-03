@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable, startWith, map, switchMap } from 'rxjs';
+import { Observable, startWith, map, switchMap, tap } from 'rxjs';
 import { AdminBoroughToAutocomplete } from 'src/app/modules/common/model/adminBoroughToAutocomplete';
 import { AdminBoroughToAutocompleteService } from 'src/app/modules/common/service/AdminBoroughToAutocompleteService';
 import { ChartStatsService } from './ChartStatsService';
@@ -64,6 +64,7 @@ export class GoldInBoroughComponent implements OnInit {
       }
     });;
   }
+
   loadGoldStats(boroughId: number): void {
     this.goldService.getGoldStatsByBorough(boroughId).subscribe(stats => {
       const labels = stats.map(s => s.date);

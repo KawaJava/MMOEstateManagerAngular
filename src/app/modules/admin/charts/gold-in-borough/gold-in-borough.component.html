@@ -1,17 +1,6 @@
 <div class="container">
-  <mat-form-field appearance="fill">
-    <mat-label>Wybierz gminę</mat-label>
-    <input type="text"
-           matInput
-           [formControl]="boroughControl"
-           [matAutocomplete]="auto"
-           [value]="boroughControl.value?.name || ''">
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayBoroughName">
-      <mat-option *ngFor="let borough of filteredBoroughs | async" [value]="borough">
-        {{ borough.name }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
+  <app-borough-autocomplete [control]="boroughControl" label="Wybierz gminę" class="country">
+      </app-borough-autocomplete>
   
   <div style="max-width: 950px; margin-top: 40px;">
     <canvas #barCanvas></canvas>
