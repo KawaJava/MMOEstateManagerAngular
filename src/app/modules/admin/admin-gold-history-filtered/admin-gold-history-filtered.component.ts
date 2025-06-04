@@ -57,8 +57,6 @@ export class AdminGoldHistoryFilteredComponent implements OnInit {
     return this.dataForm.get('borough') as FormControl;
   }
 
-
-
   submit() {
     const formValue = this.dataForm.value;
     const dto: GoldHistoryFilteredDto = {

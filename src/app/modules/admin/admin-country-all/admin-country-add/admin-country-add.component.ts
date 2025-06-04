@@ -36,17 +36,19 @@ export class AdminCountryAddComponent implements OnInit {
     });
   }
 
-  submit() {{
-    this.adminCountryService.createCountry(this.countryForm.value)
-    .subscribe(country => this.countryForm.setValue({
-      name: country.name,
-      slug: country.slug,
-      actualSheriffId: country.actualSheriffId,
-      goldLimit: country.goldLimit,
-  }));
-  this.snackBar.open("Hrabstwo zostało dodane", '', {duration: 3000});
-  }}
-  
+  submit() {
+    {
+      this.adminCountryService.createCountry(this.countryForm.value)
+        .subscribe(country => this.countryForm.setValue({
+          name: country.name,
+          slug: country.slug,
+          actualSheriffId: country.actualSheriffId,
+          goldLimit: country.goldLimit,
+        }));
+      this.snackBar.open("Hrabstwo zostało dodane", '', { duration: 3000 });
+    }
+  }
+
   get name() {
     return this.countryForm.get("name");
   }
@@ -56,9 +58,8 @@ export class AdminCountryAddComponent implements OnInit {
   }
 
   get sheriff(): FormControl {
-  return this.countryForm.get("actualSheriffId") as FormControl;
-}
-
+    return this.countryForm.get("actualSheriffId") as FormControl;
+  }
 
   get goldLimit() {
     return this.countryForm.get("goldLimit");

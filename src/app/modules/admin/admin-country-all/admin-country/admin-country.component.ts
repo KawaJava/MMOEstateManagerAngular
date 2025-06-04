@@ -64,6 +64,4 @@ export class AdminCountryComponent implements AfterViewInit, OnInit {
   setPlayerMap(players: AdminPlayer[]): Map<number, string> {
     return new Map(players.map(player => [player.id, player.name]));
   }
-
-
 }

@@ -98,6 +98,4 @@ export class AdminHistoricalLeadersFilteredComponent implements OnInit {
   get borough(): FormControl {
     return this.dataForm.get('borough') as FormControl;
   }
-
-
 }
