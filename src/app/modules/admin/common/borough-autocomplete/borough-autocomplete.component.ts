@@ -39,10 +39,10 @@ export class BoroughAutocompleteComponent implements OnInit {
     });
   }
 
-  displayBoroughName = (id: number): string => {
-    const borough = this.filteredBoroughs.find(p => p.id === id);
-    return borough ? borough.name : '';
+  displayBoroughName = (borough: any): string => {
+    return borough?.name || '';
   };
+
 
 }
 
