@@ -46,12 +46,17 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> Akcje </th>
     <td mat-cell *matCellDef="let element" fxLayoutAlign="row">
-      <button mat-icon-button [routerLink]="['/admin/countries/update', element.id]">
+
+      <button mat-icon-button [routerLink]="['/admin/countries/update', element.id]"
+        matTooltip="Edytuj dane o hrabstwie" matTooltipClass="yellow-tooltip">
         <mat-icon color="primary">edit</mat-icon>
       </button>
-      <button mat-icon-button [routerLink]="['/admin/countries', element.id, 'changeSheriff']">
+
+      <button mat-icon-button [routerLink]="['/admin/countries', element.id, 'changeSheriff']"
+        matTooltip="Zmień szeryfa" matTooltipClass="yellow-tooltip">
         <mat-icon color="warn">edit</mat-icon>
       </button>
+
     </td>
   </ng-container>
 

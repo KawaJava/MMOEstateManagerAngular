@@ -1,3 +1,4 @@
+@import '/src/variables.scss';
 table{
     width: 100%;
 }
@@ -9,4 +10,12 @@ table{
 }
 .mat-column-actions{
     width: 100px;
+}
+::ng-deep .yellow-tooltip {
+  background-color: $color-yellow-tooltip !important;
+  color: black !important;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
 }

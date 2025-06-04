@@ -3,81 +3,88 @@
 <button mat-raised-button color="warn" [routerLink]="['/admin/boroughs/add']" class="button-margin-basic">Dodaj gminę
   <mat-icon color="accent">add</mat-icon>
 </button>
-<button mat-raised-button color="accent" [routerLink]="['/admin/historical-leaders']" class="button-margin-basic">Sprawdź historię wójtów
+<button mat-raised-button color="accent" [routerLink]="['/admin/historical-leaders']"
+  class="button-margin-basic">Sprawdź historię wójtów
   <mat-icon color="warn">history</mat-icon>
 </button>
-<button mat-raised-button color="accent" [routerLink]="['/admin/history-golds']" class="button-margin-basic">Sprawdź poprzednie ilości złota
+<button mat-raised-button color="accent" [routerLink]="['/admin/history-golds']" class="button-margin-basic">Sprawdź
+  poprzednie ilości złota
   <mat-icon color="warn">history</mat-icon>
 </button>
 
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
 
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Id </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Nazwa </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="slug">
-      <th mat-header-cell *matHeaderCellDef> Slug </th>
-      <td mat-cell *matCellDef="let element"> {{element.slug}} </td>
-    </ng-container>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="countryId">
-        <th mat-header-cell *matHeaderCellDef> Hrabstwo </th>
-        <td mat-cell *matCellDef="let element"> {{countryMap.get(element.countryId)}} </td>
-    </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="actualLeaderId">
-        <th mat-header-cell *matHeaderCellDef> Wójt </th>
-        <td mat-cell *matCellDef="let element"> {{playerMap.get(element.actualLeaderId)}} </td>
-    </ng-container>
+  <ng-container matColumnDef="slug">
+    <th mat-header-cell *matHeaderCellDef> Slug </th>
+    <td mat-cell *matCellDef="let element"> {{element.slug}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="leaderStartDate">
-        <th mat-header-cell *matHeaderCellDef> Rozpoczęcie urzędowania </th>
-        <td mat-cell *matCellDef="let element"> {{ element.leaderStartDate | date: 'dd.MM.yyyy HH:mm:ss' }} </td>
-    </ng-container>
+  <ng-container matColumnDef="countryId">
+    <th mat-header-cell *matHeaderCellDef> Hrabstwo </th>
+    <td mat-cell *matCellDef="let element"> {{countryMap.get(element.countryId)}} </td>
+  </ng-container>
 
-      <ng-container matColumnDef="actualGold">
-        <th mat-header-cell *matHeaderCellDef> Ilość złota </th>
-        <td mat-cell *matCellDef="let element"> {{element.actualGold}} </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="goldAddedBy">
-          <th mat-header-cell *matHeaderCellDef> Złoto dodał</th>
-          <td mat-cell *matCellDef="let element"> {{playerMap.get(element.goldAddedBy)}} </td>
-      </ng-container>
+  <ng-container matColumnDef="actualLeaderId">
+    <th mat-header-cell *matHeaderCellDef> Wójt </th>
+    <td mat-cell *matCellDef="let element"> {{playerMap.get(element.actualLeaderId)}} </td>
+  </ng-container>
 
-      <ng-container matColumnDef="dateAdded">
-        <th mat-header-cell *matHeaderCellDef> Data dodania złota</th>
-        <td mat-cell *matCellDef="let element"> {{ element.dateAdded | date: 'dd.MM.yyyy HH:mm:ss' }} </td>
-    </ng-container>
+  <ng-container matColumnDef="leaderStartDate">
+    <th mat-header-cell *matHeaderCellDef> Rozpoczęcie urzędowania </th>
+    <td mat-cell *matCellDef="let element"> {{ element.leaderStartDate | date: 'dd.MM.yyyy HH:mm:ss' }} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="emailSend">
-        <th mat-header-cell *matHeaderCellDef> Email </th>
-        <td mat-cell *matCellDef="let element"> {{element.emailSend ? 'Tak' : 'Nie'}} </td>
-      </ng-container>
+  <ng-container matColumnDef="actualGold">
+    <th mat-header-cell *matHeaderCellDef> Ilość złota </th>
+    <td mat-cell *matCellDef="let element"> {{element.actualGold}} </td>
+  </ng-container>
 
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> Akcje </th>
-        <td mat-cell *matCellDef="let element" fxLayoutAlign="row">
-          <button mat-icon-button [routerLink]="['/admin/boroughs/update', element.id]">
-            <mat-icon color="primary">edit</mat-icon>
-          </button>
-          <button mat-icon-button [routerLink]="['/admin/boroughs', element.id, 'changeLeader']">
-            <mat-icon color="warn">edit</mat-icon>
-          </button>
-        </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  <ng-container matColumnDef="goldAddedBy">
+    <th mat-header-cell *matHeaderCellDef> Złoto dodał</th>
+    <td mat-cell *matCellDef="let element"> {{playerMap.get(element.goldAddedBy)}} </td>
+  </ng-container>
 
-  <mat-paginator [pageSizeOptions]="[10, 25, 50]"
-    [pageSize]="25" showFirstLastButtons [length]="totalElements">
-  </mat-paginator>
+  <ng-container matColumnDef="dateAdded">
+    <th mat-header-cell *matHeaderCellDef> Data dodania złota</th>
+    <td mat-cell *matCellDef="let element"> {{ element.dateAdded | date: 'dd.MM.yyyy HH:mm:ss' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="emailSend">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.emailSend ? 'Tak' : 'Nie'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Akcje </th>
+    <td mat-cell *matCellDef="let element" fxLayoutAlign="row">
+
+      <button mat-icon-button [routerLink]="['/admin/boroughs/update', element.id]" matTooltip="Edytuj dane o gminie"
+        matTooltipClass="yellow-tooltip">
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+
+      <button mat-icon-button [routerLink]="['/admin/boroughs', element.id, 'changeLeader']" matTooltip="Zmień wójta"
+        matTooltipClass="yellow-tooltip">
+        <mat-icon color="warn">edit</mat-icon>
+      </button>
+
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[10, 25, 50]" [pageSize]="25" showFirstLastButtons [length]="totalElements">
+</mat-paginator>
