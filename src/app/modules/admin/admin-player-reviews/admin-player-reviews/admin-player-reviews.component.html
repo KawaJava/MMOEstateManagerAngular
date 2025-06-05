@@ -51,7 +51,7 @@
         <th mat-header-cell *matHeaderCellDef> Akcje </th>
         <td mat-cell *matCellDef="let element" fxLayoutAlign="row">
             <button mat-icon-button (click)="confirmDelete(element)" matTooltip="Usuń na stałe"
-                matTooltipPosition="above">
+                matTooltipClass="yellow-tooltip" matTooltipPosition="above">
                 <mat-icon color="warn">delete</mat-icon>
             </button>
         </td>
