@@ -4,6 +4,7 @@ import { MatTable } from '@angular/material/table';
 import { AdminConfirmDialogService } from '../../admin-confirm-dialog.service';
 import { AdminPlayerReview } from '../model/adminPlayerReview';
 import { AdminPlayerReviewsService } from '../service/admin-player-reviews-service.service';
+import { AdminPlayerReviewWithAI } from '../model/adminPlayerReviewWithAI';
 
 @Component({
   selector: 'app-admin-player-reviews-to-accept',
@@ -13,10 +14,10 @@ import { AdminPlayerReviewsService } from '../service/admin-player-reviews-servi
 export class AdminPlayerReviewsToAcceptComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatTable) table!: MatTable<AdminPlayerReview>;
+  @ViewChild(MatTable) table!: MatTable<AdminPlayerReviewWithAI>;
 
-  displayedColumns: string[] = ['id', 'authorName', 'note', 'player','content', 'createdAt', 'actions'];
-  data: AdminPlayerReview[] = [];
+  displayedColumns: string[] = ['id', 'authorName', 'note', 'player', 'content', 'createdAt','aiOpinion', 'actions'];
+  data: AdminPlayerReviewWithAI[] = [];
   totalElements = 0;
 
   constructor(
@@ -27,7 +28,7 @@ export class AdminPlayerReviewsToAcceptComponent implements OnInit {
   ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-    this.reviewService.getReviewsToAccept().subscribe(data => this.data = data)
+    this.reviewService.getReviewsToAcceptWithAI().subscribe(data => this.data = data)
 
   }
 

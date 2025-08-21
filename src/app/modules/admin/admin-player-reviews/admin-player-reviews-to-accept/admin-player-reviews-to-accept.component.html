@@ -26,14 +26,14 @@
         <td mat-cell *matCellDef="let element"> {{ element.content }} </td>
     </ng-container>
 
-    <ng-container matColumnDef="actualGold">
-        <th mat-header-cell *matHeaderCellDef> Ilość złota </th>
-        <td mat-cell *matCellDef="let element"> {{element.actualGold}} </td>
-    </ng-container>
-
     <ng-container matColumnDef="player">
         <th mat-header-cell *matHeaderCellDef> Gracz </th>
         <td mat-cell *matCellDef="let element"> {{element.player.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="aiOpinion">
+        <th mat-header-cell *matHeaderCellDef> Opinia AI </th>
+        <td mat-cell *matCellDef="let element"> {{element.aiOpinion}} </td>
     </ng-container>
 
     <ng-container matColumnDef="createdAt">
